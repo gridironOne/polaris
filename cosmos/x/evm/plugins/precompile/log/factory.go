@@ -23,11 +23,11 @@ package log
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/eth/core/precompile"
-	coretypes "github.com/gridironOne/gridiron/eth/core/types"
-	"github.com/gridironOne/gridiron/lib/registry"
-	libtypes "github.com/gridironOne/gridiron/lib/types"
-	"github.com/gridironOne/gridiron/lib/utils"
+	"github.com/polarisOne/polaris/eth/core/precompile"
+	coretypes "github.com/polarisOne/polaris/eth/core/types"
+	"github.com/polarisOne/polaris/lib/registry"
+	libtypes "github.com/polarisOne/polaris/lib/types"
+	"github.com/polarisOne/polaris/lib/utils"
 )
 
 // Factory is a `PrecompileLogFactory` that builds Ethereum logs from Cosmos events. All Ethereum

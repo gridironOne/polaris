@@ -27,16 +27,16 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 
-	cbindings "github.com/gridironOne/gridiron/contracts/bindings/cosmos"
-	cpbindings "github.com/gridironOne/gridiron/contracts/bindings/cosmos/precompile/erc20"
-	cosmlib "github.com/gridironOne/gridiron/cosmos/lib"
-	"github.com/gridironOne/gridiron/cosmos/precompile"
-	erc20types "github.com/gridironOne/gridiron/cosmos/x/erc20/types"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/precompile/log"
-	"github.com/gridironOne/gridiron/eth/accounts/abi"
-	"github.com/gridironOne/gridiron/eth/common"
-	ethprecompile "github.com/gridironOne/gridiron/eth/core/precompile"
-	"github.com/gridironOne/gridiron/lib/utils"
+	cbindings "github.com/polarisOne/polaris/contracts/bindings/cosmos"
+	cpbindings "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/erc20"
+	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
+	"github.com/polarisOne/polaris/cosmos/precompile"
+	erc20types "github.com/polarisOne/polaris/cosmos/x/erc20/types"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/precompile/log"
+	"github.com/polarisOne/polaris/eth/accounts/abi"
+	"github.com/polarisOne/polaris/eth/common"
+	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
+	"github.com/polarisOne/polaris/lib/utils"
 )
 
 // Contract is the precompile contract for the auth module.
@@ -46,8 +46,8 @@ type Contract struct {
 	bk bankkeeper.Keeper
 	em ERC20Module
 
-	gridironERC20ABI abi.ABI
-	gridironERC20Bin string
+	polarisERC20ABI abi.ABI
+	polarisERC20Bin string
 }
 
 // NewPrecompileContract returns a new instance of the auth module precompile contract.
@@ -62,8 +62,8 @@ func NewPrecompileContract(bk bankkeeper.Keeper, em ERC20Module) ethprecompile.S
 		),
 		bk:              bk,
 		em:              em,
-		gridironERC20ABI: abi.MustUnmarshalJSON(cbindings.GridironERC20MetaData.ABI),
-		gridironERC20Bin: cbindings.GridironERC20MetaData.Bin,
+		polarisERC20ABI: abi.MustUnmarshalJSON(cbindings.PolarisERC20MetaData.ABI),
+		polarisERC20Bin: cbindings.PolarisERC20MetaData.Bin,
 	}
 }
 

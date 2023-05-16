@@ -32,21 +32,21 @@ import (
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	bindings "github.com/gridironOne/gridiron/contracts/bindings/testing"
-	"github.com/gridironOne/gridiron/cosmos/precompile/staking"
-	testutil "github.com/gridironOne/gridiron/cosmos/testing/utils"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/keeper"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/state"
-	evmmempool "github.com/gridironOne/gridiron/cosmos/x/evm/plugins/txpool/mempool"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/types"
-	"github.com/gridironOne/gridiron/eth/accounts/abi"
-	"github.com/gridironOne/gridiron/eth/common"
-	ethprecompile "github.com/gridironOne/gridiron/eth/core/precompile"
-	coretypes "github.com/gridironOne/gridiron/eth/core/types"
-	"github.com/gridironOne/gridiron/eth/crypto"
-	"github.com/gridironOne/gridiron/eth/params"
-	"github.com/gridironOne/gridiron/lib/utils"
+	bindings "github.com/polarisOne/polaris/contracts/bindings/testing"
+	"github.com/polarisOne/polaris/cosmos/precompile/staking"
+	testutil "github.com/polarisOne/polaris/cosmos/testing/utils"
+	"github.com/polarisOne/polaris/cosmos/x/evm/keeper"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state"
+	evmmempool "github.com/polarisOne/polaris/cosmos/x/evm/plugins/txpool/mempool"
+	"github.com/polarisOne/polaris/cosmos/x/evm/types"
+	"github.com/polarisOne/polaris/eth/accounts/abi"
+	"github.com/polarisOne/polaris/eth/common"
+	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
+	coretypes "github.com/polarisOne/polaris/eth/core/types"
+	"github.com/polarisOne/polaris/eth/crypto"
+	"github.com/polarisOne/polaris/eth/params"
+	"github.com/polarisOne/polaris/lib/utils"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -75,7 +75,7 @@ var _ = Describe("Processor", func() {
 	)
 
 	BeforeEach(func() {
-		err := os.RemoveAll("tmp/gridironOne")
+		err := os.RemoveAll("tmp/polarisOne")
 		Expect(err).ToNot(HaveOccurred())
 
 		legacyTxData = &coretypes.LegacyTx{
@@ -91,7 +91,7 @@ var _ = Describe("Processor", func() {
 			storetypes.NewKVStoreKey("evm"),
 			ak, bk,
 			"authority",
-			simtestutil.NewAppOptionsWithFlagHome("tmp/gridironOne"),
+			simtestutil.NewAppOptionsWithFlagHome("tmp/polarisOne"),
 			evmmempool.NewEthTxPoolFrom(evmmempool.DefaultPriorityMempool()),
 			func() *ethprecompile.Injector {
 				return ethprecompile.NewPrecompiles([]ethprecompile.Registrable{sc}...)
@@ -127,7 +127,7 @@ var _ = Describe("Processor", func() {
 
 		AfterEach(func() {
 			k.Precommit(ctx)
-			err := os.RemoveAll("tmp/gridironOne")
+			err := os.RemoveAll("tmp/polarisOne")
 			Expect(err).ToNot(HaveOccurred())
 		})
 

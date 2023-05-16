@@ -21,9 +21,9 @@
 package log
 
 import (
-	"github.com/gridironOne/gridiron/eth/accounts/abi"
-	"github.com/gridironOne/gridiron/eth/common"
-	libtypes "github.com/gridironOne/gridiron/lib/types"
+	"github.com/polarisOne/polaris/eth/accounts/abi"
+	"github.com/polarisOne/polaris/eth/common"
+	libtypes "github.com/polarisOne/polaris/lib/types"
 )
 
 // Compile-time assertion.

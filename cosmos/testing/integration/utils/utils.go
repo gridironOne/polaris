@@ -28,10 +28,10 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 	gethrpc "github.com/ethereum/go-ethereum/rpc"
 
-	bindings "github.com/gridironOne/gridiron/contracts/bindings/testing"
-	"github.com/gridironOne/gridiron/cosmos/testing/network"
-	"github.com/gridironOne/gridiron/eth/common"
-	coretypes "github.com/gridironOne/gridiron/eth/core/types"
+	bindings "github.com/polarisOne/polaris/contracts/bindings/testing"
+	"github.com/polarisOne/polaris/cosmos/testing/network"
+	"github.com/polarisOne/polaris/eth/common"
+	coretypes "github.com/polarisOne/polaris/eth/core/types"
 
 	. "github.com/onsi/gomega" //nolint:stylecheck,revive,gostaticcheck  // Gomega makes sense in tests.
 )
@@ -41,8 +41,8 @@ const (
 	TxTimeout      = 30 * time.Second
 )
 
-// StartGridironNetwork starts a new in-memory Gridiron chain.
-func StartGridironNetwork(t network.TestingT) (*network.Network, *ethclient.Client) {
+// StartPolarisNetwork starts a new in-memory Polaris chain.
+func StartPolarisNetwork(t network.TestingT) (*network.Network, *ethclient.Client) {
 	var err error
 	net := network.New(t)
 	time.Sleep(1 * time.Second)

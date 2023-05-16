@@ -3,7 +3,7 @@
 
 package mock
 
-import libtypes "github.com/gridironOne/gridiron/lib/types"
+import libtypes "pkg.berachain.dev/polaris/lib/types"
 
 //go:generate moq -out ./cloneable.mock.go -pkg mock ../ Cloneable
 

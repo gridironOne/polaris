@@ -1,10 +1,10 @@
-module github.com/gridironOne/lib
+module pkg.berachain.dev/polaris/lib
 
 go 1.20
 
 require (
 	github.com/onsi/ginkgo/v2 v2.9.2
-	github.com/onsi/gomega v1.27.4
+	github.com/onsi/gomega v1.27.6
 )
 
 require (

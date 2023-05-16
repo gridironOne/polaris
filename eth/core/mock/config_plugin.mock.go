@@ -7,7 +7,7 @@ import (
 	"context"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/params"
-	"github.com/gridironOne/gridiron/eth/core"
+	"pkg.berachain.dev/polaris/eth/core"
 	"sync"
 )
 

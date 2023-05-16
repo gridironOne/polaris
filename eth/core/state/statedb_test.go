@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -23,12 +23,12 @@ package state_test
 import (
 	"math/big"
 
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/core/state"
-	"github.com/gridironOne/gridiron/eth/core/state/journal/mock"
-	coretypes "github.com/gridironOne/gridiron/eth/core/types"
-	"github.com/gridironOne/gridiron/eth/core/vm"
-	"github.com/gridironOne/gridiron/eth/params"
+	"pkg.berachain.dev/polaris/eth/common"
+	"pkg.berachain.dev/polaris/eth/core/state"
+	"pkg.berachain.dev/polaris/eth/core/state/journal/mock"
+	coretypes "pkg.berachain.dev/polaris/eth/core/types"
+	"pkg.berachain.dev/polaris/eth/core/vm"
+	"pkg.berachain.dev/polaris/eth/params"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -41,7 +41,7 @@ var (
 )
 
 var _ = Describe("StateDB", func() {
-	var sdb vm.GridironStateDB
+	var sdb vm.PolarisStateDB
 
 	BeforeEach(func() {
 		sdb = state.NewStateDB(mock.NewEmptyStatePlugin())

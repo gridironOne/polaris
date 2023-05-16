@@ -29,11 +29,11 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	"github.com/cosmos/cosmos-sdk/x/auth/tx"
 
-	cryptocodec "github.com/gridironOne/gridiron/cosmos/crypto/codec"
-	evmante "github.com/gridironOne/gridiron/cosmos/x/evm/ante"
+	cryptocodec "github.com/polarisOne/polaris/cosmos/crypto/codec"
+	evmante "github.com/polarisOne/polaris/cosmos/x/evm/ante"
 )
 
-func BuildGridironEncodingConfig(mb module.BasicManager) params.EncodingConfig {
+func BuildPolarisEncodingConfig(mb module.BasicManager) params.EncodingConfig {
 	cdc := codec.NewLegacyAmino()
 	interfaceRegistry := types.NewInterfaceRegistry()
 	codec := codec.NewProtoCodec(interfaceRegistry)

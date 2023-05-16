@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -24,11 +24,11 @@ import (
 	"context"
 	"math/big"
 
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/core/vm"
-	"github.com/gridironOne/gridiron/lib/errors"
-	"github.com/gridironOne/gridiron/lib/errors/debug"
-	"github.com/gridironOne/gridiron/lib/utils"
+	"pkg.berachain.dev/polaris/eth/common"
+	"pkg.berachain.dev/polaris/eth/core/vm"
+	"pkg.berachain.dev/polaris/lib/errors"
+	"pkg.berachain.dev/polaris/lib/errors/debug"
+	"pkg.berachain.dev/polaris/lib/utils"
 )
 
 // NumBytesMethodID is the number of bytes used to represent a ABI method's ID.

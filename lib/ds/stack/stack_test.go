@@ -6,8 +6,8 @@ package stack_test
 import (
 	"testing"
 
-	"github.com/gridironOne/gridiron/lib/ds"
-	"github.com/gridironOne/gridiron/lib/ds/stack"
+	"pkg.berachain.dev/polaris/lib/ds"
+	"pkg.berachain.dev/polaris/lib/ds/stack"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

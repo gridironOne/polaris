@@ -26,7 +26,7 @@ import (
 
 	dbm "github.com/cosmos/cosmos-db"
 
-	"github.com/gridironOne/gridiron/cosmos/lib/trees"
+	"github.com/polarisOne/polaris/cosmos/lib/trees"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

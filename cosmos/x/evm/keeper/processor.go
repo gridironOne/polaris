@@ -25,8 +25,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/eth/core"
-	coretypes "github.com/gridironOne/gridiron/eth/core/types"
+	"github.com/polarisOne/polaris/eth/core"
+	coretypes "github.com/polarisOne/polaris/eth/core/types"
 )
 
 // ProcessTransaction is called during the DeliverTx processing of the ABCI lifecycle.
@@ -39,7 +39,7 @@ func (k *Keeper) ProcessTransaction(ctx context.Context, tx *coretypes.Transacti
 		"reset gas meter prior to ethereum state transition")
 
 	// Process the transaction and return the EVM's execution result.
-	execResult, err := k.gridiron.ProcessTransaction(ctx, tx)
+	execResult, err := k.polaris.ProcessTransaction(ctx, tx)
 	if err != nil {
 		return nil, err
 	}

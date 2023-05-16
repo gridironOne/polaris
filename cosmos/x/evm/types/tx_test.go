@@ -25,10 +25,10 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/cosmos/x/evm/types"
-	coretypes "github.com/gridironOne/gridiron/eth/core/types"
-	"github.com/gridironOne/gridiron/eth/crypto"
-	"github.com/gridironOne/gridiron/eth/params"
+	"github.com/polarisOne/polaris/cosmos/x/evm/types"
+	coretypes "github.com/polarisOne/polaris/eth/core/types"
+	"github.com/polarisOne/polaris/eth/crypto"
+	"github.com/polarisOne/polaris/eth/params"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

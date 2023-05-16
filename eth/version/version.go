@@ -27,13 +27,13 @@ import (
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 
-	"github.com/gridironOne/gridiron/eth/params"
+	"pkg.berachain.dev/polaris/eth/params"
 )
 
 const (
 	govcsTimeLayout = "2006-01-02T15:04:05Z"
 	ourTimeLayout   = "20060102"
-	ourPath         = "github.com/gridironOne/gridiron/eth" // Path to our module
+	ourPath         = "pkg.berachain.dev/polaris/eth" // Path to our module
 )
 
 // These variables are set at build-time by the linker when the build is

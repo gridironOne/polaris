@@ -24,12 +24,12 @@ import (
 	"context"
 	"math/big"
 
-	tbindings "github.com/gridironOne/gridiron/contracts/bindings/testing"
-	coretypes "github.com/gridironOne/gridiron/eth/core/types"
+	tbindings "github.com/polarisOne/polaris/contracts/bindings/testing"
+	coretypes "github.com/polarisOne/polaris/eth/core/types"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	. "github.com/gridironOne/gridiron/cosmos/testing/integration/utils"
+	. "github.com/polarisOne/polaris/cosmos/testing/integration/utils"
 )
 
 var _ = Describe("Tx Pool", func() {

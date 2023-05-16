@@ -25,7 +25,7 @@ import (
 
 	"github.com/rs/zerolog/log"
 
-	"github.com/gridironOne/gridiron/playground/pkg/chain"
+	"github.com/polarisOne/polaris/playground/pkg/chain"
 )
 
 // Runner is the interface for the node runner.

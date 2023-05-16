@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -21,10 +21,10 @@
 package api
 
 import (
-	"github.com/gridironOne/gridiron/eth/core"
+	"pkg.berachain.dev/polaris/eth/core"
 )
 
-// Chain defines the methods that the Gridiron Ethereum API exposes. These sub-interfaces define
+// Chain defines the methods that the Polaris Ethereum API exposes. These sub-interfaces define
 // the basic methods of a EVM chain.
 type Chain interface {
 	core.ChainWriter

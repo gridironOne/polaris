@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -29,11 +29,11 @@ import (
 	"github.com/ethereum/go-ethereum/node"
 	"github.com/ethereum/go-ethereum/p2p"
 
-	"github.com/gridironOne/gridiron/eth/rpc"
+	"pkg.berachain.dev/polaris/eth/rpc"
 )
 
 // clientIdentifier is the identifier string for the client.
-const clientIdentifier = "gridiron-geth"
+const clientIdentifier = "polaris-geth"
 
 // DefaultConfig returns the default configuration for the provider.
 func DefaultConfig() *Config {
@@ -46,23 +46,24 @@ func DefaultConfig() *Config {
 	nodeCfg.HTTPModules = append(nodeCfg.HTTPModules, "eth", "web3", "net")
 	nodeCfg.WSModules = append(nodeCfg.WSModules, "eth")
 	nodeCfg.HTTPHost = "0.0.0.0"
-
 	nodeCfg.WSHost = "0.0.0.0"
 	nodeCfg.WSOrigins = []string{"*"}
 	nodeCfg.HTTPCors = []string{"*"}
 	nodeCfg.HTTPVirtualHosts = []string{"*"}
+	nodeCfg.GraphQLCors = []string{"*"}
+	nodeCfg.GraphQLVirtualHosts = []string{"*"}
 	c.NodeConfig = nodeCfg
 	c.RPCConfig = *rpc.DefaultConfig()
 	return &c
 }
 
-// Config represents the configurable parameters for Gridiron.
+// Config represents the configurable parameters for Polaris.
 type Config struct {
 	NodeConfig node.Config
 	RPCConfig  rpc.Config
 }
 
-// LoadConfigFromFilePath reads in a Gridiron config file from the fileystem.
+// LoadConfigFromFilePath reads in a Polaris config file from the fileystem.
 func LoadConfigFromFilePath(filename string) (*Config, error) {
 	var config Config
 

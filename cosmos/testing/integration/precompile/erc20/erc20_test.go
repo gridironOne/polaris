@@ -26,17 +26,17 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	cbindings "github.com/gridironOne/gridiron/contracts/bindings/cosmos"
-	bbindings "github.com/gridironOne/gridiron/contracts/bindings/cosmos/precompile/bank"
-	bindings "github.com/gridironOne/gridiron/contracts/bindings/cosmos/precompile/erc20"
-	tbindings "github.com/gridironOne/gridiron/contracts/bindings/testing"
-	cosmlib "github.com/gridironOne/gridiron/cosmos/lib"
-	"github.com/gridironOne/gridiron/cosmos/testing/integration"
-	erc20types "github.com/gridironOne/gridiron/cosmos/x/erc20/types"
+	cbindings "github.com/polarisOne/polaris/contracts/bindings/cosmos"
+	bbindings "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/bank"
+	bindings "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/erc20"
+	tbindings "github.com/polarisOne/polaris/contracts/bindings/testing"
+	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
+	"github.com/polarisOne/polaris/cosmos/testing/integration"
+	erc20types "github.com/polarisOne/polaris/cosmos/x/erc20/types"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	. "github.com/gridironOne/gridiron/cosmos/testing/integration/utils"
+	. "github.com/polarisOne/polaris/cosmos/testing/integration/utils"
 )
 
 func TestERC20Precompile(t *testing.T) {
@@ -137,7 +137,7 @@ var _ = Describe("ERC20", func() {
 				// check that the new ERC20 is minted to TestAddress
 				tokenAddr, err := erc20Precompile.Erc20AddressForCoinDenom(nil, "bOSMO")
 				Expect(err).ToNot(HaveOccurred())
-				token, err := cbindings.NewGridironERC20(tokenAddr, tf.EthClient)
+				token, err := cbindings.NewPolarisERC20(tokenAddr, tf.EthClient)
 				Expect(err).ToNot(HaveOccurred())
 				balance, err := token.BalanceOf(nil, tf.Address("alice"))
 				Expect(err).ToNot(HaveOccurred())
@@ -196,7 +196,7 @@ var _ = Describe("ERC20", func() {
 				Expect(err).ToNot(HaveOccurred())
 				Expect(bal).To(Equal(big.NewInt(123456789)))
 
-				// token already exists, create new Gridiron denom
+				// token already exists, create new Polaris denom
 				_, err = erc20Precompile.TransferERC20ToCoin(
 					tf.GenerateTransactOpts("alice"),
 					token,
@@ -211,7 +211,7 @@ var _ = Describe("ERC20", func() {
 				Expect(err).ToNot(HaveOccurred())
 				Expect(bal).To(Equal(big.NewInt(123456789)))
 				bankBal, err := bankPrecompile.GetBalance(
-					nil, tf.Address("alice"), erc20types.NewGridironDenomForAddress(token),
+					nil, tf.Address("alice"), erc20types.NewPolarisDenomForAddress(token),
 				)
 				Expect(err).ToNot(HaveOccurred())
 				Expect(bankBal.Cmp(big.NewInt(0))).To(Equal(0))
@@ -228,7 +228,7 @@ var _ = Describe("ERC20", func() {
 				Expect(err).ToNot(HaveOccurred())
 				ExpectSuccessReceipt(tf.EthClient, tx)
 
-				// token already exists, create new Gridiron denom
+				// token already exists, create new Polaris denom
 				_, err = erc20Precompile.TransferERC20ToCoin(
 					tf.GenerateTransactOpts("alice"),
 					token,
@@ -248,7 +248,7 @@ var _ = Describe("ERC20", func() {
 				Expect(err).ToNot(HaveOccurred())
 				Expect(bal).To(Equal(big.NewInt(6789)))
 
-				// check that the Gridiron coin is minted to TestAddress
+				// check that the Polaris coin is minted to TestAddress
 				denom, err = erc20Precompile.CoinDenomForERC20Address(nil, token)
 				Expect(err).ToNot(HaveOccurred())
 				bankBal, err = bankPrecompile.GetBalance(nil, tf.Address("alice"), denom)
@@ -275,7 +275,7 @@ var _ = Describe("ERC20", func() {
 				err = tf.Network.WaitForNextBlock()
 				Expect(err).ToNot(HaveOccurred())
 
-				// check that Gridiron Coin is converted back to ERC20
+				// check that Polaris Coin is converted back to ERC20
 				bal, err = contract.BalanceOf(nil, tf.Address("alice"))
 				Expect(err).ToNot(HaveOccurred())
 				Expect(bal.Cmp(big.NewInt(123456789))).To(Equal(0))
@@ -296,7 +296,7 @@ var _ = Describe("ERC20", func() {
 			ExpectSuccessReceipt(tf.EthClient, tx)
 
 			// check that the new ERC20 is minted to TestAddress
-			tokenAddr, err := swapper.GetGridironERC20(nil, "bAKT")
+			tokenAddr, err := swapper.GetPolarisERC20(nil, "bAKT")
 			Expect(err).ToNot(HaveOccurred())
 			Expect(tokenAddr.Bytes()).To(Equal(common.Address{}.Bytes()))
 
@@ -312,9 +312,9 @@ var _ = Describe("ERC20", func() {
 			ExpectSuccessReceipt(tf.EthClient, tx)
 
 			// check that the new ERC20 is minted to TestAddress
-			tokenAddr, err = swapper.GetGridironERC20(nil, "bAKT")
+			tokenAddr, err = swapper.GetPolarisERC20(nil, "bAKT")
 			Expect(err).ToNot(HaveOccurred())
-			token, err := cbindings.NewGridironERC20(tokenAddr, tf.EthClient)
+			token, err := cbindings.NewPolarisERC20(tokenAddr, tf.EthClient)
 			Expect(err).ToNot(HaveOccurred())
 			balance, err := token.BalanceOf(nil, tf.Address("alice"))
 			Expect(err).ToNot(HaveOccurred())

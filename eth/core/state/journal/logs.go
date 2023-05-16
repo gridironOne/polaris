@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -21,10 +21,10 @@
 package journal
 
 import (
-	"github.com/gridironOne/gridiron/eth/common"
-	coretypes "github.com/gridironOne/gridiron/eth/core/types"
-	"github.com/gridironOne/gridiron/lib/ds"
-	"github.com/gridironOne/gridiron/lib/ds/stack"
+	"pkg.berachain.dev/polaris/eth/common"
+	coretypes "pkg.berachain.dev/polaris/eth/core/types"
+	"pkg.berachain.dev/polaris/lib/ds"
+	"pkg.berachain.dev/polaris/lib/ds/stack"
 )
 
 // logs is a state plugin that tracks Ethereum logs.

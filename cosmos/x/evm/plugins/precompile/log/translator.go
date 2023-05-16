@@ -23,10 +23,10 @@ package log
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/eth/accounts/abi"
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/core/precompile"
-	"github.com/gridironOne/gridiron/lib/errors"
+	"github.com/polarisOne/polaris/eth/accounts/abi"
+	"github.com/polarisOne/polaris/eth/common"
+	"github.com/polarisOne/polaris/eth/core/precompile"
+	"github.com/polarisOne/polaris/lib/errors"
 )
 
 // makeTopics generates the Ethereum log `Topics` field for a valid cosmos event. `Topics` is a

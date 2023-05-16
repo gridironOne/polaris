@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 //
-// Copyright (c) 2023 Furychain Foundation
+// Copyright (c) 2023 Berachain Foundation
 //
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
@@ -29,19 +29,19 @@ import {console} from "../../lib/forge-std/src/console.sol";
 import {stdStorage, StdStorage, Test} from "../../lib/forge-std/src/Test.sol";
 
 import {Utils} from "./Utils.sol";
-import {GridironERC20} from "../cosmos/GridironERC20.sol";
+import {PolarisERC20} from "../cosmos/PolarisERC20.sol";
 
 // NOTE: this test assumes minting is allowed on the underlying ERC20 contract.
 // Tests taken from SolidityLabs (https://github.com/soliditylabs/forge-erc20-template).
 
-contract BaseSetup is GridironERC20, Test {
+contract BaseSetup is PolarisERC20, Test {
     Utils internal utils;
     address payable[] internal users;
 
     address internal alice;
     address internal bob;
 
-    constructor() GridironERC20("denom") {}
+    constructor() PolarisERC20("denom") {}
 
     function setUp() public virtual {
         utils = new Utils();

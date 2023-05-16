@@ -23,8 +23,8 @@ package events
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/lib/errors"
-	"github.com/gridironOne/gridiron/lib/utils"
+	"github.com/polarisOne/polaris/lib/errors"
+	"github.com/polarisOne/polaris/lib/utils"
 )
 
 const (

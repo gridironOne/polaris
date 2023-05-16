@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -24,14 +24,14 @@ import (
 	"context"
 	"math/big"
 
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/core/vm"
-	"github.com/gridironOne/gridiron/eth/params"
-	"github.com/gridironOne/gridiron/lib/registry"
-	libtypes "github.com/gridironOne/gridiron/lib/types"
+	"pkg.berachain.dev/polaris/eth/common"
+	"pkg.berachain.dev/polaris/eth/core/vm"
+	"pkg.berachain.dev/polaris/eth/params"
+	"pkg.berachain.dev/polaris/lib/registry"
+	libtypes "pkg.berachain.dev/polaris/lib/types"
 )
 
-// defaultPlugin is the default precompile plugin, should any chain running Gridiron EVM not
+// defaultPlugin is the default precompile plugin, should any chain running Polaris EVM not
 // implement their own precompile plugin. Notably, this plugin can only run the default stateless
 // precompiles provided by Go-Ethereum.
 type defaultPlugin struct {

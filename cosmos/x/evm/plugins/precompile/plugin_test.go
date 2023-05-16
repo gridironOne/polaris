@@ -26,13 +26,13 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	testutil "github.com/gridironOne/gridiron/cosmos/testing/utils"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/state/events"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/state/events/mock"
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/core/precompile"
-	"github.com/gridironOne/gridiron/eth/core/vm"
-	"github.com/gridironOne/gridiron/lib/utils"
+	testutil "github.com/polarisOne/polaris/cosmos/testing/utils"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state/events"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state/events/mock"
+	"github.com/polarisOne/polaris/eth/common"
+	"github.com/polarisOne/polaris/eth/core/precompile"
+	"github.com/polarisOne/polaris/eth/core/vm"
+	"github.com/polarisOne/polaris/lib/utils"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -87,7 +87,7 @@ func (me *mockEVM) GetStateDB() vm.GethStateDB {
 }
 
 type mockSDB struct {
-	vm.GridironStateDB
+	vm.PolarisStateDB
 }
 
 func (ms *mockSDB) GetContext() context.Context {

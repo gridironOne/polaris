@@ -20,6 +20,6 @@
 
 package runtime
 
-func (app GridironApp) RegisterUpgradeHandlers() {
+func (app PolarisApp) RegisterUpgradeHandlers() {
 	// no-op in the sample app
 }

@@ -27,10 +27,10 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	cosmlib "github.com/gridironOne/gridiron/cosmos/lib"
-	erc20types "github.com/gridironOne/gridiron/cosmos/x/erc20/types"
-	"github.com/gridironOne/gridiron/eth/common"
-	ethprecompile "github.com/gridironOne/gridiron/eth/core/precompile"
+	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
+	erc20types "github.com/polarisOne/polaris/cosmos/x/erc20/types"
+	"github.com/polarisOne/polaris/eth/common"
+	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
 )
 
 const (
@@ -41,7 +41,7 @@ const (
 // ErrTokenDoesNotExist is returned when a token contract does not exist.
 var ErrTokenDoesNotExist = errors.New("ERC20 token contract does not exist")
 
-// transferCoinToERC20 transfers SDK/Gridiron coins to ERC20 tokens for an owner.
+// transferCoinToERC20 transfers SDK/Polaris coins to ERC20 tokens for an owner.
 func (c *Contract) transferCoinToERC20(
 	ctx context.Context,
 	evm ethprecompile.EVM,
@@ -53,16 +53,16 @@ func (c *Contract) transferCoinToERC20(
 ) error {
 	var (
 		sdkCtx         = sdk.UnwrapSDKContext(ctx)
-		isGridironDenom = erc20types.IsGridironDenom(denom)
+		isPolarisDenom = erc20types.IsPolarisDenom(denom)
 	)
 
-	// 1) Handle the incoming SDK/Gridiron coins
-	if isGridironDenom { // transferring Gridiron coins to ERC20 originated tokens
-		// burn amount Gridiron coins from owner
+	// 1) Handle the incoming SDK/Polaris coins
+	if isPolarisDenom { // transferring Polaris coins to ERC20 originated tokens
+		// burn amount Polaris coins from owner
 		if err := cosmlib.BurnCoinsFromAddress(sdkCtx, c.bk, erc20types.ModuleName, owner, denom, amount); err != nil {
 			return err
 		}
-	} else { // transferring IBC-originated SDK coins to Gridiron ERC20 tokens
+	} else { // transferring IBC-originated SDK coins to Polaris ERC20 tokens
 		// send bank-module backed tokens from owner to recipient
 		if err := c.bk.SendCoins(
 			sdkCtx,
@@ -74,7 +74,7 @@ func (c *Contract) transferCoinToERC20(
 		}
 	}
 
-	// 2) Handle the outgoing (Gridiron)ERC20 tokens
+	// 2) Handle the outgoing (Polaris)ERC20 tokens
 	resp, err := c.em.ERC20AddressForCoinDenom(
 		ctx, &erc20types.ERC20AddressForCoinDenomRequest{
 			Denom: denom,
@@ -91,23 +91,23 @@ func (c *Contract) transferCoinToERC20(
 		// 	return fmt.Errorf("coin %s does not have metadata registered", denom)
 		// }
 
-		// deploy the new GridironERC20 token contract
+		// deploy the new PolarisERC20 token contract
 		// NOTE: deployer of this contract is the ERC20 precompile account, NOT the msg.sender
 		// NOTE: the incoming coin's denom must have a denomMetadata set in the bank keeper
-		// (ref: https://github.com/gridironOne/gridiron/issues/682)
+		// (ref: https://github.com/polarisOne/polaris/issues/682)
 		var token common.Address
 		if token, _, err = cosmlib.DeployOnEVMFromPrecompile(
 			sdkCtx, c.GetPlugin(), evm,
-			c.RegistryKey(), c.gridironERC20ABI, value,
-			c.gridironERC20Bin, denom,
+			c.RegistryKey(), c.polarisERC20ABI, value,
+			c.polarisERC20Bin, denom,
 		); err != nil {
 			return err
 		}
 
 		// create the new ERC20 token contract pairing with SDK coin denomination
 		c.em.RegisterCoinERC20Pair(sdkCtx, denom, token)
-	} else if isGridironDenom {
-		// subesequent occurrence of Gridiron coins
+	} else if isPolarisDenom {
+		// subesequent occurrence of Polaris coins
 
 		// convert ERC20 token bech32 address to common.Address
 		var tokenAcc sdk.AccAddress
@@ -125,7 +125,7 @@ func (c *Contract) transferCoinToERC20(
 		// NOTE: it is guaranteed that the ERC20 tokens were transferred to the ERC20 module
 		if _, err = cosmlib.CallEVMFromPrecompile(
 			sdkCtx, c.GetPlugin(), evm,
-			c.RegistryKey(), token, c.gridironERC20ABI, big.NewInt(0),
+			c.RegistryKey(), token, c.polarisERC20ABI, big.NewInt(0),
 			transfer, recipient, amount,
 		); err != nil {
 			return err
@@ -145,7 +145,7 @@ func (c *Contract) transferCoinToERC20(
 	return nil
 }
 
-// transferERC20ToCoin transfers ERC20 tokens to SDK/Gridiron coins for an owner.
+// transferERC20ToCoin transfers ERC20 tokens to SDK/Polaris coins for an owner.
 func (c *Contract) transferERC20ToCoin(
 	ctx context.Context,
 	caller common.Address,
@@ -157,7 +157,7 @@ func (c *Contract) transferERC20ToCoin(
 ) error {
 	sdkCtx := sdk.UnwrapSDKContext(ctx)
 
-	// get SDK/Gridiron coin denomination pairing with ERC20 token
+	// get SDK/Polaris coin denomination pairing with ERC20 token
 	resp, err := c.em.CoinDenomForERC20Address(
 		ctx, &erc20types.CoinDenomForERC20AddressRequest{
 			Token: cosmlib.AddressToAccAddress(token).String(),
@@ -169,12 +169,12 @@ func (c *Contract) transferERC20ToCoin(
 
 	denom := resp.Denom
 	if denom == "" {
-		// if denomination not found, create new pair with ERC20 token <> Gridiron coin denomination
+		// if denomination not found, create new pair with ERC20 token <> Polaris coin denomination
 		denom = c.em.RegisterERC20CoinPair(sdkCtx, token)
 	}
 
 	//nolint:nestif // readability.
-	if erc20types.IsGridironDenom(denom) { // transferring ERC20 originated tokens to Gridiron coins
+	if erc20types.IsPolarisDenom(denom) { // transferring ERC20 originated tokens to Polaris coins
 		// return an error if the ERC20 token contract does not exist to revert the tx
 		if !evm.GetStateDB().Exist(token) {
 			return ErrTokenDoesNotExist
@@ -185,17 +185,17 @@ func (c *Contract) transferERC20ToCoin(
 		// NOTE: owner must have previously approved msg.sender to spend amount ERC20 tokens
 		if _, err = cosmlib.CallEVMFromPrecompile(
 			sdkCtx, c.GetPlugin(), evm,
-			caller, token, c.gridironERC20ABI, big.NewInt(0),
+			caller, token, c.polarisERC20ABI, big.NewInt(0),
 			transferFrom, owner, c.RegistryKey(), amount,
 		); err != nil {
 			return err
 		}
 
-		// mint amount Gridiron Coins to recipient
+		// mint amount Polaris Coins to recipient
 		if err = cosmlib.MintCoinsToAddress(sdkCtx, c.bk, erc20types.ModuleName, recipient, denom, amount); err != nil {
 			return err
 		}
-	} else { // transferring Gridiron ERC20 tokens to IBC-originated SDK coins
+	} else { // transferring Polaris ERC20 tokens to IBC-originated SDK coins
 		// send bank module-backed tokens from owner to recipient
 		if err = c.bk.SendCoins(
 			sdkCtx,

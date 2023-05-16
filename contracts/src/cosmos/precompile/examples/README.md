@@ -5,7 +5,7 @@
 Set this value in the `Deploy.s.sol` solidity forge script.
 
 ```sh
-./bin/grid query staking validators
+./bin/gridd query staking validators
 ```
 
 **Step 2: Run the Script To Deploy**

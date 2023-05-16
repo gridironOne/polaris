@@ -23,8 +23,8 @@ package state
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/cosmos/x/evm/types"
-	"github.com/gridironOne/gridiron/eth/common"
+	"github.com/polarisOne/polaris/cosmos/x/evm/types"
+	"github.com/polarisOne/polaris/eth/common"
 )
 
 // InitGenesis takes in a pointer to a genesis state object and populates the KV store.

@@ -28,13 +28,13 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins"
-	"github.com/gridironOne/gridiron/eth/core"
-	"github.com/gridironOne/gridiron/eth/core/vm"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
+	"github.com/polarisOne/polaris/eth/core"
+	"github.com/polarisOne/polaris/eth/core/vm"
 )
 
 // gasMeterDescriptor is the descriptor for the gas meter used in the plugin.
-const gasMeterDescriptor = `gridiron-gas-plugin`
+const gasMeterDescriptor = `polaris-gas-plugin`
 
 // Plugin is the interface that must be implemented by the plugin.
 type Plugin interface {
@@ -103,7 +103,7 @@ func (p *plugin) GasConsumed() uint64 {
 }
 
 // BlockGasConsumed returns the cumulative gas used during the current block. If the cumulative
-// gas used is greater than the block gas limit, we expect for Gridiron to handle it.
+// gas used is greater than the block gas limit, we expect for Polaris to handle it.
 //
 // BlockGasConsumed implements the core.GasPlugin interface.
 func (p *plugin) BlockGasConsumed() uint64 {

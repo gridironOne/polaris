@@ -1,4 +1,4 @@
-module github.com/gridironOne/gridiron/magefiles
+module github.com/polarisOne/polaris/magefiles
 
 go 1.20
 

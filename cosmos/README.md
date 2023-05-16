@@ -1,16 +1,16 @@
-# Gridiron Integrated Cosmos Chain
+# Polaris Integrated Cosmos Chain
 
 ## Installation
 
 ### From Binary
 
-The easiest way to install a Cosmos-SDK Blockchain running Gridiron is to download a pre-built binary. You can find the latest binaries on the [releases](https://github.com/gridiron/releases) page.
+The easiest way to install a Cosmos-SDK Blockchain running Polaris is to download a pre-built binary. You can find the latest binaries on the [releases](https://github.com/polaris/releases) page.
 
 ### From Source
 
 **Step 1: Install Golang & Foundry**
 
-Go v1.20+ or higher is required for Gridiron
+Go v1.20+ or higher is required for Polaris
 
 1. Install [Go 1.20+ from the official site](https://go.dev/dl/) or the method of your choice. Ensure that your `GOPATH` and `GOBIN` environment variables are properly set up by using the following commands:
 
@@ -38,30 +38,30 @@ Go v1.20+ or higher is required for Gridiron
    go version
    ```
 
-[Foundry](https://book.getfoundry.sh/getting-started/installation) is required for Gridiron
+[Foundry](https://book.getfoundry.sh/getting-started/installation) is required for Polaris
 
 3. Install Foundry:
    ```sh
    curl -L https://foundry.paradigm.xyz | bash
    ```
 
-**Step 2: Get Gridiron source code**
+**Step 2: Get Polaris source code**
 
-Clone the `gridiron` repo from the [official repo](https://github.com/gridironOne/gridiron/) and check
+Clone the `polaris` repo from the [official repo](https://github.com/polarisOne/polaris/) and check
 out the `main` branch for the latest stable release.
 Build the binary.
 
 ```bash
 cd $HOME
-git clone https://github.com/gridironOne/gridiron
-cd gridiron
+git clone https://github.com/polarisOne/polaris
+cd polaris
 git checkout main
 go run magefiles/setup/setup.go
 ```
 
 **Step 3: Build the Node Software**
 
-Run the following command to install `grid` to your `GOPATH` and build the node. `grid` is the node daemon and CLI for interacting with a gridiron node.
+Run the following command to install `grid` to your `GOPATH` and build the node. `grid` is the node daemon and CLI for interacting with a polaris node.
 
 ```bash
 mage install
@@ -78,7 +78,7 @@ grid version --long
 A successful installation will return the following:
 
 ```bash
-name: gridironOne
+name: polarisOne
 server_name: grid
 version: <x.x.x>
 commit: <Commit hash>

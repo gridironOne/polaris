@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -21,18 +21,18 @@
 package state
 
 import (
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/core/state/journal"
-	coretypes "github.com/gridironOne/gridiron/eth/core/types"
-	"github.com/gridironOne/gridiron/eth/core/vm"
-	"github.com/gridironOne/gridiron/eth/params"
-	"github.com/gridironOne/gridiron/lib/snapshot"
-	libtypes "github.com/gridironOne/gridiron/lib/types"
+	"pkg.berachain.dev/polaris/eth/common"
+	"pkg.berachain.dev/polaris/eth/core/state/journal"
+	coretypes "pkg.berachain.dev/polaris/eth/core/types"
+	"pkg.berachain.dev/polaris/eth/core/vm"
+	"pkg.berachain.dev/polaris/eth/params"
+	"pkg.berachain.dev/polaris/lib/snapshot"
+	libtypes "pkg.berachain.dev/polaris/lib/types"
 )
 
 // stateDB is a struct that holds the plugins and controller to manage Ethereum state.
 type stateDB struct {
-	// Plugin is injected by the chain running the Gridiron EVM.
+	// Plugin is injected by the chain running the Polaris EVM.
 	Plugin
 
 	// Journals built internally and required for the stateDB.
@@ -46,8 +46,8 @@ type stateDB struct {
 	ctrl libtypes.Controller[string, libtypes.Controllable[string]]
 }
 
-// NewStateDB returns a `vm.GridironStateDB` with the given `StatePlugin`.
-func NewStateDB(sp Plugin) vm.GridironStateDB {
+// NewStateDB returns a `vm.PolarisStateDB` with the given `StatePlugin`.
+func NewStateDB(sp Plugin) vm.PolarisStateDB {
 	// Build the journals required for the stateDB
 	lj := journal.NewLogs()
 	rj := journal.NewRefund()

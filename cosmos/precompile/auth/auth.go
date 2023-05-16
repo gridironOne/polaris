@@ -30,12 +30,12 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/authz"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 
-	generated "github.com/gridironOne/gridiron/contracts/bindings/cosmos/precompile/auth"
-	cosmlib "github.com/gridironOne/gridiron/cosmos/lib"
-	"github.com/gridironOne/gridiron/cosmos/precompile"
-	"github.com/gridironOne/gridiron/eth/common"
-	ethprecompile "github.com/gridironOne/gridiron/eth/core/precompile"
-	"github.com/gridironOne/gridiron/lib/utils"
+	generated "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/auth"
+	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
+	"github.com/polarisOne/polaris/cosmos/precompile"
+	"github.com/polarisOne/polaris/eth/common"
+	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
+	"github.com/polarisOne/polaris/lib/utils"
 )
 
 const requiredGas = 1000

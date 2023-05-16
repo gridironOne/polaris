@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -23,14 +23,14 @@ package vm
 import (
 	"context"
 
-	"github.com/gridironOne/gridiron/eth/common"
-	libtypes "github.com/gridironOne/gridiron/lib/types"
+	"pkg.berachain.dev/polaris/eth/common"
+	libtypes "pkg.berachain.dev/polaris/lib/types"
 )
 
 type (
-	// GridironStateDB defines an extension to the interface provided by Go-Ethereum to support
+	// PolarisStateDB defines an extension to the interface provided by Go-Ethereum to support
 	// additional state transition functionalities.
-	GridironStateDB interface {
+	PolarisStateDB interface {
 		GethStateDB
 		// Finalize finalizes the state transition.
 		libtypes.Finalizeable

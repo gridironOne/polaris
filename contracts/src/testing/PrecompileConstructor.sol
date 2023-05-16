@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 //
-// Copyright (c) 2023 Furychain Foundation
+// Copyright (c) 2023 Berachain Foundation
 //
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
@@ -31,14 +31,14 @@ import {IERC20Module} from "../cosmos/precompile/ERC20Module.sol";
 // An example of calling a precompile from the contract's constructor.
 contract PrecompileConstructor {
     IERC20Module public immutable erc20Module = IERC20Module(0x0000000000000000000000000000000000696969);
-    IERC20 public afury;
+    IERC20 public abera;
     string public denom;
 
     constructor() {
-        bool success = erc20Module.transferCoinToERC20From("afury", msg.sender, msg.sender, 123456789);
-        require(success, "failed to transfer afury");
-        afury = erc20Module.erc20AddressForCoinDenom("afury");
-        denom = erc20Module.coinDenomForERC20Address(afury);
-        require(keccak256(abi.encodePacked(denom)) == keccak256(abi.encodePacked("afury")), "returned the wrong denom");
+        bool success = erc20Module.transferCoinToERC20From("abera", msg.sender, msg.sender, 123456789);
+        require(success, "failed to transfer abera");
+        abera = erc20Module.erc20AddressForCoinDenom("abera");
+        denom = erc20Module.coinDenomForERC20Address(abera);
+        require(keccak256(abi.encodePacked(denom)) == keccak256(abi.encodePacked("abera")), "returned the wrong denom");
     }
 }

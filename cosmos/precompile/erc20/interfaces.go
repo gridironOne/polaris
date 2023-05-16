@@ -23,16 +23,16 @@ package erc20
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	erc20types "github.com/gridironOne/gridiron/cosmos/x/erc20/types"
-	"github.com/gridironOne/gridiron/eth/common"
+	erc20types "github.com/polarisOne/polaris/cosmos/x/erc20/types"
+	"github.com/polarisOne/polaris/eth/common"
 )
 
 type (
 	ERC20Module interface { //nolint:revive // good name.
 		erc20types.QueryServiceServer
 
-		// RegisterERC20CoinPair registers a new ERC20 originated token <> Gridiron Coin pair and
-		// returns the new Gridiron Coin denom.
+		// RegisterERC20CoinPair registers a new ERC20 originated token <> Polaris Coin pair and
+		// returns the new Polaris Coin denom.
 		RegisterERC20CoinPair(ctx sdk.Context, token common.Address) string
 
 		// RegisterCoinERC20Pair registers a new IBC-originated SDK Coin <> ERC20 token pair.

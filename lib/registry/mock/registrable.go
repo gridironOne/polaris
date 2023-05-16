@@ -3,7 +3,7 @@
 
 package mock
 
-import libtypes "github.com/gridironOne/gridiron/lib/types"
+import libtypes "pkg.berachain.dev/polaris/lib/types"
 
 // Assert that `MockRegistrable` implements `Registrable`.
 var _ libtypes.Registrable[string] = &Registrable{}

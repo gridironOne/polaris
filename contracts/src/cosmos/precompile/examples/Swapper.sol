@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 //
-// Copyright (c) 2023 Furychain Foundation
+// Copyright (c) 2023 Berachain Foundation
 //
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
@@ -47,8 +47,8 @@ contract Swapper {
         require(transferred, "Swapper: transferCoinToERC20 failed");
     }
 
-    // gets the Gridiron ERC20 token for a given SDK coin denomination
-    function getGridironERC20(string calldata denom) external view returns (IERC20) {
+    // gets the Polaris ERC20 token for a given SDK coin denomination
+    function getPolarisERC20(string calldata denom) external view returns (IERC20) {
         return erc20Module.erc20AddressForCoinDenom(denom);
     }
 

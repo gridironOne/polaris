@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -26,17 +26,17 @@ import (
 
 	"github.com/ethereum/go-ethereum/consensus/misc"
 
-	"github.com/gridironOne/gridiron/eth/core/state"
-	"github.com/gridironOne/gridiron/eth/core/types"
-	"github.com/gridironOne/gridiron/eth/core/vm"
-	"github.com/gridironOne/gridiron/eth/params"
+	"pkg.berachain.dev/polaris/eth/core/state"
+	"pkg.berachain.dev/polaris/eth/core/types"
+	"pkg.berachain.dev/polaris/eth/core/vm"
+	"pkg.berachain.dev/polaris/eth/params"
 )
 
 // ChainResources is the interface that defines functions for code paths within the chain to acquire
 // resources to use in execution such as StateDBss and EVMss.
 type ChainResources interface {
 	GetStateByNumber(int64) (vm.GethStateDB, error)
-	GetEVM(context.Context, vm.TxContext, vm.GridironStateDB, *types.Header, *vm.Config) *vm.GethEVM
+	GetEVM(context.Context, vm.TxContext, vm.PolarisStateDB, *types.Header, *vm.Config) *vm.GethEVM
 }
 
 // GetStateByNumber returns a statedb configured to read what the state of the blockchain is/was
@@ -53,7 +53,7 @@ func (bc *blockchain) GetStateByNumber(number int64) (vm.GethStateDB, error) {
 // StateProcessor to acquire a new EVM at the start of every block. As well as by the backend to
 // acquire an EVM for running gas estimations, eth_call etc.
 func (bc *blockchain) GetEVM(
-	_ context.Context, txContext vm.TxContext, state vm.GridironStateDB,
+	_ context.Context, txContext vm.TxContext, state vm.PolarisStateDB,
 	header *types.Header, vmConfig *vm.Config,
 ) *vm.GethEVM {
 	chainCfg := bc.processor.cp.ChainConfig() // TODO: get chain config at height.

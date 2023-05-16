@@ -43,12 +43,12 @@ func (e Eth) Test() error {
 
 // Runs all unit tests for the Cosmos SDK chain.
 func (e Eth) TestUnit() error {
-	LogGreen("Running all Gridiron Ethereum unit tests...")
+	LogGreen("Running all Polaris Ethereum unit tests...")
 	return testUnit(e.directory())
 }
 
 // Runs all integration for the Cosmos SDK chain.
 func (e Eth) TestIntegration() error {
-	LogGreen("Running all Gridiron Ethereum integration tests...")
+	LogGreen("Running all Polaris Ethereum integration tests...")
 	return testIntegration(e.directory())
 }

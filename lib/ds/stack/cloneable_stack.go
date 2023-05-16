@@ -4,8 +4,8 @@
 package stack
 
 import (
-	"github.com/gridironOne/gridiron/lib/ds"
-	libtypes "github.com/gridironOne/gridiron/lib/types"
+	"pkg.berachain.dev/polaris/lib/ds"
+	libtypes "pkg.berachain.dev/polaris/lib/types"
 )
 
 // cloneableStack is a struct that holds a slice of CacheEntry instances.

@@ -27,11 +27,11 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 
-	cosmlib "github.com/gridironOne/gridiron/cosmos/lib"
-	"github.com/gridironOne/gridiron/cosmos/testing/utils"
-	"github.com/gridironOne/gridiron/cosmos/x/erc20/keeper"
-	"github.com/gridironOne/gridiron/cosmos/x/erc20/types"
-	"github.com/gridironOne/gridiron/eth/common"
+	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
+	"github.com/polarisOne/polaris/cosmos/testing/utils"
+	"github.com/polarisOne/polaris/cosmos/x/erc20/keeper"
+	"github.com/polarisOne/polaris/cosmos/x/erc20/types"
+	"github.com/polarisOne/polaris/eth/common"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -78,7 +78,7 @@ var _ = Describe("GRPC Query Server", func() {
 			Token: cosmlib.AddressToAccAddress(tokenAddr).String(),
 		})
 		Expect(err).ToNot(HaveOccurred())
-		Expect(resp.Denom).To(Equal(types.NewGridironDenomForAddress(tokenAddr)))
+		Expect(resp.Denom).To(Equal(types.NewPolarisDenomForAddress(tokenAddr)))
 	})
 
 	It("should correctly handle coin --> erc20", func() {

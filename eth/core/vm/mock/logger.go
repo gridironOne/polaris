@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -25,7 +25,7 @@ import (
 
 	ethereumcorevm "github.com/ethereum/go-ethereum/core/vm"
 
-	"github.com/gridironOne/gridiron/eth/common"
+	"pkg.berachain.dev/polaris/eth/common"
 )
 
 //go:generate moq -out ./logger.mock.go -pkg mock ../ EVMLogger

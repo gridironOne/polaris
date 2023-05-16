@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -23,10 +23,10 @@ package journal
 import (
 	"math/big"
 
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/crypto"
-	"github.com/gridironOne/gridiron/lib/ds"
-	"github.com/gridironOne/gridiron/lib/ds/stack"
+	"pkg.berachain.dev/polaris/eth/common"
+	"pkg.berachain.dev/polaris/eth/crypto"
+	"pkg.berachain.dev/polaris/lib/ds"
+	"pkg.berachain.dev/polaris/lib/ds/stack"
 )
 
 // emptyCodeHash is the Keccak256 Hash of empty code
@@ -70,7 +70,7 @@ func (s *suicides) RegistryKey() string {
 	return suicidesRegistryKey
 }
 
-// Suicide implements the GridironStateDB interface by marking the given address as suicided.
+// Suicide implements the PolarisStateDB interface by marking the given address as suicided.
 // This clears the account balance, but the code and state of the address remains available
 // until after Commit is called.
 func (s *suicides) Suicide(addr common.Address) bool {
@@ -94,7 +94,7 @@ func (s *suicides) Suicide(addr common.Address) bool {
 	return true
 }
 
-// HasSuicided implements the GridironStateDB interface by returning if the contract was suicided
+// HasSuicided implements the PolarisStateDB interface by returning if the contract was suicided
 // in current transaction.
 func (s *suicides) HasSuicided(addr common.Address) bool {
 	for i := s.journal.Size() - 1; i >= 0; i-- {

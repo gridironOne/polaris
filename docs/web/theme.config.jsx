@@ -2,23 +2,23 @@ import { useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 
 export default {
-    logo: <span>Gridiron</span>,
+    logo: <span>Polaris</span>,
     logoLink: '/',
     project: {
-        link: 'https://github.com/gridironOne/gridiron',
+        link: 'https://github.com/polarisOne/polaris',
     },
-    docsRepositoryBase: "https://github.com/gridironOne/gridiron",
+    docsRepositoryBase: "https://github.com/polarisOne/polaris",
     banner: {
         key: '2.0-release',
-        text: <a href="https://medium.com/gridironOne-foundation/introducing-gridiron-vm-2a0b77d777f8" target="_blank">
-          🎉 Introducing Gridiron Ethereum! 
+        text: <a href="https://medium.com/polarisOne-foundation/introducing-polaris-vm-2a0b77d777f8" target="_blank">
+          🎉 Introducing Polaris Ethereum! 
         </a>,
     },
     useNextSeoProps() {
         const { route } = useRouter()
         if (route !== '/') {
             return {
-                titleTemplate: '%s – Gridiron Ethereum Docs'
+                titleTemplate: '%s – Polaris Ethereum Docs'
             }
         }
     },
@@ -33,34 +33,34 @@ export default {
                 <meta httpEquiv="Content-Language" content="en" />
                 <meta
                     name="description"
-                    content="Gridiron Ethereum brings EVM to Cosmos in a new way"
+                    content="Polaris Ethereum brings EVM to Cosmos in a new way"
                 />
                 <meta
                     name="og:description"
-                    content="Gridiron Ethereum brings EVM to Cosmos in a new way"
+                    content="Polaris Ethereum brings EVM to Cosmos in a new way"
                 />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:image" content="/header.png" />
-                <meta name="twitter:site:domain" content="https://gridiron.gridironOne.dev/" />
-                <meta property="twitter:description" content="Gridiron Ethereum brings EVM to Cosmos in a new way"/>
-                <meta name="twitter:url" content="https://gridiron.gridironOne.dev/" />
+                <meta name="twitter:site:domain" content="https://polaris.polarisOne.dev/" />
+                <meta property="twitter:description" content="Polaris Ethereum brings EVM to Cosmos in a new way"/>
+                <meta name="twitter:url" content="https://polaris.polarisOne.dev/" />
                 <meta
                     name="og:title"
-                    content={title ? title + ' – Gridiron Ethereum' : 'Gridiron Ethereum'}
+                    content={title ? title + ' – Polaris Ethereum' : 'Polaris Ethereum'}
                 />
                 <meta name="og:image" content={socialCard} />
-                <meta name="apple-mobile-web-app-title" content="Gridiron Ethereum" />
+                <meta name="apple-mobile-web-app-title" content="Polaris Ethereum" />
                 <link rel="icon" href="/milky-way.png" type="image/png" />
                 <link rel="icon" href="/milky-way.ico"/>
                 <link
                     rel="icon"
-                    href="/gridironOne.svg"
+                    href="/polarisOne.svg"
                     type="image/svg+xml"
                     media="(prefers-color-scheme: dark)"
                 />
                 <link
                     rel="icon"
-                    href="/gridironOne.png"
+                    href="/polarisOne.png"
                     type="image/png"
                     media="(prefers-color-scheme: dark)"
                 />

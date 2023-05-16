@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -26,8 +26,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/core/vm"
 
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/core/types"
+	"pkg.berachain.dev/polaris/eth/common"
+	"pkg.berachain.dev/polaris/eth/core/types"
 )
 
 // ChainWriter defines methods that are used to perform state and block transitions.
@@ -76,12 +76,12 @@ func (bc *blockchain) Prepare(ctx context.Context, height int64) {
 		ParentHash: parentHash,
 		UncleHash:  types.EmptyUncleHash,
 		Coinbase:   coinbase,
-		Root:       common.Hash{}, // Gridiron does not use the Ethereum state root.
+		Root:       common.Hash{}, // Polaris does not use the Ethereum state root.
 		Difficulty: big.NewInt(0),
 		Number:     big.NewInt(height),
 		GasLimit:   bc.gp.BlockGasLimit(),
 		Time:       timestamp,
-		Extra:      []byte{}, // Gridiron does not set the Extra field.
+		Extra:      []byte{}, // Polaris does not set the Extra field.
 		MixDigest:  common.Hash{},
 		Nonce:      types.BlockNonce{},
 		BaseFee:    bc.CalculateNextBaseFee(),

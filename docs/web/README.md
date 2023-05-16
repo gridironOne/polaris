@@ -1,4 +1,4 @@
-# gridiron-docs
+# polaris-docs
 
 gm welcome to docs
 

@@ -28,7 +28,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
 
-	generated "github.com/gridironOne/gridiron/contracts/bindings/cosmos/precompile/governance"
+	generated "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/governance"
 )
 
 // submitProposalHelper is a helper function for the `SubmitProposal` method of the governance precompile contract.

@@ -6,9 +6,9 @@ package snapshot
 import (
 	"testing"
 
-	libtypes "github.com/gridironOne/gridiron/lib/types"
-	typesmock "github.com/gridironOne/gridiron/lib/types/mock"
-	"github.com/gridironOne/gridiron/lib/utils"
+	libtypes "pkg.berachain.dev/polaris/lib/types"
+	typesmock "pkg.berachain.dev/polaris/lib/types/mock"
+	"pkg.berachain.dev/polaris/lib/utils"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

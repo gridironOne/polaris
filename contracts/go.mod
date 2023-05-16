@@ -1,4 +1,4 @@
-module github.com/gridironOne/contracts
+module pkg.berachain.dev/polaris/contracts
 
 go 1.20
 

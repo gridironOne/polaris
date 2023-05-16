@@ -46,10 +46,10 @@ import (
 	authsims "github.com/cosmos/cosmos-sdk/x/auth/simulation"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 
-	gridironbaseapp "github.com/gridironOne/gridiron/cosmos/runtime/baseapp"
-	simappconfig "github.com/gridironOne/gridiron/cosmos/runtime/config"
-	evmante "github.com/gridironOne/gridiron/cosmos/x/evm/ante"
-	evmmempool "github.com/gridironOne/gridiron/cosmos/x/evm/plugins/txpool/mempool"
+	polarisbaseapp "github.com/polarisOne/polaris/cosmos/runtime/baseapp"
+	simappconfig "github.com/polarisOne/polaris/cosmos/runtime/config"
+	evmante "github.com/polarisOne/polaris/cosmos/x/evm/ante"
+	evmmempool "github.com/polarisOne/polaris/cosmos/x/evm/plugins/txpool/mempool"
 
 	_ "embed"
 	_ "github.com/cosmos/cosmos-sdk/x/auth/tx/config" // import for side-effects
@@ -62,7 +62,7 @@ var (
 	// ModuleBasics defines the module BasicManager is in charge of setting up basic,
 	// non-dependant module elements, such as codec registration
 	// and genesis verification.
-	ModuleBasics = module.NewBasicManager(gridironbaseapp.ModuleBasics...)
+	ModuleBasics = module.NewBasicManager(polarisbaseapp.ModuleBasics...)
 
 	// application configuration (used by depinject).
 	AppConfig = appconfig.Compose(&appv1alpha1.Config{
@@ -71,15 +71,15 @@ var (
 )
 
 var (
-	_ runtime.AppI            = (*GridironApp)(nil)
-	_ servertypes.Application = (*GridironApp)(nil)
+	_ runtime.AppI            = (*PolarisApp)(nil)
+	_ servertypes.Application = (*PolarisApp)(nil)
 )
 
-// GridironBaseApp extends an ABCI application, but with most of its parameters exported.
+// PolarisBaseApp extends an ABCI application, but with most of its parameters exported.
 // They are exported for convenience in creating helper functions, as object
 // capabilities aren't needed for testing.
-type GridironApp struct {
-	gridironbaseapp.GridironBaseApp
+type PolarisApp struct {
+	polarisbaseapp.PolarisBaseApp
 
 	// simulation manager
 	sm *module.SimulationManager
@@ -97,17 +97,17 @@ func init() {
 	simappconfig.SetupCosmosConfig()
 }
 
-// NewGridironApp returns a reference to an initialized GridironApp.
-func NewGridironApp( //nolint:funlen // as defined by the sdk.
+// NewPolarisApp returns a reference to an initialized PolarisApp.
+func NewPolarisApp( //nolint:funlen // as defined by the sdk.
 	logger log.Logger,
 	db dbm.DB,
 	traceStore io.Writer,
 	loadLatest bool,
 	appOpts servertypes.AppOptions,
 	baseAppOptions ...func(*baseapp.BaseApp),
-) *GridironApp {
+) *PolarisApp {
 	var (
-		app          = &GridironApp{}
+		app          = &PolarisApp{}
 		appBuilder   *runtime.AppBuilder
 		ethTxMempool mempool.Mempool = evmmempool.NewEthTxPoolFrom(
 			evmmempool.DefaultPriorityMempool(),
@@ -118,7 +118,7 @@ func NewGridironApp( //nolint:funlen // as defined by the sdk.
 				app.App,
 				appOpts,
 				ethTxMempool,
-				gridironbaseapp.PrecompilesToInject(&app.GridironBaseApp),
+				polarisbaseapp.PrecompilesToInject(&app.PolarisBaseApp),
 			),
 		)
 	)
@@ -156,7 +156,7 @@ func NewGridironApp( //nolint:funlen // as defined by the sdk.
 	// TODO: move this somewhere better, introduce non IAVL enforced module keys as a PR to the SDK
 	// we ask @tac0turtle how 2 fix
 	offchainKey := storetypes.NewKVStoreKey("offchain-evm")
-	app.GridironBaseApp.MountCustomStores(offchainKey)
+	app.PolarisBaseApp.MountCustomStores(offchainKey)
 
 	// ===============================================================
 	// THE "DEPINJECT IS CAUSING PROBLEMS" SECTION
@@ -172,8 +172,8 @@ func NewGridironApp( //nolint:funlen // as defined by the sdk.
 		offchainKey,
 		app.CreateQueryContext,
 		// TODO: clean this up.
-		homePath+"/config/gridiron.toml",
-		homePath+"/data/gridiron",
+		homePath+"/config/polaris.toml",
+		homePath+"/data/polaris",
 	)
 
 	opt := ante.HandlerOptions{
@@ -242,6 +242,6 @@ func NewGridironApp( //nolint:funlen // as defined by the sdk.
 }
 
 // SimulationManager implements the SimulationApp interface.
-func (app *GridironApp) SimulationManager() *module.SimulationManager {
+func (app *PolarisApp) SimulationManager() *module.SimulationManager {
 	return app.sm
 }

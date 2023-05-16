@@ -4,9 +4,9 @@
 package stack_test
 
 import (
-	"github.com/gridironOne/gridiron/lib/ds"
-	"github.com/gridironOne/gridiron/lib/ds/stack"
-	typesmock "github.com/gridironOne/gridiron/lib/types/mock"
+	"pkg.berachain.dev/polaris/lib/ds"
+	"pkg.berachain.dev/polaris/lib/ds/stack"
+	typesmock "pkg.berachain.dev/polaris/lib/types/mock"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

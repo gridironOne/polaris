@@ -28,11 +28,11 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	signingtypes "github.com/cosmos/cosmos-sdk/types/tx/signing"
 
-	"github.com/gridironOne/gridiron/cosmos/crypto/keys/ethsecp256k1"
-	evmante "github.com/gridironOne/gridiron/cosmos/x/evm/ante"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/types"
-	coretypes "github.com/gridironOne/gridiron/eth/core/types"
-	errorslib "github.com/gridironOne/gridiron/lib/errors"
+	"github.com/polarisOne/polaris/cosmos/crypto/keys/ethsecp256k1"
+	evmante "github.com/polarisOne/polaris/cosmos/x/evm/ante"
+	"github.com/polarisOne/polaris/cosmos/x/evm/types"
+	coretypes "github.com/polarisOne/polaris/eth/core/types"
+	errorslib "github.com/polarisOne/polaris/lib/errors"
 )
 
 // SerializeToSdkTx converts an ethereum transaction to a Cosmos native transaction.

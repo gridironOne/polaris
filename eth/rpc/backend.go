@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -36,23 +36,23 @@ import (
 	"github.com/ethereum/go-ethereum/event"
 	"github.com/ethereum/go-ethereum/node"
 
-	"github.com/gridironOne/gridiron/eth/api"
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/common/hexutil"
-	"github.com/gridironOne/gridiron/eth/core"
-	"github.com/gridironOne/gridiron/eth/core/types"
-	"github.com/gridironOne/gridiron/eth/core/vm"
-	"github.com/gridironOne/gridiron/eth/log"
-	"github.com/gridironOne/gridiron/eth/params"
-	rpcapi "github.com/gridironOne/gridiron/eth/rpc/api"
-	"github.com/gridironOne/gridiron/eth/version"
-	errorslib "github.com/gridironOne/gridiron/lib/errors"
-	"github.com/gridironOne/gridiron/lib/utils"
+	"pkg.berachain.dev/polaris/eth/api"
+	"pkg.berachain.dev/polaris/eth/common"
+	"pkg.berachain.dev/polaris/eth/common/hexutil"
+	"pkg.berachain.dev/polaris/eth/core"
+	"pkg.berachain.dev/polaris/eth/core/types"
+	"pkg.berachain.dev/polaris/eth/core/vm"
+	"pkg.berachain.dev/polaris/eth/log"
+	"pkg.berachain.dev/polaris/eth/params"
+	rpcapi "pkg.berachain.dev/polaris/eth/rpc/api"
+	"pkg.berachain.dev/polaris/eth/version"
+	errorslib "pkg.berachain.dev/polaris/lib/errors"
+	"pkg.berachain.dev/polaris/lib/utils"
 )
 
-// GridironBackend represents the backend object for a Gridiron chain. It extends the standard
+// PolarisBackend represents the backend object for a Polaris chain. It extends the standard
 // go-ethereum backend object.
-type GridironBackend interface {
+type PolarisBackend interface {
 	Backend
 	rpcapi.NetBackend
 	rpcapi.Web3Backend
@@ -72,12 +72,12 @@ type backend struct {
 // Constructor
 // ==============================================================================
 
-// NewGridironBackend returns a new `Backend` object.
-func NewGridironBackend(
+// NewPolarisBackend returns a new `Backend` object.
+func NewPolarisBackend(
 	chain api.Chain,
 	rpcConfig *Config,
 	nodeConfig *node.Config,
-) GridironBackend {
+) PolarisBackend {
 	b := &backend{
 		chain:     chain,
 		rpcConfig: rpcConfig,
@@ -115,12 +115,12 @@ func (b *backend) FeeHistory(ctx context.Context, blockCount int, lastBlock Bloc
 	return b.gpo.FeeHistory(ctx, blockCount, lastBlock, rewardPercentiles)
 }
 
-// ChainDb is unused in Gridiron.
+// ChainDb is unused in Polaris.
 func (b *backend) ChainDb() ethdb.Database { //nolint:stylecheck // conforms to interface.
 	return ethdb.Database(nil)
 }
 
-// AccountManager is unused in Gridiron.
+// AccountManager is unused in Polaris.
 func (b *backend) AccountManager() *accounts.Manager {
 	return &accounts.Manager{}
 }
@@ -159,14 +159,14 @@ func (b *backend) UnprotectedAllowed() bool {
 // ==============================================================================
 
 // SetHead is used for state sync on ethereum, we leave state sync up to the host
-// chain and thus it is not implemented in Gridiron.
+// chain and thus it is not implemented in Polaris.
 func (b *backend) SetHead(number uint64) {
 	panic("not implemented")
 }
 
 // HeaderByNumber returns the block header at the given block number.
 func (b *backend) HeaderByNumber(_ context.Context, number BlockNumber) (*types.Header, error) {
-	block, err := b.gridironBlockByNumber(number)
+	block, err := b.polarisBlockByNumber(number)
 	// If the block is non-existent, return nil.
 	// This is to maintain parity with the behavior of the geth backend.
 	if errors.Is(err, core.ErrBlockNotFound) {
@@ -182,7 +182,7 @@ func (b *backend) HeaderByNumber(_ context.Context, number BlockNumber) (*types.
 
 // HeaderByHash returns the block header with the given hash.
 func (b *backend) HeaderByHash(_ context.Context, hash common.Hash) (*types.Header, error) {
-	block, err := b.gridironBlockByHash(hash)
+	block, err := b.polarisBlockByHash(hash)
 	// If the block is non-existent, return nil.
 	// This is to maintain parity with the behavior of the geth backend.
 	if errors.Is(err, core.ErrBlockNotFound) {
@@ -200,7 +200,7 @@ func (b *backend) HeaderByHash(_ context.Context, hash common.Hash) (*types.Head
 func (b *backend) HeaderByNumberOrHash(_ context.Context,
 	blockNrOrHash BlockNumberOrHash,
 ) (*types.Header, error) {
-	block, err := b.gridironBlockByNumberOrHash(blockNrOrHash)
+	block, err := b.polarisBlockByNumberOrHash(blockNrOrHash)
 	// If the block is non-existent, return nil.
 	// This is to maintain parity with the behavior of the geth backend.
 	if errors.Is(err, core.ErrBlockNotFound) {
@@ -239,7 +239,7 @@ func (b *backend) CurrentBlock() *types.Header {
 
 // BlockByNumber returns the block identified by `number`.
 func (b *backend) BlockByNumber(_ context.Context, number BlockNumber) (*types.Block, error) {
-	block, err := b.gridironBlockByNumber(number)
+	block, err := b.polarisBlockByNumber(number)
 	if err != nil {
 		b.logger.Error("eth.rpc.backend.BlockByNumber", "number", number, "err", err)
 		return nil, errorslib.Wrapf(err, "BlockByNumber [%d]", number)
@@ -251,7 +251,7 @@ func (b *backend) BlockByNumber(_ context.Context, number BlockNumber) (*types.B
 
 // BlockByHash returns the block with the given `hash`.
 func (b *backend) BlockByHash(_ context.Context, hash common.Hash) (*types.Block, error) {
-	block, err := b.gridironBlockByHash(hash)
+	block, err := b.polarisBlockByHash(hash)
 	b.logger.Info("BlockByHash", "hash", hash, "block", block)
 	if err != nil {
 		b.logger.Error("eth.rpc.backend.BlockByHash", "hash", hash, "err", err)
@@ -266,7 +266,7 @@ func (b *backend) BlockByHash(_ context.Context, hash common.Hash) (*types.Block
 func (b *backend) BlockByNumberOrHash(_ context.Context,
 	blockNrOrHash BlockNumberOrHash,
 ) (*types.Block, error) {
-	block, err := b.gridironBlockByNumberOrHash(blockNrOrHash)
+	block, err := b.polarisBlockByNumberOrHash(blockNrOrHash)
 	if err != nil {
 		b.logger.Error("eth.rpc.backend.BlockByNumberOrHash", "blockNrOrHash", blockNrOrHash, "err", err)
 		return nil, err
@@ -284,7 +284,7 @@ func (b *backend) StateAndHeaderByNumber(
 		b.logger.Error("eth.rpc.backend.StateAndHeaderByNumber", "number", number, "err", err)
 		return nil, nil, err
 	}
-	block, err := b.gridironBlockByNumber(number)
+	block, err := b.polarisBlockByNumber(number)
 	if err != nil {
 		b.logger.Error("eth.rpc.backend.StateAndHeaderByNumber", "number", number, "err", err)
 		return nil, nil, err
@@ -304,7 +304,7 @@ func (b *backend) StateAndHeaderByNumberOrHash(
 	if inputNum, ok := blockNrOrHash.Number(); ok {
 		// Try to resolve by block number first.
 		number = inputNum.Int64()
-		block, err = b.gridironBlockByNumber(inputNum)
+		block, err = b.polarisBlockByNumber(inputNum)
 		if err != nil {
 			b.logger.Error("eth.rpc.backend.StateAndHeaderByNumberOrHash", "number", inputNum,
 				"err", err)
@@ -312,7 +312,7 @@ func (b *backend) StateAndHeaderByNumberOrHash(
 		}
 	} else if hash, ok = blockNrOrHash.Hash(); ok {
 		// Try to resolve by hash next.
-		block, err = b.gridironBlockByHash(hash)
+		block, err = b.polarisBlockByHash(hash)
 		if err != nil {
 			b.logger.Error("eth.rpc.backend.StateAndHeaderByNumberOrHash", "hash", hash,
 				"err", err)
@@ -348,7 +348,7 @@ func (b *backend) GetTransaction(
 	return tx, blockHash, blockNumber, index, nil
 }
 
-// PendingBlockAndReceipts returns the pending block (equivalent to current block in Gridiron)
+// PendingBlockAndReceipts returns the pending block (equivalent to current block in Polaris)
 // and associated receipts.
 func (b *backend) PendingBlockAndReceipts() (*types.Block, types.Receipts) {
 	block, receipts, err := b.chain.CurrentBlockAndReceipts()
@@ -406,7 +406,7 @@ func (b *backend) GetEVM(ctx context.Context, msg *core.Message, state vm.GethSt
 	}
 	txContext := core.NewEVMTxContext(msg)
 	b.logger.Info("called eth.rpc.backend.GetEVM", "header", header, "txContext", txContext, "vmConfig", vmConfig)
-	gethEVM := b.chain.GetEVM(ctx, txContext, utils.MustGetAs[vm.GridironStateDB](state), header, vmConfig)
+	gethEVM := b.chain.GetEVM(ctx, txContext, utils.MustGetAs[vm.PolarisStateDB](state), header, vmConfig)
 	return gethEVM, state.Error, nil
 }
 
@@ -493,7 +493,7 @@ func (b *backend) GetBody(_ context.Context, hash common.Hash,
 		b.logger.Error("eth.rpc.backend.GetBody", "number", number, "hash", hash)
 		return nil, errors.New("invalid arguments; expect hash and no special block numbers")
 	}
-	block, err := b.gridironBlockByNumberOrHash(BlockNumberOrHash{BlockNumber: &number, BlockHash: &hash})
+	block, err := b.polarisBlockByNumberOrHash(BlockNumberOrHash{BlockNumber: &number, BlockHash: &hash})
 	if err != nil {
 		b.logger.Error("eth.rpc.backend.GetBody", "number", number, "hash", hash)
 		return nil, err
@@ -546,7 +546,12 @@ func (b *backend) ServiceFilter(_ context.Context, session *bloombits.MatcherSes
 // For education:
 // https://medium.com/@pedrouid/chainid-vs-networkid-how-do-they-differ-on-ethereum-eec2ed41635b
 func (b *backend) Version() string {
-	return b.ChainConfig().ChainID.String()
+	chainID := b.ChainConfig().ChainID
+	if chainID == nil {
+		b.logger.Error("eth.rpc.backend.Version", "ChainID is nil")
+		return "-1"
+	}
+	return chainID.String()
 }
 
 func (b *backend) Listening() bool {
@@ -561,15 +566,15 @@ func (b *backend) PeerCount() hexutil.Uint {
 
 // ClientVersion returns the current client version.
 func (b *backend) ClientVersion() string {
-	return version.ClientName("gridiron-geth")
+	return version.ClientName("polaris-geth")
 }
 
 // ==============================================================================
-// Gridiron Helpers
+// Polaris Helpers
 // ==============================================================================
 
-// gridironBlockByNumberOrHash returns the block identified by `number` or `hash`.
-func (b *backend) gridironBlockByNumberOrHash(
+// polarisBlockByNumberOrHash returns the block identified by `number` or `hash`.
+func (b *backend) polarisBlockByNumberOrHash(
 	blockNrOrHash BlockNumberOrHash,
 ) (*types.Block, error) {
 	// First we try to get by hash.
@@ -577,51 +582,45 @@ func (b *backend) gridironBlockByNumberOrHash(
 		block, err := b.chain.GetBlockByHash(hash)
 		if err != nil {
 			return nil, errorslib.Wrapf(ErrBlockNotFound,
-				"gridironBlockByNumberOrHash: hash [%s]", hash.String())
+				"polarisBlockByNumberOrHash: hash [%s]", hash.String())
 		}
-
 		// If the hash is found, we have the canonical chain.
 		if block.Hash() == hash {
 			return block, nil
 		}
 		if blockNrOrHash.RequireCanonical {
 			return nil, errorslib.Wrapf(ErrHashNotCanonical,
-				"gridironBlockByNumberOrHash: hash [%s]", hash.String())
+				"polarisBlockByNumberOrHash: hash [%s]", hash.String())
 		}
 		// If not we try to query by number as a backup.
 	}
 
 	// Then we try to get the block by number
 	if blockNr, ok := blockNrOrHash.Number(); ok {
-		block, err := b.gridironBlockByNumber(blockNr)
-		// If the block is non-existent, return nil.
-		// This is to maintain parity with the behavior of the geth backend.
-		if errors.Is(err, core.ErrBlockNotFound) {
-			return nil, nil //nolint:nilnil // we love go-ethereum.
-		}
+		block, err := b.polarisBlockByNumber(blockNr)
 		if err != nil {
 			return nil, errorslib.Wrapf(ErrBlockNotFound,
-				"gridironBlockByNumberOrHash: number [%d]", blockNr)
+				"polarisBlockByNumberOrHash: number [%d]", blockNr)
 		}
 		return block, nil
 	}
 	return nil, errors.New("invalid arguments; neither block nor hash specified")
 }
 
-// gridironBlockByHash returns the gridiron block identified by `hash`.
-func (b *backend) gridironBlockByHash(hash common.Hash) (*types.Block, error) {
+// polarisBlockByHash returns the polaris block identified by `hash`.
+func (b *backend) polarisBlockByHash(hash common.Hash) (*types.Block, error) {
 	return b.chain.GetBlockByHash(hash)
 }
 
-// gridironBlockByNumber returns the gridiron block identified by `number.
-func (b *backend) gridironBlockByNumber(number BlockNumber) (*types.Block, error) {
+// polarisBlockByNumber returns the polaris block identified by `number.
+func (b *backend) polarisBlockByNumber(number BlockNumber) (*types.Block, error) {
 	switch number { //nolint:nolintlint,exhaustive // golangci-lint bug?
 	case SafeBlockNumber, FinalizedBlockNumber:
 		return b.chain.FinalizedBlock()
 	case PendingBlockNumber, LatestBlockNumber:
 		return b.chain.CurrentBlock()
 	default:
-		// CONTRACT: GetGridironBlockByNumber receives number >=0
+		// CONTRACT: GetPolarisBlockByNumber receives number >=0
 		return b.chain.GetBlockByNumber(number.Int64())
 	}
 }

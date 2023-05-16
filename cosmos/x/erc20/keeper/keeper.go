@@ -28,9 +28,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/cosmos/x/erc20/store"
-	"github.com/gridironOne/gridiron/cosmos/x/erc20/types"
-	"github.com/gridironOne/gridiron/eth/common"
+	"github.com/polarisOne/polaris/cosmos/x/erc20/store"
+	"github.com/polarisOne/polaris/cosmos/x/erc20/types"
+	"github.com/polarisOne/polaris/eth/common"
 )
 
 // Keeper of this module maintains collections of erc20.
@@ -58,13 +58,13 @@ func (k *Keeper) DenomKVStore(ctx sdk.Context) store.DenomKVStore {
 	return store.NewDenomKVStore(ctx.KVStore(k.storeKey))
 }
 
-// RegisterERC20CoinPair registers a new ERC20 originated token <> Gridiron Coin pair and returns
-// the new Gridiron Coin denom.
+// RegisterERC20CoinPair registers a new ERC20 originated token <> Polaris Coin pair and returns
+// the new Polaris Coin denom.
 func (k *Keeper) RegisterERC20CoinPair(ctx sdk.Context, token common.Address) string {
-	// store the denomination as a Gridiron coin denomination.
-	gridironDenom := types.NewGridironDenomForAddress(token)
-	k.DenomKVStore(ctx).SetAddressDenomPair(token, gridironDenom)
-	return gridironDenom
+	// store the denomination as a Polaris coin denomination.
+	polarisDenom := types.NewPolarisDenomForAddress(token)
+	k.DenomKVStore(ctx).SetAddressDenomPair(token, polarisDenom)
+	return polarisDenom
 }
 
 // RegisterCoinERC20Pair registers a new IBC-originated SDK Coin <> ERC20 token pair.

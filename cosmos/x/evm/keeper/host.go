@@ -27,28 +27,28 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkmempool "github.com/cosmos/cosmos-sdk/types/mempool"
 
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/block"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/configuration"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/gas"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/historical"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/precompile"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/precompile/log"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/state"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/txpool"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/txpool/mempool"
-	"github.com/gridironOne/gridiron/eth/core"
-	ethprecompile "github.com/gridironOne/gridiron/eth/core/precompile"
-	"github.com/gridironOne/gridiron/lib/utils"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/block"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/configuration"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/gas"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/historical"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/precompile"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/precompile/log"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/txpool"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/txpool/mempool"
+	"github.com/polarisOne/polaris/eth/core"
+	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
+	"github.com/polarisOne/polaris/lib/utils"
 )
 
 // Compile-time interface assertion.
-var _ core.GridironHostChain = (*host)(nil)
+var _ core.PolarisHostChain = (*host)(nil)
 
 // Host is the interface that must be implemented by the host.
-// It includes core.GridironHostChain and functions that are called in other packages.
+// It includes core.PolarisHostChain and functions that are called in other packages.
 type Host interface {
-	core.GridironHostChain
+	core.PolarisHostChain
 	GetAllPlugins() []plugins.Base
 	Setup(
 		storetypes.StoreKey,
@@ -60,7 +60,7 @@ type Host interface {
 }
 
 type host struct {
-	// The various plugins that are are used to implement core.GridironHostChain.
+	// The various plugins that are are used to implement core.PolarisHostChain.
 	bp  block.Plugin
 	cp  configuration.Plugin
 	gp  gas.Plugin

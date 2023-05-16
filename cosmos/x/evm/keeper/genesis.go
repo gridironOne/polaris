@@ -23,9 +23,9 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/types"
-	"github.com/gridironOne/gridiron/lib/utils"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
+	"github.com/polarisOne/polaris/cosmos/x/evm/types"
+	"github.com/polarisOne/polaris/lib/utils"
 )
 
 // InitGenesis is called during the InitGenesis.
@@ -41,8 +41,8 @@ func (k *Keeper) InitGenesis(ctx sdk.Context, genState types.GenesisState) error
 		}
 	}
 
-	// Start the gridiron "Node" in order to spin up things like the JSON-RPC server.
-	if err := k.gridiron.StartServices(); err != nil {
+	// Start the polaris "Node" in order to spin up things like the JSON-RPC server.
+	if err := k.polaris.StartServices(); err != nil {
 		return err
 	}
 	return nil

@@ -4,7 +4,7 @@
 package mock
 
 import (
-	"github.com/gridironOne/gridiron/lib/types"
+	"pkg.berachain.dev/polaris/lib/types"
 	"sync"
 )
 

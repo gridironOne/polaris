@@ -27,8 +27,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins"
-	"github.com/gridironOne/gridiron/eth/core"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
+	"github.com/polarisOne/polaris/eth/core"
 )
 
 // Plugin is the interface that must be implemented by the plugin.
@@ -37,7 +37,7 @@ type Plugin interface {
 	core.HistoricalPlugin
 }
 
-// plugin keeps track of gridiron blocks via headers.
+// plugin keeps track of polaris blocks via headers.
 type plugin struct {
 	// ctx is the current block context, used for accessing current block info and kv stores.
 	ctx sdk.Context

@@ -4,7 +4,7 @@
 package utils_test
 
 import (
-	"github.com/gridironOne/gridiron/lib/utils"
+	"pkg.berachain.dev/polaris/lib/utils"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -23,10 +23,10 @@ package core
 import (
 	"errors"
 
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/core/types"
-	"github.com/gridironOne/gridiron/eth/params"
-	"github.com/gridironOne/gridiron/lib/utils"
+	"pkg.berachain.dev/polaris/eth/common"
+	"pkg.berachain.dev/polaris/eth/core/types"
+	"pkg.berachain.dev/polaris/eth/params"
+	"pkg.berachain.dev/polaris/lib/utils"
 )
 
 // ChainReader defines methods that are used to read the state and blocks of the chain.
@@ -187,7 +187,7 @@ func (bc *blockchain) GetBlockByNumber(number int64) (*types.Block, error) {
 	// Cache the found block for next time and return
 	bc.blockNumCache.Add(number, block)
 	bc.blockHashCache.Add(block.Hash(), block)
-	return nil, ErrBlockNotFound
+	return block, nil
 }
 
 // GetBlockByHash retrieves a block from the database by hash, caching it if found.

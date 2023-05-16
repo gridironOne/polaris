@@ -21,7 +21,7 @@
 package types
 
 import (
-	"github.com/gridironOne/gridiron/eth/common"
+	"github.com/polarisOne/polaris/eth/common"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

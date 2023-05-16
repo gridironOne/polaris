@@ -7,7 +7,7 @@ import (
 	storetypes "cosmossdk.io/store/types"
 	"github.com/cosmos/cosmos-db"
 	"io"
-	"github.com/gridironOne/gridiron/cosmos/testing/types/mock/interfaces"
+	"github.com/polarisOne/polaris/cosmos/testing/types/mock/interfaces"
 	"sync"
 )
 

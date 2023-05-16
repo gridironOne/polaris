@@ -29,7 +29,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/authz"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 
-	cosmlib "github.com/gridironOne/gridiron/cosmos/lib"
+	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
 )
 
 // setSendAllowanceHelper is the helper method to call the grant method on the msgServer, with a

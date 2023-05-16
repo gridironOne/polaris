@@ -18,7 +18,7 @@ const LOCAL_CHAIN_INFO: ChainInfo = {
   rpc: 'http://localhost:26657',
   rest: 'http://localhost:1317',
   chainId: 'clockend-4200',
-  chainName: 'gridiron',
+  chainName: 'polaris',
   stakeCurrency: FURY,
   bip44: furyBip44,
   bech32Config: Bech32Address.defaultBech32Config('did:fury:'),

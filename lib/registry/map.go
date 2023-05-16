@@ -4,7 +4,7 @@
 package registry
 
 import (
-	libtypes "github.com/gridironOne/gridiron/lib/types"
+	libtypes "pkg.berachain.dev/polaris/lib/types"
 )
 
 // mapRegistry is a simple implementation of `Registry` that uses a map as the underlying data

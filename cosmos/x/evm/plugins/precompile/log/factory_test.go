@@ -26,12 +26,12 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	cosmlib "github.com/gridironOne/gridiron/cosmos/lib"
-	"github.com/gridironOne/gridiron/eth/accounts/abi"
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/core/precompile"
-	"github.com/gridironOne/gridiron/eth/core/precompile/mock"
-	"github.com/gridironOne/gridiron/eth/crypto"
+	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
+	"github.com/polarisOne/polaris/eth/accounts/abi"
+	"github.com/polarisOne/polaris/eth/common"
+	"github.com/polarisOne/polaris/eth/core/precompile"
+	"github.com/polarisOne/polaris/eth/core/precompile/mock"
+	"github.com/polarisOne/polaris/eth/crypto"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

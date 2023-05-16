@@ -8,7 +8,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 	"math/big"
-	"github.com/gridironOne/gridiron/eth/core"
+	"pkg.berachain.dev/polaris/eth/core"
 	"sync"
 )
 

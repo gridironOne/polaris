@@ -1,5 +1,5 @@
-# Gridiron Cosmos-SDK Modules
+# Polaris Cosmos-SDK Modules
 
-Gridiron implements the following custom modules:
+Polaris implements the following custom modules:
 
-* `evm` - Intergrates the Gridiron Ethereum as a Cosmos-SDK module
+* `evm` - Intergrates the Polaris Ethereum as a Cosmos-SDK module

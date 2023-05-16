@@ -28,10 +28,10 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	libgenerated "github.com/gridironOne/gridiron/contracts/bindings/cosmos/lib"
-	cosmlib "github.com/gridironOne/gridiron/cosmos/lib"
-	"github.com/gridironOne/gridiron/eth/common"
-	libutils "github.com/gridironOne/gridiron/lib/utils"
+	libgenerated "github.com/polarisOne/polaris/contracts/bindings/cosmos/lib"
+	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
+	"github.com/polarisOne/polaris/eth/common"
+	libutils "github.com/polarisOne/polaris/lib/utils"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

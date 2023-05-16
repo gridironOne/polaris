@@ -25,7 +25,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/eth/common"
+	"github.com/polarisOne/polaris/eth/common"
 )
 
 // MintCoinsToAddress mints coins to a given address.

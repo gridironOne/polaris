@@ -32,7 +32,7 @@ KEYRING="test"
 KEYALGO="eth_secp256k1"
 LOGLEVEL="info"
 # Set dedicated home directory for the ./bin/grid instance
-HOMEDIR="/gridiron"
+HOMEDIR="/polaris"
 # to trace evm
 #TRACE="--trace"
 TRACE=""
@@ -40,7 +40,7 @@ TRACE=""
 # Path variables
 CONFIG_TOML=$HOMEDIR/config/config.toml
 APP_TOML=$HOMEDIR/config/app.toml
-GRIDIRON_TOML=$HOMEDIR/config/gridiron.toml
+POLARIS_TOML=$HOMEDIR/config/polaris.toml
 GENESIS=$HOMEDIR/config/genesis.json
 TMP_GENESIS=$HOMEDIR/config/tmp_genesis.json
 

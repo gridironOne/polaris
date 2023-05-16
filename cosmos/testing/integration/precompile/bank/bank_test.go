@@ -24,14 +24,14 @@ import (
 	"math/big"
 	"testing"
 
-	bindings "github.com/gridironOne/gridiron/contracts/bindings/cosmos/precompile/bank"
-	tbindings "github.com/gridironOne/gridiron/contracts/bindings/testing/fundraiser"
-	"github.com/gridironOne/gridiron/cosmos/testing/integration"
-	"github.com/gridironOne/gridiron/eth/common"
+	bindings "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/bank"
+	tbindings "github.com/polarisOne/polaris/contracts/bindings/testing/fundraiser"
+	"github.com/polarisOne/polaris/cosmos/testing/integration"
+	"github.com/polarisOne/polaris/eth/common"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	. "github.com/gridironOne/gridiron/cosmos/testing/integration/utils"
+	. "github.com/polarisOne/polaris/cosmos/testing/integration/utils"
 )
 
 func TestCosmosPrecompiles(t *testing.T) {

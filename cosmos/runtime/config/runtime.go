@@ -41,13 +41,13 @@ import (
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	erc20types "github.com/gridironOne/gridiron/cosmos/x/erc20/types"
-	evmtypes "github.com/gridironOne/gridiron/cosmos/x/evm/types"
+	erc20types "github.com/polarisOne/polaris/cosmos/x/erc20/types"
+	evmtypes "github.com/polarisOne/polaris/cosmos/x/evm/types"
 )
 
 // DefaultRuntime represents a standard default runtime configuration.
 var DefaultRuntime = &runtimev1alpha1.Module{
-	AppName: "GridironBaseApp",
+	AppName: "PolarisBaseApp",
 	// During begin block slashing happens after distr.BeginBlocker so that
 	// there is nothing left over in the validator fee pool, so as to keep the
 	// CanWithdrawInvariant invariant.

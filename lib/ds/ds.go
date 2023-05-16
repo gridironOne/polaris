@@ -4,7 +4,7 @@
 package ds
 
 import (
-	libtypes "github.com/gridironOne/gridiron/lib/types"
+	libtypes "pkg.berachain.dev/polaris/lib/types"
 )
 
 // Stack is an interface represent a FILO data structure.

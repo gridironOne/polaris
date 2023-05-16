@@ -24,10 +24,10 @@ import (
 	"math/big"
 	"testing"
 
-	testutil "github.com/gridironOne/gridiron/cosmos/testing/utils"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/state"
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/core"
+	testutil "github.com/polarisOne/polaris/cosmos/testing/utils"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state"
+	"github.com/polarisOne/polaris/eth/common"
+	"github.com/polarisOne/polaris/eth/core"
 )
 
 var (

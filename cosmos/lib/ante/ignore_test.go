@@ -26,8 +26,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/cosmos/testing/types/mock"
-	mocktypes "github.com/gridironOne/gridiron/cosmos/testing/types/mock/interfaces/mock"
+	"github.com/polarisOne/polaris/cosmos/testing/types/mock"
+	mocktypes "github.com/polarisOne/polaris/cosmos/testing/types/mock/interfaces/mock"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

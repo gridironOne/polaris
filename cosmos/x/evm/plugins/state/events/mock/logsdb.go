@@ -21,7 +21,7 @@
 package mock
 
 import (
-	coretypes "github.com/gridironOne/gridiron/eth/core/types"
+	coretypes "github.com/polarisOne/polaris/eth/core/types"
 )
 
 //go:generate moq -out ./logsdb.mock.go -pkg mock ../ LogsDB

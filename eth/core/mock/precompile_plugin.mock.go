@@ -9,8 +9,8 @@ import (
 	"github.com/ethereum/go-ethereum/core/vm"
 	"github.com/ethereum/go-ethereum/params"
 	"math/big"
-	"github.com/gridironOne/gridiron/eth/core"
-	"github.com/gridironOne/gridiron/eth/core/precompile"
+	"pkg.berachain.dev/polaris/eth/core"
+	"pkg.berachain.dev/polaris/eth/core/precompile"
 	"sync"
 )
 

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -21,22 +21,15 @@
 package rpc
 
 import (
-	"github.com/ethereum/go-ethereum/eth/filters"
-
-	"github.com/gridironOne/gridiron/eth/rpc/api"
+	"pkg.berachain.dev/polaris/eth/rpc/api"
 )
 
 // GetAPIs returns a list of all available APIs.
-func GetAPIs(apiBackend GridironBackend) []API {
+func GetAPIs(apiBackend PolarisBackend) []API {
 	return append(GetGethAPIs(apiBackend),
 		API{
 			Namespace: "eth",
 			Service:   api.NewEthashAPI(apiBackend),
-		},
-		API{
-			Namespace: "eth",
-			// TODO: config must be setup properly.
-			Service: NewFilterAPI(filters.NewFilterSystem(apiBackend, filters.Config{}), false),
 		},
 		API{
 			Namespace: "net",

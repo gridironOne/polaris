@@ -20,7 +20,7 @@
 
 package plugins
 
-import "github.com/gridironOne/gridiron/eth/core"
+import "github.com/polarisOne/polaris/eth/core"
 
 type blockPlugin struct {
 	core.BlockPlugin

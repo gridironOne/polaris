@@ -23,13 +23,13 @@ package chain
 import (
 	"context"
 
-	"github.com/gridironOne/gridiron/eth/api"
-	"github.com/gridironOne/gridiron/eth/core/types"
+	"github.com/polarisOne/polaris/eth/api"
+	"github.com/polarisOne/polaris/eth/core/types"
 )
 
 // blockProducer is the block producer.
 type blockProducer struct {
-	gridiron         api.Chain
+	polaris         api.Chain
 	currentBlockNum int64
 }
 
@@ -38,22 +38,22 @@ func (bp *blockProducer) ProduceBlock() error {
 	bp.currentBlockNum++
 
 	ctx := context.Background()
-	// Prepare Gridiron for a new block.
-	bp.gridiron.Prepare(ctx, bp.currentBlockNum)
+	// Prepare Polaris for a new block.
+	bp.polaris.Prepare(ctx, bp.currentBlockNum)
 
 	// TODO: get from mempool.
 	txs := make(types.Transactions, 0)
 
 	// Iterate through all the transactions in the mempool.
 	for _, txn := range txs {
-		_, err := bp.gridiron.ProcessTransaction(context.Background(), txn)
+		_, err := bp.polaris.ProcessTransaction(context.Background(), txn)
 		if err != nil {
 			return err
 		}
 	}
 
 	// Finalize the block.
-	err := bp.gridiron.Finalize(ctx)
+	err := bp.polaris.Finalize(ctx)
 	if err != nil {
 		return err
 	}

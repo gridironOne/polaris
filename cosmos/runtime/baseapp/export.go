@@ -35,12 +35,12 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/staking"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	"github.com/gridironOne/gridiron/lib/errors"
+	"github.com/polarisOne/polaris/lib/errors"
 )
 
 // ExportAppStateAndValidators exports the state of the application for a genesis
 // file.
-func (app *GridironBaseApp) ExportAppStateAndValidators(forZeroHeight bool,
+func (app *PolarisBaseApp) ExportAppStateAndValidators(forZeroHeight bool,
 	jailAllowedAddrs []string, modulesToExport []string) (servertypes.ExportedApp, error) {
 	// as if they could withdraw from the start of the next block
 	ctx := app.NewContext(true, cmtproto.Header{Height: app.LastBlockHeight()})
@@ -78,7 +78,7 @@ func (app *GridironBaseApp) ExportAppStateAndValidators(forZeroHeight bool,
 //	in favour of export at a block height
 //
 //nolint:funlen,gocognit // from sdk.
-func (app *GridironBaseApp) PrepForZeroHeightGenesis(ctx sdk.Context, jailAllowedAddrs []string) {
+func (app *PolarisBaseApp) PrepForZeroHeightGenesis(ctx sdk.Context, jailAllowedAddrs []string) {
 	applyAllowedAddrs := false
 
 	// check if there is a allowed address list

@@ -1,4 +1,4 @@
-## Running a Gridiron Ethereum Cosmos-SDK with Docker
+## Running a Polaris Ethereum Cosmos-SDK with Docker
 
 <div className="steps-container">
 
@@ -23,7 +23,7 @@ The easiest way to run the node in a docker container is to use a pre-built cont
    You can point to the release image. Referring to `latest` in this case
 
    ```sh
-   docker image pull <gridiron-container-registry>/gridiron:latest>
+   docker image pull <polaris-container-registry>/polaris:latest>
    ```
 
    Note: Might have to use different docker image for different OS
@@ -31,7 +31,7 @@ The easiest way to run the node in a docker container is to use a pre-built cont
 3. Run the container image
 
    ```sh
-   docker run -p 1317:1317 <gridiron-container-registry>/gridiron:latest>
+   docker run -p 1317:1317 <polaris-container-registry>/polaris:latest>
    ```
 
 Now you have a node running on your machine with a default chain and we have RPC running on port `1317` and path `eth/rpc`. To verify,

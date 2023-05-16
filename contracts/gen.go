@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 //
-// Copyright (c) 2023 Furychain Foundation
+// Copyright (c) 2023 Berachain Foundation
 //
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
@@ -32,7 +32,7 @@ package contracts
 //go:generate abigen --pkg governance --abi ./out/Governance.sol/IGovernanceModule.abi.json --bin ./out/Governance.sol/IGovernanceModule.bin --out ./bindings/cosmos/precompile/governance/i_governance_module.abigen.go --type GovernanceModule
 //go:generate abigen --pkg erc20 --abi ./out/ERC20Module.sol/IERC20Module.abi.json --bin ./out/ERC20Module.sol/IERC20Module.bin --out ./bindings/cosmos/precompile/erc20/i_erc20_module.abigen.go --type ERC20Module
 
-//go:generate abigen --pkg cosmos --abi ./out/GridironERC20.sol/GridironERC20.abi.json --bin ./out/GridironERC20.sol/GridironERC20.bin --out ./bindings/cosmos/gridiron_erc20.abigen.go --type GridironERC20
+//go:generate abigen --pkg cosmos --abi ./out/PolarisERC20.sol/PolarisERC20.abi.json --bin ./out/PolarisERC20.sol/PolarisERC20.bin --out ./bindings/cosmos/polaris_erc20.abigen.go --type PolarisERC20
 
 //go:generate abigen --pkg lib --abi ./out/CosmosTypes.sol/CosmosTypes.abi.json --bin ./out/CosmosTypes.sol/CosmosTypes.bin --out ./bindings/cosmos/lib/cosmos_types.abigen.go --type CosmosTypes
 

@@ -69,12 +69,12 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/staking"
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 
-	ethcryptocodec "github.com/gridironOne/gridiron/cosmos/crypto/codec"
-	"github.com/gridironOne/gridiron/cosmos/x/erc20"
-	erc20keeper "github.com/gridironOne/gridiron/cosmos/x/erc20/keeper"
-	"github.com/gridironOne/gridiron/cosmos/x/evm"
-	evmkeeper "github.com/gridironOne/gridiron/cosmos/x/evm/keeper"
-	"github.com/gridironOne/gridiron/lib/utils"
+	ethcryptocodec "github.com/polarisOne/polaris/cosmos/crypto/codec"
+	"github.com/polarisOne/polaris/cosmos/x/erc20"
+	erc20keeper "github.com/polarisOne/polaris/cosmos/x/erc20/keeper"
+	"github.com/polarisOne/polaris/cosmos/x/evm"
+	evmkeeper "github.com/polarisOne/polaris/cosmos/x/evm/keeper"
+	"github.com/polarisOne/polaris/lib/utils"
 
 	_ "github.com/cosmos/cosmos-sdk/x/auth/tx/config" // import for side-effects
 )
@@ -108,10 +108,10 @@ var (
 	}
 )
 
-// GridironBaseApp extends an ABCI application, but with most of its parameters exported.
+// PolarisBaseApp extends an ABCI application, but with most of its parameters exported.
 // They are exported for convenience in creating helper functions, as object
 // capabilities aren't needed for testing.
-type GridironBaseApp struct {
+type PolarisBaseApp struct {
 	*runtime.App
 	LegacyAminoCodec       *codec.LegacyAmino
 	ApplicationCodec       codec.Codec
@@ -136,49 +136,49 @@ type GridironBaseApp struct {
 	GroupKeeper           groupkeeper.Keeper
 	ConsensusParamsKeeper consensuskeeper.Keeper
 
-	// gridiron keepers
+	// polaris keepers
 	EVMKeeper   *evmkeeper.Keeper
 	ERC20Keeper *erc20keeper.Keeper
 }
 
 // Name returns the name of the App.
-func (app *GridironBaseApp) Name() string { return app.BaseApp.Name() }
+func (app *PolarisBaseApp) Name() string { return app.BaseApp.Name() }
 
-// LegacyAmino returns GridironBaseApp's amino codec.
+// LegacyAmino returns PolarisBaseApp's amino codec.
 //
 // NOTE: This is solely to be used for testing purposes as it may be desirable
 // for modules to register their own custom testing types.
-func (app *GridironBaseApp) LegacyAmino() *codec.LegacyAmino {
+func (app *PolarisBaseApp) LegacyAmino() *codec.LegacyAmino {
 	return app.LegacyAminoCodec
 }
 
-// AppCodec returns GridironBaseApp's app codec.
+// AppCodec returns PolarisBaseApp's app codec.
 //
 // NOTE: This is solely to be used for testing purposes as it may be desirable
 // for modules to register their own custom testing types.
-func (app *GridironBaseApp) AppCodec() codec.Codec {
+func (app *PolarisBaseApp) AppCodec() codec.Codec {
 	return app.ApplicationCodec
 }
 
-// InterfaceRegistry returns GridironBaseApp's InterfaceRegistry.
-func (app *GridironBaseApp) InterfaceRegistry() codectypes.InterfaceRegistry {
+// InterfaceRegistry returns PolarisBaseApp's InterfaceRegistry.
+func (app *PolarisBaseApp) InterfaceRegistry() codectypes.InterfaceRegistry {
 	return app.CodecInterfaceRegistry
 }
 
-// TxConfig returns GridironBaseApp's TxConfig.
-func (app *GridironBaseApp) TxConfig() client.TxConfig {
+// TxConfig returns PolarisBaseApp's TxConfig.
+func (app *PolarisBaseApp) TxConfig() client.TxConfig {
 	return app.TxnConfig
 }
 
 // AutoCliOpts returns the autocli options for the app.
-func (app *GridironBaseApp) AutoCliOpts() autocli.AppOptions {
+func (app *PolarisBaseApp) AutoCliOpts() autocli.AppOptions {
 	return app.AutoCliOptions
 }
 
 // GetSubspace returns a param subspace for a given module name.
 //
 // NOTE: This is solely to be used for testing purposes.
-func (app *GridironBaseApp) GetSubspace(moduleName string) paramstypes.Subspace {
+func (app *PolarisBaseApp) GetSubspace(moduleName string) paramstypes.Subspace {
 	subspace, _ := app.ParamsKeeper.GetSubspace(moduleName)
 	return subspace
 }
@@ -186,7 +186,7 @@ func (app *GridironBaseApp) GetSubspace(moduleName string) paramstypes.Subspace 
 // GetKey returns the KVStoreKey for the provided store key.
 //
 // NOTE: This is solely to be used for testing purposes.
-func (app *GridironBaseApp) GetKey(storeKey string) *storetypes.KVStoreKey {
+func (app *PolarisBaseApp) GetKey(storeKey string) *storetypes.KVStoreKey {
 	kvStoreKey, ok := utils.GetAs[*storetypes.KVStoreKey](app.UnsafeFindStoreKey(storeKey))
 	if !ok {
 		return nil
@@ -195,7 +195,7 @@ func (app *GridironBaseApp) GetKey(storeKey string) *storetypes.KVStoreKey {
 }
 
 // KVStoreKeys returns all the registered KVStoreKeys.
-func (app *GridironBaseApp) KVStoreKeys() map[string]*storetypes.KVStoreKey {
+func (app *PolarisBaseApp) KVStoreKeys() map[string]*storetypes.KVStoreKey {
 	keys := make(map[string]*storetypes.KVStoreKey)
 	for _, k := range app.GetStoreKeys() {
 		if kv, ok := utils.GetAs[*storetypes.KVStoreKey](k); ok {
@@ -208,7 +208,7 @@ func (app *GridironBaseApp) KVStoreKeys() map[string]*storetypes.KVStoreKey {
 
 // RegisterAPIRoutes registers all application module routes with the provided
 // API server.
-func (app *GridironBaseApp) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APIConfig) {
+func (app *PolarisBaseApp) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APIConfig) {
 	app.App.RegisterAPIRoutes(apiSvr, apiConfig)
 	// register swagger API in app.go so that other applications can override easily
 	if err := server.RegisterSwaggerAPI(apiSvr.ClientCtx, apiSvr.Router, apiConfig.Swagger); err != nil {
@@ -218,13 +218,13 @@ func (app *GridironBaseApp) RegisterAPIRoutes(apiSvr *api.Server, apiConfig conf
 }
 
 // RegisterEthSecp256k1SignatureType registers the eth_secp256k1 signature type.
-func (app *GridironBaseApp) RegisterEthSecp256k1SignatureType() {
+func (app *PolarisBaseApp) RegisterEthSecp256k1SignatureType() {
 	ethcryptocodec.RegisterInterfaces(app.CodecInterfaceRegistry)
 }
 
 // MountCustomStore mounts a custom store to the baseapp.
 // TODO: GET UPSTREAMED
-func (app *GridironBaseApp) MountCustomStores(keys ...storetypes.StoreKey) {
+func (app *PolarisBaseApp) MountCustomStores(keys ...storetypes.StoreKey) {
 	for _, key := range keys {
 		// StoreTypeDB doesn't do anything upon commit, so its blessed for the offchain stuff.
 		app.MountStore(key, storetypes.StoreTypeDB)

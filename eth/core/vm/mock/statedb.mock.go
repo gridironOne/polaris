@@ -10,20 +10,20 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/params"
 	"math/big"
-	"github.com/gridironOne/gridiron/eth/core/vm"
+	"pkg.berachain.dev/polaris/eth/core/vm"
 	"sync"
 )
 
-// Ensure, that GridironStateDBMock does implement vm.GridironStateDB.
+// Ensure, that PolarisStateDBMock does implement vm.PolarisStateDB.
 // If this is not the case, regenerate this file with moq.
-var _ vm.GridironStateDB = &GridironStateDBMock{}
+var _ vm.PolarisStateDB = &PolarisStateDBMock{}
 
-// GridironStateDBMock is a mock implementation of vm.GridironStateDB.
+// PolarisStateDBMock is a mock implementation of vm.PolarisStateDB.
 //
-//	func TestSomethingThatUsesGridironStateDB(t *testing.T) {
+//	func TestSomethingThatUsesPolarisStateDB(t *testing.T) {
 //
-//		// make and configure a mocked vm.GridironStateDB
-//		mockedGridironStateDB := &GridironStateDBMock{
+//		// make and configure a mocked vm.PolarisStateDB
+//		mockedPolarisStateDB := &PolarisStateDBMock{
 //			AddAddressToAccessListFunc: func(addr common.Address)  {
 //				panic("mock out the AddAddressToAccessList method")
 //			},
@@ -200,11 +200,11 @@ var _ vm.GridironStateDB = &GridironStateDBMock{}
 //			},
 //		}
 //
-//		// use mockedGridironStateDB in code that requires vm.GridironStateDB
+//		// use mockedPolarisStateDB in code that requires vm.PolarisStateDB
 //		// and then make assertions.
 //
 //	}
-type GridironStateDBMock struct {
+type PolarisStateDBMock struct {
 	// AddAddressToAccessListFunc mocks the AddAddressToAccessList method.
 	AddAddressToAccessListFunc func(addr common.Address)
 
@@ -767,9 +767,9 @@ type GridironStateDBMock struct {
 }
 
 // AddAddressToAccessList calls AddAddressToAccessListFunc.
-func (mock *GridironStateDBMock) AddAddressToAccessList(addr common.Address) {
+func (mock *PolarisStateDBMock) AddAddressToAccessList(addr common.Address) {
 	if mock.AddAddressToAccessListFunc == nil {
-		panic("GridironStateDBMock.AddAddressToAccessListFunc: method is nil but GridironStateDB.AddAddressToAccessList was just called")
+		panic("PolarisStateDBMock.AddAddressToAccessListFunc: method is nil but PolarisStateDB.AddAddressToAccessList was just called")
 	}
 	callInfo := struct {
 		Addr common.Address
@@ -785,8 +785,8 @@ func (mock *GridironStateDBMock) AddAddressToAccessList(addr common.Address) {
 // AddAddressToAccessListCalls gets all the calls that were made to AddAddressToAccessList.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.AddAddressToAccessListCalls())
-func (mock *GridironStateDBMock) AddAddressToAccessListCalls() []struct {
+//	len(mockedPolarisStateDB.AddAddressToAccessListCalls())
+func (mock *PolarisStateDBMock) AddAddressToAccessListCalls() []struct {
 	Addr common.Address
 } {
 	var calls []struct {
@@ -799,9 +799,9 @@ func (mock *GridironStateDBMock) AddAddressToAccessListCalls() []struct {
 }
 
 // AddBalance calls AddBalanceFunc.
-func (mock *GridironStateDBMock) AddBalance(address common.Address, intMoqParam *big.Int) {
+func (mock *PolarisStateDBMock) AddBalance(address common.Address, intMoqParam *big.Int) {
 	if mock.AddBalanceFunc == nil {
-		panic("GridironStateDBMock.AddBalanceFunc: method is nil but GridironStateDB.AddBalance was just called")
+		panic("PolarisStateDBMock.AddBalanceFunc: method is nil but PolarisStateDB.AddBalance was just called")
 	}
 	callInfo := struct {
 		Address     common.Address
@@ -819,8 +819,8 @@ func (mock *GridironStateDBMock) AddBalance(address common.Address, intMoqParam 
 // AddBalanceCalls gets all the calls that were made to AddBalance.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.AddBalanceCalls())
-func (mock *GridironStateDBMock) AddBalanceCalls() []struct {
+//	len(mockedPolarisStateDB.AddBalanceCalls())
+func (mock *PolarisStateDBMock) AddBalanceCalls() []struct {
 	Address     common.Address
 	IntMoqParam *big.Int
 } {
@@ -835,9 +835,9 @@ func (mock *GridironStateDBMock) AddBalanceCalls() []struct {
 }
 
 // AddLog calls AddLogFunc.
-func (mock *GridironStateDBMock) AddLog(log *types.Log) {
+func (mock *PolarisStateDBMock) AddLog(log *types.Log) {
 	if mock.AddLogFunc == nil {
-		panic("GridironStateDBMock.AddLogFunc: method is nil but GridironStateDB.AddLog was just called")
+		panic("PolarisStateDBMock.AddLogFunc: method is nil but PolarisStateDB.AddLog was just called")
 	}
 	callInfo := struct {
 		Log *types.Log
@@ -853,8 +853,8 @@ func (mock *GridironStateDBMock) AddLog(log *types.Log) {
 // AddLogCalls gets all the calls that were made to AddLog.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.AddLogCalls())
-func (mock *GridironStateDBMock) AddLogCalls() []struct {
+//	len(mockedPolarisStateDB.AddLogCalls())
+func (mock *PolarisStateDBMock) AddLogCalls() []struct {
 	Log *types.Log
 } {
 	var calls []struct {
@@ -867,9 +867,9 @@ func (mock *GridironStateDBMock) AddLogCalls() []struct {
 }
 
 // AddPreimage calls AddPreimageFunc.
-func (mock *GridironStateDBMock) AddPreimage(hash common.Hash, bytes []byte) {
+func (mock *PolarisStateDBMock) AddPreimage(hash common.Hash, bytes []byte) {
 	if mock.AddPreimageFunc == nil {
-		panic("GridironStateDBMock.AddPreimageFunc: method is nil but GridironStateDB.AddPreimage was just called")
+		panic("PolarisStateDBMock.AddPreimageFunc: method is nil but PolarisStateDB.AddPreimage was just called")
 	}
 	callInfo := struct {
 		Hash  common.Hash
@@ -887,8 +887,8 @@ func (mock *GridironStateDBMock) AddPreimage(hash common.Hash, bytes []byte) {
 // AddPreimageCalls gets all the calls that were made to AddPreimage.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.AddPreimageCalls())
-func (mock *GridironStateDBMock) AddPreimageCalls() []struct {
+//	len(mockedPolarisStateDB.AddPreimageCalls())
+func (mock *PolarisStateDBMock) AddPreimageCalls() []struct {
 	Hash  common.Hash
 	Bytes []byte
 } {
@@ -903,9 +903,9 @@ func (mock *GridironStateDBMock) AddPreimageCalls() []struct {
 }
 
 // AddRefund calls AddRefundFunc.
-func (mock *GridironStateDBMock) AddRefund(v uint64) {
+func (mock *PolarisStateDBMock) AddRefund(v uint64) {
 	if mock.AddRefundFunc == nil {
-		panic("GridironStateDBMock.AddRefundFunc: method is nil but GridironStateDB.AddRefund was just called")
+		panic("PolarisStateDBMock.AddRefundFunc: method is nil but PolarisStateDB.AddRefund was just called")
 	}
 	callInfo := struct {
 		V uint64
@@ -921,8 +921,8 @@ func (mock *GridironStateDBMock) AddRefund(v uint64) {
 // AddRefundCalls gets all the calls that were made to AddRefund.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.AddRefundCalls())
-func (mock *GridironStateDBMock) AddRefundCalls() []struct {
+//	len(mockedPolarisStateDB.AddRefundCalls())
+func (mock *PolarisStateDBMock) AddRefundCalls() []struct {
 	V uint64
 } {
 	var calls []struct {
@@ -935,9 +935,9 @@ func (mock *GridironStateDBMock) AddRefundCalls() []struct {
 }
 
 // AddSlotToAccessList calls AddSlotToAccessListFunc.
-func (mock *GridironStateDBMock) AddSlotToAccessList(addr common.Address, slot common.Hash) {
+func (mock *PolarisStateDBMock) AddSlotToAccessList(addr common.Address, slot common.Hash) {
 	if mock.AddSlotToAccessListFunc == nil {
-		panic("GridironStateDBMock.AddSlotToAccessListFunc: method is nil but GridironStateDB.AddSlotToAccessList was just called")
+		panic("PolarisStateDBMock.AddSlotToAccessListFunc: method is nil but PolarisStateDB.AddSlotToAccessList was just called")
 	}
 	callInfo := struct {
 		Addr common.Address
@@ -955,8 +955,8 @@ func (mock *GridironStateDBMock) AddSlotToAccessList(addr common.Address, slot c
 // AddSlotToAccessListCalls gets all the calls that were made to AddSlotToAccessList.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.AddSlotToAccessListCalls())
-func (mock *GridironStateDBMock) AddSlotToAccessListCalls() []struct {
+//	len(mockedPolarisStateDB.AddSlotToAccessListCalls())
+func (mock *PolarisStateDBMock) AddSlotToAccessListCalls() []struct {
 	Addr common.Address
 	Slot common.Hash
 } {
@@ -971,9 +971,9 @@ func (mock *GridironStateDBMock) AddSlotToAccessListCalls() []struct {
 }
 
 // AddressInAccessList calls AddressInAccessListFunc.
-func (mock *GridironStateDBMock) AddressInAccessList(addr common.Address) bool {
+func (mock *PolarisStateDBMock) AddressInAccessList(addr common.Address) bool {
 	if mock.AddressInAccessListFunc == nil {
-		panic("GridironStateDBMock.AddressInAccessListFunc: method is nil but GridironStateDB.AddressInAccessList was just called")
+		panic("PolarisStateDBMock.AddressInAccessListFunc: method is nil but PolarisStateDB.AddressInAccessList was just called")
 	}
 	callInfo := struct {
 		Addr common.Address
@@ -989,8 +989,8 @@ func (mock *GridironStateDBMock) AddressInAccessList(addr common.Address) bool {
 // AddressInAccessListCalls gets all the calls that were made to AddressInAccessList.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.AddressInAccessListCalls())
-func (mock *GridironStateDBMock) AddressInAccessListCalls() []struct {
+//	len(mockedPolarisStateDB.AddressInAccessListCalls())
+func (mock *PolarisStateDBMock) AddressInAccessListCalls() []struct {
 	Addr common.Address
 } {
 	var calls []struct {
@@ -1003,9 +1003,9 @@ func (mock *GridironStateDBMock) AddressInAccessListCalls() []struct {
 }
 
 // Commit calls CommitFunc.
-func (mock *GridironStateDBMock) Commit(deleteEmptyObjects bool) (common.Hash, error) {
+func (mock *PolarisStateDBMock) Commit(deleteEmptyObjects bool) (common.Hash, error) {
 	if mock.CommitFunc == nil {
-		panic("GridironStateDBMock.CommitFunc: method is nil but GridironStateDB.Commit was just called")
+		panic("PolarisStateDBMock.CommitFunc: method is nil but PolarisStateDB.Commit was just called")
 	}
 	callInfo := struct {
 		DeleteEmptyObjects bool
@@ -1021,8 +1021,8 @@ func (mock *GridironStateDBMock) Commit(deleteEmptyObjects bool) (common.Hash, e
 // CommitCalls gets all the calls that were made to Commit.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.CommitCalls())
-func (mock *GridironStateDBMock) CommitCalls() []struct {
+//	len(mockedPolarisStateDB.CommitCalls())
+func (mock *PolarisStateDBMock) CommitCalls() []struct {
 	DeleteEmptyObjects bool
 } {
 	var calls []struct {
@@ -1035,9 +1035,9 @@ func (mock *GridironStateDBMock) CommitCalls() []struct {
 }
 
 // Copy calls CopyFunc.
-func (mock *GridironStateDBMock) Copy() state.StateDBI {
+func (mock *PolarisStateDBMock) Copy() state.StateDBI {
 	if mock.CopyFunc == nil {
-		panic("GridironStateDBMock.CopyFunc: method is nil but GridironStateDB.Copy was just called")
+		panic("PolarisStateDBMock.CopyFunc: method is nil but PolarisStateDB.Copy was just called")
 	}
 	callInfo := struct {
 	}{}
@@ -1050,8 +1050,8 @@ func (mock *GridironStateDBMock) Copy() state.StateDBI {
 // CopyCalls gets all the calls that were made to Copy.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.CopyCalls())
-func (mock *GridironStateDBMock) CopyCalls() []struct {
+//	len(mockedPolarisStateDB.CopyCalls())
+func (mock *PolarisStateDBMock) CopyCalls() []struct {
 } {
 	var calls []struct {
 	}
@@ -1062,9 +1062,9 @@ func (mock *GridironStateDBMock) CopyCalls() []struct {
 }
 
 // CreateAccount calls CreateAccountFunc.
-func (mock *GridironStateDBMock) CreateAccount(address common.Address) {
+func (mock *PolarisStateDBMock) CreateAccount(address common.Address) {
 	if mock.CreateAccountFunc == nil {
-		panic("GridironStateDBMock.CreateAccountFunc: method is nil but GridironStateDB.CreateAccount was just called")
+		panic("PolarisStateDBMock.CreateAccountFunc: method is nil but PolarisStateDB.CreateAccount was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -1080,8 +1080,8 @@ func (mock *GridironStateDBMock) CreateAccount(address common.Address) {
 // CreateAccountCalls gets all the calls that were made to CreateAccount.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.CreateAccountCalls())
-func (mock *GridironStateDBMock) CreateAccountCalls() []struct {
+//	len(mockedPolarisStateDB.CreateAccountCalls())
+func (mock *PolarisStateDBMock) CreateAccountCalls() []struct {
 	Address common.Address
 } {
 	var calls []struct {
@@ -1094,9 +1094,9 @@ func (mock *GridironStateDBMock) CreateAccountCalls() []struct {
 }
 
 // Database calls DatabaseFunc.
-func (mock *GridironStateDBMock) Database() state.Database {
+func (mock *PolarisStateDBMock) Database() state.Database {
 	if mock.DatabaseFunc == nil {
-		panic("GridironStateDBMock.DatabaseFunc: method is nil but GridironStateDB.Database was just called")
+		panic("PolarisStateDBMock.DatabaseFunc: method is nil but PolarisStateDB.Database was just called")
 	}
 	callInfo := struct {
 	}{}
@@ -1109,8 +1109,8 @@ func (mock *GridironStateDBMock) Database() state.Database {
 // DatabaseCalls gets all the calls that were made to Database.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.DatabaseCalls())
-func (mock *GridironStateDBMock) DatabaseCalls() []struct {
+//	len(mockedPolarisStateDB.DatabaseCalls())
+func (mock *PolarisStateDBMock) DatabaseCalls() []struct {
 } {
 	var calls []struct {
 	}
@@ -1121,9 +1121,9 @@ func (mock *GridironStateDBMock) DatabaseCalls() []struct {
 }
 
 // Dump calls DumpFunc.
-func (mock *GridironStateDBMock) Dump(opts *state.DumpConfig) []byte {
+func (mock *PolarisStateDBMock) Dump(opts *state.DumpConfig) []byte {
 	if mock.DumpFunc == nil {
-		panic("GridironStateDBMock.DumpFunc: method is nil but GridironStateDB.Dump was just called")
+		panic("PolarisStateDBMock.DumpFunc: method is nil but PolarisStateDB.Dump was just called")
 	}
 	callInfo := struct {
 		Opts *state.DumpConfig
@@ -1139,8 +1139,8 @@ func (mock *GridironStateDBMock) Dump(opts *state.DumpConfig) []byte {
 // DumpCalls gets all the calls that were made to Dump.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.DumpCalls())
-func (mock *GridironStateDBMock) DumpCalls() []struct {
+//	len(mockedPolarisStateDB.DumpCalls())
+func (mock *PolarisStateDBMock) DumpCalls() []struct {
 	Opts *state.DumpConfig
 } {
 	var calls []struct {
@@ -1153,9 +1153,9 @@ func (mock *GridironStateDBMock) DumpCalls() []struct {
 }
 
 // DumpToCollector calls DumpToCollectorFunc.
-func (mock *GridironStateDBMock) DumpToCollector(c state.DumpCollector, conf *state.DumpConfig) []byte {
+func (mock *PolarisStateDBMock) DumpToCollector(c state.DumpCollector, conf *state.DumpConfig) []byte {
 	if mock.DumpToCollectorFunc == nil {
-		panic("GridironStateDBMock.DumpToCollectorFunc: method is nil but GridironStateDB.DumpToCollector was just called")
+		panic("PolarisStateDBMock.DumpToCollectorFunc: method is nil but PolarisStateDB.DumpToCollector was just called")
 	}
 	callInfo := struct {
 		C    state.DumpCollector
@@ -1173,8 +1173,8 @@ func (mock *GridironStateDBMock) DumpToCollector(c state.DumpCollector, conf *st
 // DumpToCollectorCalls gets all the calls that were made to DumpToCollector.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.DumpToCollectorCalls())
-func (mock *GridironStateDBMock) DumpToCollectorCalls() []struct {
+//	len(mockedPolarisStateDB.DumpToCollectorCalls())
+func (mock *PolarisStateDBMock) DumpToCollectorCalls() []struct {
 	C    state.DumpCollector
 	Conf *state.DumpConfig
 } {
@@ -1189,9 +1189,9 @@ func (mock *GridironStateDBMock) DumpToCollectorCalls() []struct {
 }
 
 // Empty calls EmptyFunc.
-func (mock *GridironStateDBMock) Empty(address common.Address) bool {
+func (mock *PolarisStateDBMock) Empty(address common.Address) bool {
 	if mock.EmptyFunc == nil {
-		panic("GridironStateDBMock.EmptyFunc: method is nil but GridironStateDB.Empty was just called")
+		panic("PolarisStateDBMock.EmptyFunc: method is nil but PolarisStateDB.Empty was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -1207,8 +1207,8 @@ func (mock *GridironStateDBMock) Empty(address common.Address) bool {
 // EmptyCalls gets all the calls that were made to Empty.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.EmptyCalls())
-func (mock *GridironStateDBMock) EmptyCalls() []struct {
+//	len(mockedPolarisStateDB.EmptyCalls())
+func (mock *PolarisStateDBMock) EmptyCalls() []struct {
 	Address common.Address
 } {
 	var calls []struct {
@@ -1221,9 +1221,9 @@ func (mock *GridironStateDBMock) EmptyCalls() []struct {
 }
 
 // Error calls ErrorFunc.
-func (mock *GridironStateDBMock) Error() error {
+func (mock *PolarisStateDBMock) Error() error {
 	if mock.ErrorFunc == nil {
-		panic("GridironStateDBMock.ErrorFunc: method is nil but GridironStateDB.Error was just called")
+		panic("PolarisStateDBMock.ErrorFunc: method is nil but PolarisStateDB.Error was just called")
 	}
 	callInfo := struct {
 	}{}
@@ -1236,8 +1236,8 @@ func (mock *GridironStateDBMock) Error() error {
 // ErrorCalls gets all the calls that were made to Error.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.ErrorCalls())
-func (mock *GridironStateDBMock) ErrorCalls() []struct {
+//	len(mockedPolarisStateDB.ErrorCalls())
+func (mock *PolarisStateDBMock) ErrorCalls() []struct {
 } {
 	var calls []struct {
 	}
@@ -1248,9 +1248,9 @@ func (mock *GridironStateDBMock) ErrorCalls() []struct {
 }
 
 // Exist calls ExistFunc.
-func (mock *GridironStateDBMock) Exist(address common.Address) bool {
+func (mock *PolarisStateDBMock) Exist(address common.Address) bool {
 	if mock.ExistFunc == nil {
-		panic("GridironStateDBMock.ExistFunc: method is nil but GridironStateDB.Exist was just called")
+		panic("PolarisStateDBMock.ExistFunc: method is nil but PolarisStateDB.Exist was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -1266,8 +1266,8 @@ func (mock *GridironStateDBMock) Exist(address common.Address) bool {
 // ExistCalls gets all the calls that were made to Exist.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.ExistCalls())
-func (mock *GridironStateDBMock) ExistCalls() []struct {
+//	len(mockedPolarisStateDB.ExistCalls())
+func (mock *PolarisStateDBMock) ExistCalls() []struct {
 	Address common.Address
 } {
 	var calls []struct {
@@ -1280,9 +1280,9 @@ func (mock *GridironStateDBMock) ExistCalls() []struct {
 }
 
 // Finalise calls FinaliseFunc.
-func (mock *GridironStateDBMock) Finalise(deleteEmptyObjects bool) {
+func (mock *PolarisStateDBMock) Finalise(deleteEmptyObjects bool) {
 	if mock.FinaliseFunc == nil {
-		panic("GridironStateDBMock.FinaliseFunc: method is nil but GridironStateDB.Finalise was just called")
+		panic("PolarisStateDBMock.FinaliseFunc: method is nil but PolarisStateDB.Finalise was just called")
 	}
 	callInfo := struct {
 		DeleteEmptyObjects bool
@@ -1298,8 +1298,8 @@ func (mock *GridironStateDBMock) Finalise(deleteEmptyObjects bool) {
 // FinaliseCalls gets all the calls that were made to Finalise.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.FinaliseCalls())
-func (mock *GridironStateDBMock) FinaliseCalls() []struct {
+//	len(mockedPolarisStateDB.FinaliseCalls())
+func (mock *PolarisStateDBMock) FinaliseCalls() []struct {
 	DeleteEmptyObjects bool
 } {
 	var calls []struct {
@@ -1312,9 +1312,9 @@ func (mock *GridironStateDBMock) FinaliseCalls() []struct {
 }
 
 // Finalize calls FinalizeFunc.
-func (mock *GridironStateDBMock) Finalize() {
+func (mock *PolarisStateDBMock) Finalize() {
 	if mock.FinalizeFunc == nil {
-		panic("GridironStateDBMock.FinalizeFunc: method is nil but GridironStateDB.Finalize was just called")
+		panic("PolarisStateDBMock.FinalizeFunc: method is nil but PolarisStateDB.Finalize was just called")
 	}
 	callInfo := struct {
 	}{}
@@ -1327,8 +1327,8 @@ func (mock *GridironStateDBMock) Finalize() {
 // FinalizeCalls gets all the calls that were made to Finalize.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.FinalizeCalls())
-func (mock *GridironStateDBMock) FinalizeCalls() []struct {
+//	len(mockedPolarisStateDB.FinalizeCalls())
+func (mock *PolarisStateDBMock) FinalizeCalls() []struct {
 } {
 	var calls []struct {
 	}
@@ -1339,9 +1339,9 @@ func (mock *GridironStateDBMock) FinalizeCalls() []struct {
 }
 
 // ForEachStorage calls ForEachStorageFunc.
-func (mock *GridironStateDBMock) ForEachStorage(address common.Address, fn func(common.Hash, common.Hash) bool) error {
+func (mock *PolarisStateDBMock) ForEachStorage(address common.Address, fn func(common.Hash, common.Hash) bool) error {
 	if mock.ForEachStorageFunc == nil {
-		panic("GridironStateDBMock.ForEachStorageFunc: method is nil but GridironStateDB.ForEachStorage was just called")
+		panic("PolarisStateDBMock.ForEachStorageFunc: method is nil but PolarisStateDB.ForEachStorage was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -1359,8 +1359,8 @@ func (mock *GridironStateDBMock) ForEachStorage(address common.Address, fn func(
 // ForEachStorageCalls gets all the calls that were made to ForEachStorage.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.ForEachStorageCalls())
-func (mock *GridironStateDBMock) ForEachStorageCalls() []struct {
+//	len(mockedPolarisStateDB.ForEachStorageCalls())
+func (mock *PolarisStateDBMock) ForEachStorageCalls() []struct {
 	Address common.Address
 	Fn      func(common.Hash, common.Hash) bool
 } {
@@ -1375,9 +1375,9 @@ func (mock *GridironStateDBMock) ForEachStorageCalls() []struct {
 }
 
 // GetBalance calls GetBalanceFunc.
-func (mock *GridironStateDBMock) GetBalance(address common.Address) *big.Int {
+func (mock *PolarisStateDBMock) GetBalance(address common.Address) *big.Int {
 	if mock.GetBalanceFunc == nil {
-		panic("GridironStateDBMock.GetBalanceFunc: method is nil but GridironStateDB.GetBalance was just called")
+		panic("PolarisStateDBMock.GetBalanceFunc: method is nil but PolarisStateDB.GetBalance was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -1393,8 +1393,8 @@ func (mock *GridironStateDBMock) GetBalance(address common.Address) *big.Int {
 // GetBalanceCalls gets all the calls that were made to GetBalance.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.GetBalanceCalls())
-func (mock *GridironStateDBMock) GetBalanceCalls() []struct {
+//	len(mockedPolarisStateDB.GetBalanceCalls())
+func (mock *PolarisStateDBMock) GetBalanceCalls() []struct {
 	Address common.Address
 } {
 	var calls []struct {
@@ -1407,9 +1407,9 @@ func (mock *GridironStateDBMock) GetBalanceCalls() []struct {
 }
 
 // GetCode calls GetCodeFunc.
-func (mock *GridironStateDBMock) GetCode(address common.Address) []byte {
+func (mock *PolarisStateDBMock) GetCode(address common.Address) []byte {
 	if mock.GetCodeFunc == nil {
-		panic("GridironStateDBMock.GetCodeFunc: method is nil but GridironStateDB.GetCode was just called")
+		panic("PolarisStateDBMock.GetCodeFunc: method is nil but PolarisStateDB.GetCode was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -1425,8 +1425,8 @@ func (mock *GridironStateDBMock) GetCode(address common.Address) []byte {
 // GetCodeCalls gets all the calls that were made to GetCode.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.GetCodeCalls())
-func (mock *GridironStateDBMock) GetCodeCalls() []struct {
+//	len(mockedPolarisStateDB.GetCodeCalls())
+func (mock *PolarisStateDBMock) GetCodeCalls() []struct {
 	Address common.Address
 } {
 	var calls []struct {
@@ -1439,9 +1439,9 @@ func (mock *GridironStateDBMock) GetCodeCalls() []struct {
 }
 
 // GetCodeHash calls GetCodeHashFunc.
-func (mock *GridironStateDBMock) GetCodeHash(address common.Address) common.Hash {
+func (mock *PolarisStateDBMock) GetCodeHash(address common.Address) common.Hash {
 	if mock.GetCodeHashFunc == nil {
-		panic("GridironStateDBMock.GetCodeHashFunc: method is nil but GridironStateDB.GetCodeHash was just called")
+		panic("PolarisStateDBMock.GetCodeHashFunc: method is nil but PolarisStateDB.GetCodeHash was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -1457,8 +1457,8 @@ func (mock *GridironStateDBMock) GetCodeHash(address common.Address) common.Hash
 // GetCodeHashCalls gets all the calls that were made to GetCodeHash.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.GetCodeHashCalls())
-func (mock *GridironStateDBMock) GetCodeHashCalls() []struct {
+//	len(mockedPolarisStateDB.GetCodeHashCalls())
+func (mock *PolarisStateDBMock) GetCodeHashCalls() []struct {
 	Address common.Address
 } {
 	var calls []struct {
@@ -1471,9 +1471,9 @@ func (mock *GridironStateDBMock) GetCodeHashCalls() []struct {
 }
 
 // GetCodeSize calls GetCodeSizeFunc.
-func (mock *GridironStateDBMock) GetCodeSize(address common.Address) int {
+func (mock *PolarisStateDBMock) GetCodeSize(address common.Address) int {
 	if mock.GetCodeSizeFunc == nil {
-		panic("GridironStateDBMock.GetCodeSizeFunc: method is nil but GridironStateDB.GetCodeSize was just called")
+		panic("PolarisStateDBMock.GetCodeSizeFunc: method is nil but PolarisStateDB.GetCodeSize was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -1489,8 +1489,8 @@ func (mock *GridironStateDBMock) GetCodeSize(address common.Address) int {
 // GetCodeSizeCalls gets all the calls that were made to GetCodeSize.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.GetCodeSizeCalls())
-func (mock *GridironStateDBMock) GetCodeSizeCalls() []struct {
+//	len(mockedPolarisStateDB.GetCodeSizeCalls())
+func (mock *PolarisStateDBMock) GetCodeSizeCalls() []struct {
 	Address common.Address
 } {
 	var calls []struct {
@@ -1503,9 +1503,9 @@ func (mock *GridironStateDBMock) GetCodeSizeCalls() []struct {
 }
 
 // GetCommittedState calls GetCommittedStateFunc.
-func (mock *GridironStateDBMock) GetCommittedState(address common.Address, hash common.Hash) common.Hash {
+func (mock *PolarisStateDBMock) GetCommittedState(address common.Address, hash common.Hash) common.Hash {
 	if mock.GetCommittedStateFunc == nil {
-		panic("GridironStateDBMock.GetCommittedStateFunc: method is nil but GridironStateDB.GetCommittedState was just called")
+		panic("PolarisStateDBMock.GetCommittedStateFunc: method is nil but PolarisStateDB.GetCommittedState was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -1523,8 +1523,8 @@ func (mock *GridironStateDBMock) GetCommittedState(address common.Address, hash 
 // GetCommittedStateCalls gets all the calls that were made to GetCommittedState.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.GetCommittedStateCalls())
-func (mock *GridironStateDBMock) GetCommittedStateCalls() []struct {
+//	len(mockedPolarisStateDB.GetCommittedStateCalls())
+func (mock *PolarisStateDBMock) GetCommittedStateCalls() []struct {
 	Address common.Address
 	Hash    common.Hash
 } {
@@ -1539,9 +1539,9 @@ func (mock *GridironStateDBMock) GetCommittedStateCalls() []struct {
 }
 
 // GetContext calls GetContextFunc.
-func (mock *GridironStateDBMock) GetContext() context.Context {
+func (mock *PolarisStateDBMock) GetContext() context.Context {
 	if mock.GetContextFunc == nil {
-		panic("GridironStateDBMock.GetContextFunc: method is nil but GridironStateDB.GetContext was just called")
+		panic("PolarisStateDBMock.GetContextFunc: method is nil but PolarisStateDB.GetContext was just called")
 	}
 	callInfo := struct {
 	}{}
@@ -1554,8 +1554,8 @@ func (mock *GridironStateDBMock) GetContext() context.Context {
 // GetContextCalls gets all the calls that were made to GetContext.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.GetContextCalls())
-func (mock *GridironStateDBMock) GetContextCalls() []struct {
+//	len(mockedPolarisStateDB.GetContextCalls())
+func (mock *PolarisStateDBMock) GetContextCalls() []struct {
 } {
 	var calls []struct {
 	}
@@ -1566,9 +1566,9 @@ func (mock *GridironStateDBMock) GetContextCalls() []struct {
 }
 
 // GetLogs calls GetLogsFunc.
-func (mock *GridironStateDBMock) GetLogs(hash common.Hash, blockNumber uint64, blockHash common.Hash) []*types.Log {
+func (mock *PolarisStateDBMock) GetLogs(hash common.Hash, blockNumber uint64, blockHash common.Hash) []*types.Log {
 	if mock.GetLogsFunc == nil {
-		panic("GridironStateDBMock.GetLogsFunc: method is nil but GridironStateDB.GetLogs was just called")
+		panic("PolarisStateDBMock.GetLogsFunc: method is nil but PolarisStateDB.GetLogs was just called")
 	}
 	callInfo := struct {
 		Hash        common.Hash
@@ -1588,8 +1588,8 @@ func (mock *GridironStateDBMock) GetLogs(hash common.Hash, blockNumber uint64, b
 // GetLogsCalls gets all the calls that were made to GetLogs.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.GetLogsCalls())
-func (mock *GridironStateDBMock) GetLogsCalls() []struct {
+//	len(mockedPolarisStateDB.GetLogsCalls())
+func (mock *PolarisStateDBMock) GetLogsCalls() []struct {
 	Hash        common.Hash
 	BlockNumber uint64
 	BlockHash   common.Hash
@@ -1606,9 +1606,9 @@ func (mock *GridironStateDBMock) GetLogsCalls() []struct {
 }
 
 // GetNonce calls GetNonceFunc.
-func (mock *GridironStateDBMock) GetNonce(address common.Address) uint64 {
+func (mock *PolarisStateDBMock) GetNonce(address common.Address) uint64 {
 	if mock.GetNonceFunc == nil {
-		panic("GridironStateDBMock.GetNonceFunc: method is nil but GridironStateDB.GetNonce was just called")
+		panic("PolarisStateDBMock.GetNonceFunc: method is nil but PolarisStateDB.GetNonce was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -1624,8 +1624,8 @@ func (mock *GridironStateDBMock) GetNonce(address common.Address) uint64 {
 // GetNonceCalls gets all the calls that were made to GetNonce.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.GetNonceCalls())
-func (mock *GridironStateDBMock) GetNonceCalls() []struct {
+//	len(mockedPolarisStateDB.GetNonceCalls())
+func (mock *PolarisStateDBMock) GetNonceCalls() []struct {
 	Address common.Address
 } {
 	var calls []struct {
@@ -1638,9 +1638,9 @@ func (mock *GridironStateDBMock) GetNonceCalls() []struct {
 }
 
 // GetOrNewStateObject calls GetOrNewStateObjectFunc.
-func (mock *GridironStateDBMock) GetOrNewStateObject(addr common.Address) *state.StateObject {
+func (mock *PolarisStateDBMock) GetOrNewStateObject(addr common.Address) *state.StateObject {
 	if mock.GetOrNewStateObjectFunc == nil {
-		panic("GridironStateDBMock.GetOrNewStateObjectFunc: method is nil but GridironStateDB.GetOrNewStateObject was just called")
+		panic("PolarisStateDBMock.GetOrNewStateObjectFunc: method is nil but PolarisStateDB.GetOrNewStateObject was just called")
 	}
 	callInfo := struct {
 		Addr common.Address
@@ -1656,8 +1656,8 @@ func (mock *GridironStateDBMock) GetOrNewStateObject(addr common.Address) *state
 // GetOrNewStateObjectCalls gets all the calls that were made to GetOrNewStateObject.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.GetOrNewStateObjectCalls())
-func (mock *GridironStateDBMock) GetOrNewStateObjectCalls() []struct {
+//	len(mockedPolarisStateDB.GetOrNewStateObjectCalls())
+func (mock *PolarisStateDBMock) GetOrNewStateObjectCalls() []struct {
 	Addr common.Address
 } {
 	var calls []struct {
@@ -1670,9 +1670,9 @@ func (mock *GridironStateDBMock) GetOrNewStateObjectCalls() []struct {
 }
 
 // GetProof calls GetProofFunc.
-func (mock *GridironStateDBMock) GetProof(addr common.Address) ([][]byte, error) {
+func (mock *PolarisStateDBMock) GetProof(addr common.Address) ([][]byte, error) {
 	if mock.GetProofFunc == nil {
-		panic("GridironStateDBMock.GetProofFunc: method is nil but GridironStateDB.GetProof was just called")
+		panic("PolarisStateDBMock.GetProofFunc: method is nil but PolarisStateDB.GetProof was just called")
 	}
 	callInfo := struct {
 		Addr common.Address
@@ -1688,8 +1688,8 @@ func (mock *GridironStateDBMock) GetProof(addr common.Address) ([][]byte, error)
 // GetProofCalls gets all the calls that were made to GetProof.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.GetProofCalls())
-func (mock *GridironStateDBMock) GetProofCalls() []struct {
+//	len(mockedPolarisStateDB.GetProofCalls())
+func (mock *PolarisStateDBMock) GetProofCalls() []struct {
 	Addr common.Address
 } {
 	var calls []struct {
@@ -1702,9 +1702,9 @@ func (mock *GridironStateDBMock) GetProofCalls() []struct {
 }
 
 // GetRefund calls GetRefundFunc.
-func (mock *GridironStateDBMock) GetRefund() uint64 {
+func (mock *PolarisStateDBMock) GetRefund() uint64 {
 	if mock.GetRefundFunc == nil {
-		panic("GridironStateDBMock.GetRefundFunc: method is nil but GridironStateDB.GetRefund was just called")
+		panic("PolarisStateDBMock.GetRefundFunc: method is nil but PolarisStateDB.GetRefund was just called")
 	}
 	callInfo := struct {
 	}{}
@@ -1717,8 +1717,8 @@ func (mock *GridironStateDBMock) GetRefund() uint64 {
 // GetRefundCalls gets all the calls that were made to GetRefund.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.GetRefundCalls())
-func (mock *GridironStateDBMock) GetRefundCalls() []struct {
+//	len(mockedPolarisStateDB.GetRefundCalls())
+func (mock *PolarisStateDBMock) GetRefundCalls() []struct {
 } {
 	var calls []struct {
 	}
@@ -1729,9 +1729,9 @@ func (mock *GridironStateDBMock) GetRefundCalls() []struct {
 }
 
 // GetState calls GetStateFunc.
-func (mock *GridironStateDBMock) GetState(address common.Address, hash common.Hash) common.Hash {
+func (mock *PolarisStateDBMock) GetState(address common.Address, hash common.Hash) common.Hash {
 	if mock.GetStateFunc == nil {
-		panic("GridironStateDBMock.GetStateFunc: method is nil but GridironStateDB.GetState was just called")
+		panic("PolarisStateDBMock.GetStateFunc: method is nil but PolarisStateDB.GetState was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -1749,8 +1749,8 @@ func (mock *GridironStateDBMock) GetState(address common.Address, hash common.Ha
 // GetStateCalls gets all the calls that were made to GetState.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.GetStateCalls())
-func (mock *GridironStateDBMock) GetStateCalls() []struct {
+//	len(mockedPolarisStateDB.GetStateCalls())
+func (mock *PolarisStateDBMock) GetStateCalls() []struct {
 	Address common.Address
 	Hash    common.Hash
 } {
@@ -1765,9 +1765,9 @@ func (mock *GridironStateDBMock) GetStateCalls() []struct {
 }
 
 // GetStorageProof calls GetStorageProofFunc.
-func (mock *GridironStateDBMock) GetStorageProof(a common.Address, key common.Hash) ([][]byte, error) {
+func (mock *PolarisStateDBMock) GetStorageProof(a common.Address, key common.Hash) ([][]byte, error) {
 	if mock.GetStorageProofFunc == nil {
-		panic("GridironStateDBMock.GetStorageProofFunc: method is nil but GridironStateDB.GetStorageProof was just called")
+		panic("PolarisStateDBMock.GetStorageProofFunc: method is nil but PolarisStateDB.GetStorageProof was just called")
 	}
 	callInfo := struct {
 		A   common.Address
@@ -1785,8 +1785,8 @@ func (mock *GridironStateDBMock) GetStorageProof(a common.Address, key common.Ha
 // GetStorageProofCalls gets all the calls that were made to GetStorageProof.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.GetStorageProofCalls())
-func (mock *GridironStateDBMock) GetStorageProofCalls() []struct {
+//	len(mockedPolarisStateDB.GetStorageProofCalls())
+func (mock *PolarisStateDBMock) GetStorageProofCalls() []struct {
 	A   common.Address
 	Key common.Hash
 } {
@@ -1801,9 +1801,9 @@ func (mock *GridironStateDBMock) GetStorageProofCalls() []struct {
 }
 
 // GetTransientState calls GetTransientStateFunc.
-func (mock *GridironStateDBMock) GetTransientState(addr common.Address, key common.Hash) common.Hash {
+func (mock *PolarisStateDBMock) GetTransientState(addr common.Address, key common.Hash) common.Hash {
 	if mock.GetTransientStateFunc == nil {
-		panic("GridironStateDBMock.GetTransientStateFunc: method is nil but GridironStateDB.GetTransientState was just called")
+		panic("PolarisStateDBMock.GetTransientStateFunc: method is nil but PolarisStateDB.GetTransientState was just called")
 	}
 	callInfo := struct {
 		Addr common.Address
@@ -1821,8 +1821,8 @@ func (mock *GridironStateDBMock) GetTransientState(addr common.Address, key comm
 // GetTransientStateCalls gets all the calls that were made to GetTransientState.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.GetTransientStateCalls())
-func (mock *GridironStateDBMock) GetTransientStateCalls() []struct {
+//	len(mockedPolarisStateDB.GetTransientStateCalls())
+func (mock *PolarisStateDBMock) GetTransientStateCalls() []struct {
 	Addr common.Address
 	Key  common.Hash
 } {
@@ -1837,9 +1837,9 @@ func (mock *GridironStateDBMock) GetTransientStateCalls() []struct {
 }
 
 // HasSuicided calls HasSuicidedFunc.
-func (mock *GridironStateDBMock) HasSuicided(address common.Address) bool {
+func (mock *PolarisStateDBMock) HasSuicided(address common.Address) bool {
 	if mock.HasSuicidedFunc == nil {
-		panic("GridironStateDBMock.HasSuicidedFunc: method is nil but GridironStateDB.HasSuicided was just called")
+		panic("PolarisStateDBMock.HasSuicidedFunc: method is nil but PolarisStateDB.HasSuicided was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -1855,8 +1855,8 @@ func (mock *GridironStateDBMock) HasSuicided(address common.Address) bool {
 // HasSuicidedCalls gets all the calls that were made to HasSuicided.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.HasSuicidedCalls())
-func (mock *GridironStateDBMock) HasSuicidedCalls() []struct {
+//	len(mockedPolarisStateDB.HasSuicidedCalls())
+func (mock *PolarisStateDBMock) HasSuicidedCalls() []struct {
 	Address common.Address
 } {
 	var calls []struct {
@@ -1869,9 +1869,9 @@ func (mock *GridironStateDBMock) HasSuicidedCalls() []struct {
 }
 
 // IntermediateRoot calls IntermediateRootFunc.
-func (mock *GridironStateDBMock) IntermediateRoot(deleteEmptyObjects bool) common.Hash {
+func (mock *PolarisStateDBMock) IntermediateRoot(deleteEmptyObjects bool) common.Hash {
 	if mock.IntermediateRootFunc == nil {
-		panic("GridironStateDBMock.IntermediateRootFunc: method is nil but GridironStateDB.IntermediateRoot was just called")
+		panic("PolarisStateDBMock.IntermediateRootFunc: method is nil but PolarisStateDB.IntermediateRoot was just called")
 	}
 	callInfo := struct {
 		DeleteEmptyObjects bool
@@ -1887,8 +1887,8 @@ func (mock *GridironStateDBMock) IntermediateRoot(deleteEmptyObjects bool) commo
 // IntermediateRootCalls gets all the calls that were made to IntermediateRoot.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.IntermediateRootCalls())
-func (mock *GridironStateDBMock) IntermediateRootCalls() []struct {
+//	len(mockedPolarisStateDB.IntermediateRootCalls())
+func (mock *PolarisStateDBMock) IntermediateRootCalls() []struct {
 	DeleteEmptyObjects bool
 } {
 	var calls []struct {
@@ -1901,9 +1901,9 @@ func (mock *GridironStateDBMock) IntermediateRootCalls() []struct {
 }
 
 // IteratorDump calls IteratorDumpFunc.
-func (mock *GridironStateDBMock) IteratorDump(opts *state.DumpConfig) state.IteratorDump {
+func (mock *PolarisStateDBMock) IteratorDump(opts *state.DumpConfig) state.IteratorDump {
 	if mock.IteratorDumpFunc == nil {
-		panic("GridironStateDBMock.IteratorDumpFunc: method is nil but GridironStateDB.IteratorDump was just called")
+		panic("PolarisStateDBMock.IteratorDumpFunc: method is nil but PolarisStateDB.IteratorDump was just called")
 	}
 	callInfo := struct {
 		Opts *state.DumpConfig
@@ -1919,8 +1919,8 @@ func (mock *GridironStateDBMock) IteratorDump(opts *state.DumpConfig) state.Iter
 // IteratorDumpCalls gets all the calls that were made to IteratorDump.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.IteratorDumpCalls())
-func (mock *GridironStateDBMock) IteratorDumpCalls() []struct {
+//	len(mockedPolarisStateDB.IteratorDumpCalls())
+func (mock *PolarisStateDBMock) IteratorDumpCalls() []struct {
 	Opts *state.DumpConfig
 } {
 	var calls []struct {
@@ -1933,9 +1933,9 @@ func (mock *GridironStateDBMock) IteratorDumpCalls() []struct {
 }
 
 // Logs calls LogsFunc.
-func (mock *GridironStateDBMock) Logs() []*types.Log {
+func (mock *PolarisStateDBMock) Logs() []*types.Log {
 	if mock.LogsFunc == nil {
-		panic("GridironStateDBMock.LogsFunc: method is nil but GridironStateDB.Logs was just called")
+		panic("PolarisStateDBMock.LogsFunc: method is nil but PolarisStateDB.Logs was just called")
 	}
 	callInfo := struct {
 	}{}
@@ -1948,8 +1948,8 @@ func (mock *GridironStateDBMock) Logs() []*types.Log {
 // LogsCalls gets all the calls that were made to Logs.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.LogsCalls())
-func (mock *GridironStateDBMock) LogsCalls() []struct {
+//	len(mockedPolarisStateDB.LogsCalls())
+func (mock *PolarisStateDBMock) LogsCalls() []struct {
 } {
 	var calls []struct {
 	}
@@ -1960,9 +1960,9 @@ func (mock *GridironStateDBMock) LogsCalls() []struct {
 }
 
 // Preimages calls PreimagesFunc.
-func (mock *GridironStateDBMock) Preimages() map[common.Hash][]byte {
+func (mock *PolarisStateDBMock) Preimages() map[common.Hash][]byte {
 	if mock.PreimagesFunc == nil {
-		panic("GridironStateDBMock.PreimagesFunc: method is nil but GridironStateDB.Preimages was just called")
+		panic("PolarisStateDBMock.PreimagesFunc: method is nil but PolarisStateDB.Preimages was just called")
 	}
 	callInfo := struct {
 	}{}
@@ -1975,8 +1975,8 @@ func (mock *GridironStateDBMock) Preimages() map[common.Hash][]byte {
 // PreimagesCalls gets all the calls that were made to Preimages.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.PreimagesCalls())
-func (mock *GridironStateDBMock) PreimagesCalls() []struct {
+//	len(mockedPolarisStateDB.PreimagesCalls())
+func (mock *PolarisStateDBMock) PreimagesCalls() []struct {
 } {
 	var calls []struct {
 	}
@@ -1987,9 +1987,9 @@ func (mock *GridironStateDBMock) PreimagesCalls() []struct {
 }
 
 // Prepare calls PrepareFunc.
-func (mock *GridironStateDBMock) Prepare(rules params.Rules, sender common.Address, coinbase common.Address, dest *common.Address, precompiles []common.Address, txAccesses types.AccessList) {
+func (mock *PolarisStateDBMock) Prepare(rules params.Rules, sender common.Address, coinbase common.Address, dest *common.Address, precompiles []common.Address, txAccesses types.AccessList) {
 	if mock.PrepareFunc == nil {
-		panic("GridironStateDBMock.PrepareFunc: method is nil but GridironStateDB.Prepare was just called")
+		panic("PolarisStateDBMock.PrepareFunc: method is nil but PolarisStateDB.Prepare was just called")
 	}
 	callInfo := struct {
 		Rules       params.Rules
@@ -2015,8 +2015,8 @@ func (mock *GridironStateDBMock) Prepare(rules params.Rules, sender common.Addre
 // PrepareCalls gets all the calls that were made to Prepare.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.PrepareCalls())
-func (mock *GridironStateDBMock) PrepareCalls() []struct {
+//	len(mockedPolarisStateDB.PrepareCalls())
+func (mock *PolarisStateDBMock) PrepareCalls() []struct {
 	Rules       params.Rules
 	Sender      common.Address
 	Coinbase    common.Address
@@ -2039,9 +2039,9 @@ func (mock *GridironStateDBMock) PrepareCalls() []struct {
 }
 
 // RawDump calls RawDumpFunc.
-func (mock *GridironStateDBMock) RawDump(opts *state.DumpConfig) state.Dump {
+func (mock *PolarisStateDBMock) RawDump(opts *state.DumpConfig) state.Dump {
 	if mock.RawDumpFunc == nil {
-		panic("GridironStateDBMock.RawDumpFunc: method is nil but GridironStateDB.RawDump was just called")
+		panic("PolarisStateDBMock.RawDumpFunc: method is nil but PolarisStateDB.RawDump was just called")
 	}
 	callInfo := struct {
 		Opts *state.DumpConfig
@@ -2057,8 +2057,8 @@ func (mock *GridironStateDBMock) RawDump(opts *state.DumpConfig) state.Dump {
 // RawDumpCalls gets all the calls that were made to RawDump.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.RawDumpCalls())
-func (mock *GridironStateDBMock) RawDumpCalls() []struct {
+//	len(mockedPolarisStateDB.RawDumpCalls())
+func (mock *PolarisStateDBMock) RawDumpCalls() []struct {
 	Opts *state.DumpConfig
 } {
 	var calls []struct {
@@ -2071,9 +2071,9 @@ func (mock *GridironStateDBMock) RawDumpCalls() []struct {
 }
 
 // Reset calls ResetFunc.
-func (mock *GridironStateDBMock) Reset(txHash common.Hash, txIndex int) {
+func (mock *PolarisStateDBMock) Reset(txHash common.Hash, txIndex int) {
 	if mock.ResetFunc == nil {
-		panic("GridironStateDBMock.ResetFunc: method is nil but GridironStateDB.Reset was just called")
+		panic("PolarisStateDBMock.ResetFunc: method is nil but PolarisStateDB.Reset was just called")
 	}
 	callInfo := struct {
 		TxHash  common.Hash
@@ -2091,8 +2091,8 @@ func (mock *GridironStateDBMock) Reset(txHash common.Hash, txIndex int) {
 // ResetCalls gets all the calls that were made to Reset.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.ResetCalls())
-func (mock *GridironStateDBMock) ResetCalls() []struct {
+//	len(mockedPolarisStateDB.ResetCalls())
+func (mock *PolarisStateDBMock) ResetCalls() []struct {
 	TxHash  common.Hash
 	TxIndex int
 } {
@@ -2107,9 +2107,9 @@ func (mock *GridironStateDBMock) ResetCalls() []struct {
 }
 
 // RevertToSnapshot calls RevertToSnapshotFunc.
-func (mock *GridironStateDBMock) RevertToSnapshot(n int) {
+func (mock *PolarisStateDBMock) RevertToSnapshot(n int) {
 	if mock.RevertToSnapshotFunc == nil {
-		panic("GridironStateDBMock.RevertToSnapshotFunc: method is nil but GridironStateDB.RevertToSnapshot was just called")
+		panic("PolarisStateDBMock.RevertToSnapshotFunc: method is nil but PolarisStateDB.RevertToSnapshot was just called")
 	}
 	callInfo := struct {
 		N int
@@ -2125,8 +2125,8 @@ func (mock *GridironStateDBMock) RevertToSnapshot(n int) {
 // RevertToSnapshotCalls gets all the calls that were made to RevertToSnapshot.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.RevertToSnapshotCalls())
-func (mock *GridironStateDBMock) RevertToSnapshotCalls() []struct {
+//	len(mockedPolarisStateDB.RevertToSnapshotCalls())
+func (mock *PolarisStateDBMock) RevertToSnapshotCalls() []struct {
 	N int
 } {
 	var calls []struct {
@@ -2139,9 +2139,9 @@ func (mock *GridironStateDBMock) RevertToSnapshotCalls() []struct {
 }
 
 // SetBalance calls SetBalanceFunc.
-func (mock *GridironStateDBMock) SetBalance(addr common.Address, amount *big.Int) {
+func (mock *PolarisStateDBMock) SetBalance(addr common.Address, amount *big.Int) {
 	if mock.SetBalanceFunc == nil {
-		panic("GridironStateDBMock.SetBalanceFunc: method is nil but GridironStateDB.SetBalance was just called")
+		panic("PolarisStateDBMock.SetBalanceFunc: method is nil but PolarisStateDB.SetBalance was just called")
 	}
 	callInfo := struct {
 		Addr   common.Address
@@ -2159,8 +2159,8 @@ func (mock *GridironStateDBMock) SetBalance(addr common.Address, amount *big.Int
 // SetBalanceCalls gets all the calls that were made to SetBalance.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.SetBalanceCalls())
-func (mock *GridironStateDBMock) SetBalanceCalls() []struct {
+//	len(mockedPolarisStateDB.SetBalanceCalls())
+func (mock *PolarisStateDBMock) SetBalanceCalls() []struct {
 	Addr   common.Address
 	Amount *big.Int
 } {
@@ -2175,9 +2175,9 @@ func (mock *GridironStateDBMock) SetBalanceCalls() []struct {
 }
 
 // SetCode calls SetCodeFunc.
-func (mock *GridironStateDBMock) SetCode(address common.Address, bytes []byte) {
+func (mock *PolarisStateDBMock) SetCode(address common.Address, bytes []byte) {
 	if mock.SetCodeFunc == nil {
-		panic("GridironStateDBMock.SetCodeFunc: method is nil but GridironStateDB.SetCode was just called")
+		panic("PolarisStateDBMock.SetCodeFunc: method is nil but PolarisStateDB.SetCode was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -2195,8 +2195,8 @@ func (mock *GridironStateDBMock) SetCode(address common.Address, bytes []byte) {
 // SetCodeCalls gets all the calls that were made to SetCode.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.SetCodeCalls())
-func (mock *GridironStateDBMock) SetCodeCalls() []struct {
+//	len(mockedPolarisStateDB.SetCodeCalls())
+func (mock *PolarisStateDBMock) SetCodeCalls() []struct {
 	Address common.Address
 	Bytes   []byte
 } {
@@ -2211,9 +2211,9 @@ func (mock *GridironStateDBMock) SetCodeCalls() []struct {
 }
 
 // SetNonce calls SetNonceFunc.
-func (mock *GridironStateDBMock) SetNonce(address common.Address, v uint64) {
+func (mock *PolarisStateDBMock) SetNonce(address common.Address, v uint64) {
 	if mock.SetNonceFunc == nil {
-		panic("GridironStateDBMock.SetNonceFunc: method is nil but GridironStateDB.SetNonce was just called")
+		panic("PolarisStateDBMock.SetNonceFunc: method is nil but PolarisStateDB.SetNonce was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -2231,8 +2231,8 @@ func (mock *GridironStateDBMock) SetNonce(address common.Address, v uint64) {
 // SetNonceCalls gets all the calls that were made to SetNonce.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.SetNonceCalls())
-func (mock *GridironStateDBMock) SetNonceCalls() []struct {
+//	len(mockedPolarisStateDB.SetNonceCalls())
+func (mock *PolarisStateDBMock) SetNonceCalls() []struct {
 	Address common.Address
 	V       uint64
 } {
@@ -2247,9 +2247,9 @@ func (mock *GridironStateDBMock) SetNonceCalls() []struct {
 }
 
 // SetState calls SetStateFunc.
-func (mock *GridironStateDBMock) SetState(address common.Address, hash1 common.Hash, hash2 common.Hash) {
+func (mock *PolarisStateDBMock) SetState(address common.Address, hash1 common.Hash, hash2 common.Hash) {
 	if mock.SetStateFunc == nil {
-		panic("GridironStateDBMock.SetStateFunc: method is nil but GridironStateDB.SetState was just called")
+		panic("PolarisStateDBMock.SetStateFunc: method is nil but PolarisStateDB.SetState was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -2269,8 +2269,8 @@ func (mock *GridironStateDBMock) SetState(address common.Address, hash1 common.H
 // SetStateCalls gets all the calls that were made to SetState.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.SetStateCalls())
-func (mock *GridironStateDBMock) SetStateCalls() []struct {
+//	len(mockedPolarisStateDB.SetStateCalls())
+func (mock *PolarisStateDBMock) SetStateCalls() []struct {
 	Address common.Address
 	Hash1   common.Hash
 	Hash2   common.Hash
@@ -2287,9 +2287,9 @@ func (mock *GridironStateDBMock) SetStateCalls() []struct {
 }
 
 // SetStorage calls SetStorageFunc.
-func (mock *GridironStateDBMock) SetStorage(addr common.Address, storage map[common.Hash]common.Hash) {
+func (mock *PolarisStateDBMock) SetStorage(addr common.Address, storage map[common.Hash]common.Hash) {
 	if mock.SetStorageFunc == nil {
-		panic("GridironStateDBMock.SetStorageFunc: method is nil but GridironStateDB.SetStorage was just called")
+		panic("PolarisStateDBMock.SetStorageFunc: method is nil but PolarisStateDB.SetStorage was just called")
 	}
 	callInfo := struct {
 		Addr    common.Address
@@ -2307,8 +2307,8 @@ func (mock *GridironStateDBMock) SetStorage(addr common.Address, storage map[com
 // SetStorageCalls gets all the calls that were made to SetStorage.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.SetStorageCalls())
-func (mock *GridironStateDBMock) SetStorageCalls() []struct {
+//	len(mockedPolarisStateDB.SetStorageCalls())
+func (mock *PolarisStateDBMock) SetStorageCalls() []struct {
 	Addr    common.Address
 	Storage map[common.Hash]common.Hash
 } {
@@ -2323,9 +2323,9 @@ func (mock *GridironStateDBMock) SetStorageCalls() []struct {
 }
 
 // SetTransientState calls SetTransientStateFunc.
-func (mock *GridironStateDBMock) SetTransientState(addr common.Address, key common.Hash, value common.Hash) {
+func (mock *PolarisStateDBMock) SetTransientState(addr common.Address, key common.Hash, value common.Hash) {
 	if mock.SetTransientStateFunc == nil {
-		panic("GridironStateDBMock.SetTransientStateFunc: method is nil but GridironStateDB.SetTransientState was just called")
+		panic("PolarisStateDBMock.SetTransientStateFunc: method is nil but PolarisStateDB.SetTransientState was just called")
 	}
 	callInfo := struct {
 		Addr  common.Address
@@ -2345,8 +2345,8 @@ func (mock *GridironStateDBMock) SetTransientState(addr common.Address, key comm
 // SetTransientStateCalls gets all the calls that were made to SetTransientState.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.SetTransientStateCalls())
-func (mock *GridironStateDBMock) SetTransientStateCalls() []struct {
+//	len(mockedPolarisStateDB.SetTransientStateCalls())
+func (mock *PolarisStateDBMock) SetTransientStateCalls() []struct {
 	Addr  common.Address
 	Key   common.Hash
 	Value common.Hash
@@ -2363,9 +2363,9 @@ func (mock *GridironStateDBMock) SetTransientStateCalls() []struct {
 }
 
 // SetTxContext calls SetTxContextFunc.
-func (mock *GridironStateDBMock) SetTxContext(thash common.Hash, ti int) {
+func (mock *PolarisStateDBMock) SetTxContext(thash common.Hash, ti int) {
 	if mock.SetTxContextFunc == nil {
-		panic("GridironStateDBMock.SetTxContextFunc: method is nil but GridironStateDB.SetTxContext was just called")
+		panic("PolarisStateDBMock.SetTxContextFunc: method is nil but PolarisStateDB.SetTxContext was just called")
 	}
 	callInfo := struct {
 		Thash common.Hash
@@ -2383,8 +2383,8 @@ func (mock *GridironStateDBMock) SetTxContext(thash common.Hash, ti int) {
 // SetTxContextCalls gets all the calls that were made to SetTxContext.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.SetTxContextCalls())
-func (mock *GridironStateDBMock) SetTxContextCalls() []struct {
+//	len(mockedPolarisStateDB.SetTxContextCalls())
+func (mock *PolarisStateDBMock) SetTxContextCalls() []struct {
 	Thash common.Hash
 	Ti    int
 } {
@@ -2399,9 +2399,9 @@ func (mock *GridironStateDBMock) SetTxContextCalls() []struct {
 }
 
 // SlotInAccessList calls SlotInAccessListFunc.
-func (mock *GridironStateDBMock) SlotInAccessList(addr common.Address, slot common.Hash) (bool, bool) {
+func (mock *PolarisStateDBMock) SlotInAccessList(addr common.Address, slot common.Hash) (bool, bool) {
 	if mock.SlotInAccessListFunc == nil {
-		panic("GridironStateDBMock.SlotInAccessListFunc: method is nil but GridironStateDB.SlotInAccessList was just called")
+		panic("PolarisStateDBMock.SlotInAccessListFunc: method is nil but PolarisStateDB.SlotInAccessList was just called")
 	}
 	callInfo := struct {
 		Addr common.Address
@@ -2419,8 +2419,8 @@ func (mock *GridironStateDBMock) SlotInAccessList(addr common.Address, slot comm
 // SlotInAccessListCalls gets all the calls that were made to SlotInAccessList.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.SlotInAccessListCalls())
-func (mock *GridironStateDBMock) SlotInAccessListCalls() []struct {
+//	len(mockedPolarisStateDB.SlotInAccessListCalls())
+func (mock *PolarisStateDBMock) SlotInAccessListCalls() []struct {
 	Addr common.Address
 	Slot common.Hash
 } {
@@ -2435,9 +2435,9 @@ func (mock *GridironStateDBMock) SlotInAccessListCalls() []struct {
 }
 
 // Snapshot calls SnapshotFunc.
-func (mock *GridironStateDBMock) Snapshot() int {
+func (mock *PolarisStateDBMock) Snapshot() int {
 	if mock.SnapshotFunc == nil {
-		panic("GridironStateDBMock.SnapshotFunc: method is nil but GridironStateDB.Snapshot was just called")
+		panic("PolarisStateDBMock.SnapshotFunc: method is nil but PolarisStateDB.Snapshot was just called")
 	}
 	callInfo := struct {
 	}{}
@@ -2450,8 +2450,8 @@ func (mock *GridironStateDBMock) Snapshot() int {
 // SnapshotCalls gets all the calls that were made to Snapshot.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.SnapshotCalls())
-func (mock *GridironStateDBMock) SnapshotCalls() []struct {
+//	len(mockedPolarisStateDB.SnapshotCalls())
+func (mock *PolarisStateDBMock) SnapshotCalls() []struct {
 } {
 	var calls []struct {
 	}
@@ -2462,9 +2462,9 @@ func (mock *GridironStateDBMock) SnapshotCalls() []struct {
 }
 
 // StartPrefetcher calls StartPrefetcherFunc.
-func (mock *GridironStateDBMock) StartPrefetcher(namespace string) {
+func (mock *PolarisStateDBMock) StartPrefetcher(namespace string) {
 	if mock.StartPrefetcherFunc == nil {
-		panic("GridironStateDBMock.StartPrefetcherFunc: method is nil but GridironStateDB.StartPrefetcher was just called")
+		panic("PolarisStateDBMock.StartPrefetcherFunc: method is nil but PolarisStateDB.StartPrefetcher was just called")
 	}
 	callInfo := struct {
 		Namespace string
@@ -2480,8 +2480,8 @@ func (mock *GridironStateDBMock) StartPrefetcher(namespace string) {
 // StartPrefetcherCalls gets all the calls that were made to StartPrefetcher.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.StartPrefetcherCalls())
-func (mock *GridironStateDBMock) StartPrefetcherCalls() []struct {
+//	len(mockedPolarisStateDB.StartPrefetcherCalls())
+func (mock *PolarisStateDBMock) StartPrefetcherCalls() []struct {
 	Namespace string
 } {
 	var calls []struct {
@@ -2494,9 +2494,9 @@ func (mock *GridironStateDBMock) StartPrefetcherCalls() []struct {
 }
 
 // StopPrefetcher calls StopPrefetcherFunc.
-func (mock *GridironStateDBMock) StopPrefetcher() {
+func (mock *PolarisStateDBMock) StopPrefetcher() {
 	if mock.StopPrefetcherFunc == nil {
-		panic("GridironStateDBMock.StopPrefetcherFunc: method is nil but GridironStateDB.StopPrefetcher was just called")
+		panic("PolarisStateDBMock.StopPrefetcherFunc: method is nil but PolarisStateDB.StopPrefetcher was just called")
 	}
 	callInfo := struct {
 	}{}
@@ -2509,8 +2509,8 @@ func (mock *GridironStateDBMock) StopPrefetcher() {
 // StopPrefetcherCalls gets all the calls that were made to StopPrefetcher.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.StopPrefetcherCalls())
-func (mock *GridironStateDBMock) StopPrefetcherCalls() []struct {
+//	len(mockedPolarisStateDB.StopPrefetcherCalls())
+func (mock *PolarisStateDBMock) StopPrefetcherCalls() []struct {
 } {
 	var calls []struct {
 	}
@@ -2521,9 +2521,9 @@ func (mock *GridironStateDBMock) StopPrefetcherCalls() []struct {
 }
 
 // StorageTrie calls StorageTrieFunc.
-func (mock *GridironStateDBMock) StorageTrie(addr common.Address) (state.Trie, error) {
+func (mock *PolarisStateDBMock) StorageTrie(addr common.Address) (state.Trie, error) {
 	if mock.StorageTrieFunc == nil {
-		panic("GridironStateDBMock.StorageTrieFunc: method is nil but GridironStateDB.StorageTrie was just called")
+		panic("PolarisStateDBMock.StorageTrieFunc: method is nil but PolarisStateDB.StorageTrie was just called")
 	}
 	callInfo := struct {
 		Addr common.Address
@@ -2539,8 +2539,8 @@ func (mock *GridironStateDBMock) StorageTrie(addr common.Address) (state.Trie, e
 // StorageTrieCalls gets all the calls that were made to StorageTrie.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.StorageTrieCalls())
-func (mock *GridironStateDBMock) StorageTrieCalls() []struct {
+//	len(mockedPolarisStateDB.StorageTrieCalls())
+func (mock *PolarisStateDBMock) StorageTrieCalls() []struct {
 	Addr common.Address
 } {
 	var calls []struct {
@@ -2553,9 +2553,9 @@ func (mock *GridironStateDBMock) StorageTrieCalls() []struct {
 }
 
 // SubBalance calls SubBalanceFunc.
-func (mock *GridironStateDBMock) SubBalance(address common.Address, intMoqParam *big.Int) {
+func (mock *PolarisStateDBMock) SubBalance(address common.Address, intMoqParam *big.Int) {
 	if mock.SubBalanceFunc == nil {
-		panic("GridironStateDBMock.SubBalanceFunc: method is nil but GridironStateDB.SubBalance was just called")
+		panic("PolarisStateDBMock.SubBalanceFunc: method is nil but PolarisStateDB.SubBalance was just called")
 	}
 	callInfo := struct {
 		Address     common.Address
@@ -2573,8 +2573,8 @@ func (mock *GridironStateDBMock) SubBalance(address common.Address, intMoqParam 
 // SubBalanceCalls gets all the calls that were made to SubBalance.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.SubBalanceCalls())
-func (mock *GridironStateDBMock) SubBalanceCalls() []struct {
+//	len(mockedPolarisStateDB.SubBalanceCalls())
+func (mock *PolarisStateDBMock) SubBalanceCalls() []struct {
 	Address     common.Address
 	IntMoqParam *big.Int
 } {
@@ -2589,9 +2589,9 @@ func (mock *GridironStateDBMock) SubBalanceCalls() []struct {
 }
 
 // SubRefund calls SubRefundFunc.
-func (mock *GridironStateDBMock) SubRefund(v uint64) {
+func (mock *PolarisStateDBMock) SubRefund(v uint64) {
 	if mock.SubRefundFunc == nil {
-		panic("GridironStateDBMock.SubRefundFunc: method is nil but GridironStateDB.SubRefund was just called")
+		panic("PolarisStateDBMock.SubRefundFunc: method is nil but PolarisStateDB.SubRefund was just called")
 	}
 	callInfo := struct {
 		V uint64
@@ -2607,8 +2607,8 @@ func (mock *GridironStateDBMock) SubRefund(v uint64) {
 // SubRefundCalls gets all the calls that were made to SubRefund.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.SubRefundCalls())
-func (mock *GridironStateDBMock) SubRefundCalls() []struct {
+//	len(mockedPolarisStateDB.SubRefundCalls())
+func (mock *PolarisStateDBMock) SubRefundCalls() []struct {
 	V uint64
 } {
 	var calls []struct {
@@ -2621,9 +2621,9 @@ func (mock *GridironStateDBMock) SubRefundCalls() []struct {
 }
 
 // Suicide calls SuicideFunc.
-func (mock *GridironStateDBMock) Suicide(address common.Address) bool {
+func (mock *PolarisStateDBMock) Suicide(address common.Address) bool {
 	if mock.SuicideFunc == nil {
-		panic("GridironStateDBMock.SuicideFunc: method is nil but GridironStateDB.Suicide was just called")
+		panic("PolarisStateDBMock.SuicideFunc: method is nil but PolarisStateDB.Suicide was just called")
 	}
 	callInfo := struct {
 		Address common.Address
@@ -2639,8 +2639,8 @@ func (mock *GridironStateDBMock) Suicide(address common.Address) bool {
 // SuicideCalls gets all the calls that were made to Suicide.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.SuicideCalls())
-func (mock *GridironStateDBMock) SuicideCalls() []struct {
+//	len(mockedPolarisStateDB.SuicideCalls())
+func (mock *PolarisStateDBMock) SuicideCalls() []struct {
 	Address common.Address
 } {
 	var calls []struct {
@@ -2653,9 +2653,9 @@ func (mock *GridironStateDBMock) SuicideCalls() []struct {
 }
 
 // TxIndex calls TxIndexFunc.
-func (mock *GridironStateDBMock) TxIndex() int {
+func (mock *PolarisStateDBMock) TxIndex() int {
 	if mock.TxIndexFunc == nil {
-		panic("GridironStateDBMock.TxIndexFunc: method is nil but GridironStateDB.TxIndex was just called")
+		panic("PolarisStateDBMock.TxIndexFunc: method is nil but PolarisStateDB.TxIndex was just called")
 	}
 	callInfo := struct {
 	}{}
@@ -2668,8 +2668,8 @@ func (mock *GridironStateDBMock) TxIndex() int {
 // TxIndexCalls gets all the calls that were made to TxIndex.
 // Check the length with:
 //
-//	len(mockedGridironStateDB.TxIndexCalls())
-func (mock *GridironStateDBMock) TxIndexCalls() []struct {
+//	len(mockedPolarisStateDB.TxIndexCalls())
+func (mock *PolarisStateDBMock) TxIndexCalls() []struct {
 } {
 	var calls []struct {
 	}

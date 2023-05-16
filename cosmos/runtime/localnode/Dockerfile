@@ -25,12 +25,12 @@ ARG GOOS=darwin
 # Use the latest foundry image
 FROM ghcr.io/foundry-rs/foundry as foundry
 
-WORKDIR /gridiron
+WORKDIR /polaris
 
 # Build and test the source code
 ARG PRECOMPILE_CONTRACTS_DIR
 COPY ${PRECOMPILE_CONTRACTS_DIR} ${PRECOMPILE_CONTRACTS_DIR}
-WORKDIR /gridiron/${PRECOMPILE_CONTRACTS_DIR}
+WORKDIR /polaris/${PRECOMPILE_CONTRACTS_DIR}
 
 RUN forge build
 
@@ -42,7 +42,7 @@ RUN forge build
 FROM golang:${GO_VERSION}-alpine as builder
 
 # Copy our source code into the container
-WORKDIR /gridiron
+WORKDIR /polaris
 COPY . .
 
 # Setup some alpine stuff that nobody really knows why we need other
@@ -58,7 +58,7 @@ RUN apk add linux-headers
 
 # Copy the forge output
 ARG PRECOMPILE_CONTRACTS_DIR
-COPY --from=foundry /gridiron/${PRECOMPILE_CONTRACTS_DIR}/out /gridiron/${PRECOMPILE_CONTRACTS_DIR}/out
+COPY --from=foundry /polaris/${PRECOMPILE_CONTRACTS_DIR}/out /polaris/${PRECOMPILE_CONTRACTS_DIR}/out
 
 # # Copy the go mod and sum files
 # COPY go.mod ./
@@ -74,7 +74,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
     go build \
     -mod=readonly \
     -tags "netgo,ledger,muslc" \
-    -ldflags "-X github.com/cosmos/cosmos-sdk/version.Name="gridironOne" \
+    -ldflags "-X github.com/cosmos/cosmos-sdk/version.Name="polarisOne" \
     -X github.com/cosmos/cosmos-sdk/version.AppName="furyd" \
     -X github.com/cosmos/cosmos-sdk/version.Version=$VERSION \
     -X github.com/cosmos/cosmos-sdk/version.Commit=$COMMIT \
@@ -82,7 +82,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
     -X github.com/cosmos/cosmos-sdk/types.DBBackend="pebbledb" \
     -w -s -linkmode=external -extldflags '-Wl,-z,muldefs -static'" \
     -trimpath \
-    -o /gridiron/bin/ \
+    -o /polaris/bin/ \
     ./cosmos/cmd/grid
 
 #######################################################
@@ -94,13 +94,13 @@ FROM golang:${GO_VERSION}-alpine
 RUN apk add --no-cache bash
 RUN apk add --no-cache jq
 
-WORKDIR /gridiron
+WORKDIR /polaris
 
-COPY --from=builder /gridiron/bin/grid /bin/
-COPY --from=builder /gridiron/cosmos/runtime/localnode/docker-init.sh /gridiron/docker-init.sh
-COPY --from=builder /gridiron/cosmos/runtime/localnode/config /gridiron/config
+COPY --from=builder /polaris/bin/grid /bin/
+COPY --from=builder /polaris/cosmos/runtime/localnode/docker-init.sh /polaris/docker-init.sh
+COPY --from=builder /polaris/cosmos/runtime/localnode/config /polaris/config
 
-ENV HOME /gridiron
+ENV HOME /polaris
 WORKDIR $HOME
 
 # Expose the furyd port

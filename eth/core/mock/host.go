@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -20,12 +20,12 @@
 
 package mock
 
-import "github.com/gridironOne/gridiron/eth/core"
+import "pkg.berachain.dev/polaris/eth/core"
 
-//go:generate moq -out ./host.mock.go -pkg mock ../ GridironHostChain
+//go:generate moq -out ./host.mock.go -pkg mock ../ PolarisHostChain
 
-func NewMockHost() *GridironHostChainMock {
-	mockedGridironHostChain := &GridironHostChainMock{
+func NewMockHost() *PolarisHostChainMock {
+	mockedPolarisHostChain := &PolarisHostChainMock{
 		GetBlockPluginFunc: func() core.BlockPlugin {
 			return NewBlockPluginMock()
 		},
@@ -45,5 +45,5 @@ func NewMockHost() *GridironHostChainMock {
 			return &StatePluginMock{}
 		},
 	}
-	return mockedGridironHostChain
+	return mockedPolarisHostChain
 }

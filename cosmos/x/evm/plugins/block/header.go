@@ -26,14 +26,14 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/cosmos/x/evm/types"
-	coretypes "github.com/gridironOne/gridiron/eth/core/types"
-	"github.com/gridironOne/gridiron/eth/rpc"
-	errorslib "github.com/gridironOne/gridiron/lib/errors"
+	"github.com/polarisOne/polaris/cosmos/x/evm/types"
+	coretypes "github.com/polarisOne/polaris/eth/core/types"
+	"github.com/polarisOne/polaris/eth/rpc"
+	errorslib "github.com/polarisOne/polaris/lib/errors"
 )
 
 // ===========================================================================
-// Gridiron Block Header Tracking
+// Polaris Block Header Tracking
 // ===========================================================================.
 
 // SetQueryContextFn sets the query context func for the plugin.
@@ -62,7 +62,7 @@ func (p *plugin) GetHeaderByNumber(height int64) (*coretypes.Header, error) {
 	// Unmarshal the header from the context kv store.
 	bz := ctx.KVStore(p.storekey).Get([]byte{types.HeaderKey})
 	if bz == nil {
-		return nil, errors.New("GetHeader: gridiron header not found in kvstore")
+		return nil, errors.New("GetHeader: polaris header not found in kvstore")
 	}
 	header, err := coretypes.UnmarshalHeader(bz)
 	if err != nil {

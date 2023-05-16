@@ -23,7 +23,7 @@ package misc_test
 import (
 	"testing"
 
-	"github.com/gridironOne/gridiron/cosmos/testing/integration"
+	"github.com/polarisOne/polaris/cosmos/testing/integration"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

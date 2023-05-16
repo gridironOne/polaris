@@ -29,11 +29,11 @@ import (
 
 	"github.com/ethereum/go-ethereum/event"
 
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins"
-	mempool "github.com/gridironOne/gridiron/cosmos/x/evm/plugins/txpool/mempool"
-	"github.com/gridironOne/gridiron/eth/core"
-	coretypes "github.com/gridironOne/gridiron/eth/core/types"
-	errorslib "github.com/gridironOne/gridiron/lib/errors"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
+	mempool "github.com/polarisOne/polaris/cosmos/x/evm/plugins/txpool/mempool"
+	"github.com/polarisOne/polaris/eth/core"
+	coretypes "github.com/polarisOne/polaris/eth/core/types"
+	errorslib "github.com/polarisOne/polaris/lib/errors"
 )
 
 // Compile-time type assertion.

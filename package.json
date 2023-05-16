@@ -1,7 +1,7 @@
 {
   "name": "@zetahub/eth",
   "version": "0.0.0-eth",
-  "description": "Welcome to Gridiron Ethereum, a modular framework for injecting a Go-Ethereum (geth) EVM into any  underlying consensus layer. This folder's directory structure closely resembles that of geth, as it is meant to be a thin wrapper around the existing geth codebase. The following architecture diagram shows how Gridiron Ethereum integrates into the application level of a host chain.",
+  "description": "Welcome to Polaris Ethereum, a modular framework for injecting a Go-Ethereum (geth) EVM into any  underlying consensus layer. This folder's directory structure closely resembles that of geth, as it is meant to be a thin wrapper around the existing geth codebase. The following architecture diagram shows how Polaris Ethereum integrates into the application level of a host chain.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -21,11 +21,11 @@
 package misc_test
 
 import (
-	tbindings "github.com/gridironOne/gridiron/contracts/bindings/testing"
+	tbindings "github.com/polarisOne/polaris/contracts/bindings/testing"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	. "github.com/gridironOne/gridiron/cosmos/testing/integration/utils"
+	. "github.com/polarisOne/polaris/cosmos/testing/integration/utils"
 )
 
 var _ = Describe("Miscellaneous Precompile Tests", func() {

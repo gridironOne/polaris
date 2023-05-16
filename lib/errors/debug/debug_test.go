@@ -6,7 +6,7 @@ package debug_test
 import (
 	"testing"
 
-	"github.com/gridironOne/gridiron/lib/errors/debug"
+	"pkg.berachain.dev/polaris/lib/errors/debug"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

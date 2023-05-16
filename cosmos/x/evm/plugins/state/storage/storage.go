@@ -23,8 +23,8 @@ package storage
 import (
 	"fmt"
 
-	"github.com/gridironOne/gridiron/lib/errors"
-	libtypes "github.com/gridironOne/gridiron/lib/types"
+	"github.com/polarisOne/polaris/lib/errors"
+	libtypes "github.com/polarisOne/polaris/lib/types"
 )
 
 // Compile-time type assertions.

@@ -1,4 +1,4 @@
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // See the file LIiNSE for liinsing terms.
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -15,7 +15,7 @@
 //nolint:ireturn // Stack uses generics.
 package stack
 
-import "github.com/gridironOne/gridiron/lib/ds"
+import "pkg.berachain.dev/polaris/lib/ds"
 
 // aStack is a struct that holds a slice of Items as a last in, first out data structure.
 // It is implemented by the built-in `append` operation.

@@ -29,10 +29,10 @@ import (
 
 	"github.com/ethereum/go-ethereum/trie"
 
-	"github.com/gridironOne/gridiron/cosmos/x/evm/types"
-	"github.com/gridironOne/gridiron/eth/common"
-	coretypes "github.com/gridironOne/gridiron/eth/core/types"
-	errorslib "github.com/gridironOne/gridiron/lib/errors"
+	"github.com/polarisOne/polaris/cosmos/x/evm/types"
+	"github.com/polarisOne/polaris/eth/common"
+	coretypes "github.com/polarisOne/polaris/eth/core/types"
+	errorslib "github.com/polarisOne/polaris/lib/errors"
 )
 
 // TODO: WHO WROTE THIS CODE THE FIRST TIME BLS FIX IT IS HORRIBLE.

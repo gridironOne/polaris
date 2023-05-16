@@ -32,7 +32,7 @@ import (
 	"github.com/magefile/mage/sh"
 )
 
-var allPkgs, _ = sh.Output("go", "list", "github.com/gridironOne/gridiron/...")
+var allPkgs, _ = sh.Output("go", "list", "github.com/polarisOne/polaris/...")
 
 // RunCmd is a helper function that returns a function that runs the given
 // command with the given arguments.

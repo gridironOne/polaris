@@ -7,7 +7,7 @@ import (
 	"errors"
 	"testing"
 
-	liberrors "github.com/gridironOne/gridiron/lib/errors"
+	liberrors "pkg.berachain.dev/polaris/lib/errors"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

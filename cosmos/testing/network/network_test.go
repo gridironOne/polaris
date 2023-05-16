@@ -25,7 +25,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gridironOne/gridiron/cosmos/testing/network"
+	"github.com/polarisOne/polaris/cosmos/testing/network"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

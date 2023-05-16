@@ -27,8 +27,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/state/events"
-	libtypes "github.com/gridironOne/gridiron/lib/types"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state/events"
+	libtypes "github.com/polarisOne/polaris/lib/types"
 )
 
 // ControllableEventManager defines a cache EventManager that is controllable (snapshottable

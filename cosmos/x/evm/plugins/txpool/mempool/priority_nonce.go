@@ -31,7 +31,7 @@ import (
 	sdkmempool "github.com/cosmos/cosmos-sdk/types/mempool"
 	"github.com/cosmos/cosmos-sdk/x/auth/signing"
 
-	"github.com/gridironOne/gridiron/lib/utils"
+	"github.com/polarisOne/polaris/lib/utils"
 )
 
 // NOTE: This implementation of the Priority Nonce Mempool is forked from the Cosmos SDK directly

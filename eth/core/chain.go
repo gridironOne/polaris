@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -26,11 +26,11 @@ import (
 	lru "github.com/ethereum/go-ethereum/common/lru"
 	"github.com/ethereum/go-ethereum/event"
 
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/core/state"
-	"github.com/gridironOne/gridiron/eth/core/types"
-	"github.com/gridironOne/gridiron/eth/core/vm"
-	"github.com/gridironOne/gridiron/eth/log"
+	"pkg.berachain.dev/polaris/eth/common"
+	"pkg.berachain.dev/polaris/eth/core/state"
+	"pkg.berachain.dev/polaris/eth/core/types"
+	"pkg.berachain.dev/polaris/eth/core/vm"
+	"pkg.berachain.dev/polaris/eth/log"
 )
 
 // By default we are storing up to 64mb of historical data for each cache.
@@ -44,9 +44,9 @@ var (
 	_ ChainResources  = (*blockchain)(nil)
 )
 
-// blockchain is the canonical, persistent object that operates the Gridiron EVM.
+// blockchain is the canonical, persistent object that operates the Polaris EVM.
 type blockchain struct {
-	// the host chain plugins that the Gridiron EVM is running on.
+	// the host chain plugins that the Polaris EVM is running on.
 	bp BlockPlugin
 	cp ConfigurationPlugin
 	hp HistoricalPlugin
@@ -57,7 +57,7 @@ type blockchain struct {
 	// StateProcessor is the canonical, persistent state processor that runs the EVM.
 	processor *StateProcessor
 	// statedb is the state database that is used to mange state during transactions.
-	statedb vm.GridironStateDB
+	statedb vm.PolarisStateDB
 	// vmConfig is the configuration used to create the EVM.
 	vmConfig *vm.Config
 
@@ -100,7 +100,7 @@ type blockchain struct {
 // =========================================================================
 
 // NewChain creates and returns a `api.Chain` with the given EVM chain configuration and host.
-func NewChain(host GridironHostChain) *blockchain { //nolint:revive // only used as `api.Chain`.
+func NewChain(host PolarisHostChain) *blockchain { //nolint:revive // only used as `api.Chain`.
 	bc := &blockchain{
 		bp:             host.GetBlockPlugin(),
 		cp:             host.GetConfigurationPlugin(),

@@ -4,9 +4,9 @@
 package registry_test
 
 import (
-	"github.com/gridironOne/gridiron/lib/registry"
-	"github.com/gridironOne/gridiron/lib/registry/mock"
-	libtypes "github.com/gridironOne/gridiron/lib/types"
+	"pkg.berachain.dev/polaris/lib/registry"
+	"pkg.berachain.dev/polaris/lib/registry/mock"
+	libtypes "pkg.berachain.dev/polaris/lib/types"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

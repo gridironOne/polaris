@@ -56,9 +56,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/crisis"
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 
-	"github.com/gridironOne/gridiron/cosmos/crypto/keyring"
-	"github.com/gridironOne/gridiron/cosmos/runtime"
-	evmante "github.com/gridironOne/gridiron/cosmos/x/evm/ante"
+	"github.com/polarisOne/polaris/cosmos/crypto/keyring"
+	"github.com/polarisOne/polaris/cosmos/runtime"
+	evmante "github.com/polarisOne/polaris/cosmos/x/evm/ante"
 )
 
 // NewRootCmd creates a new root command for grid. It is called once in the
@@ -67,7 +67,7 @@ func NewRootCmd() *cobra.Command {
 	// we "pre"-instantiate the application for getting the injected/configured encoding configuration
 	// note, this is not necessary when using app wiring, as depinject can be directly used.
 	// for consistency between app-v1 and app-v2, we do it the same way via methods on simapp
-	tempApp := runtime.NewGridironApp(log.NewNopLogger(), dbm.NewMemDB(), nil, true, simtestutil.NewAppOptionsWithFlagHome(tempDir()))
+	tempApp := runtime.NewPolarisApp(log.NewNopLogger(), dbm.NewMemDB(), nil, true, simtestutil.NewAppOptionsWithFlagHome(tempDir()))
 	encodingConfig := params.EncodingConfig{
 		InterfaceRegistry: tempApp.InterfaceRegistry(),
 		Codec:             tempApp.AppCodec(),
@@ -267,7 +267,7 @@ func newApp(
 ) servertypes.Application {
 	baseappOptions := server.DefaultBaseappOptions(appOpts)
 
-	return runtime.NewGridironApp(
+	return runtime.NewPolarisApp(
 		logger, db, traceStore, true,
 		appOpts,
 		baseappOptions...,
@@ -285,7 +285,7 @@ func appExport(
 	appOpts servertypes.AppOptions,
 	modulesToExport []string,
 ) (servertypes.ExportedApp, error) {
-	var gridironApp *runtime.GridironApp
+	var polarisApp *runtime.PolarisApp
 
 	// this check is necessary as we use the flag in x/upgrade.
 	// we can exit more gracefully by checking the flag here.
@@ -304,20 +304,20 @@ func appExport(
 	appOpts = viperAppOpts
 
 	if height != -1 {
-		gridironApp = runtime.NewGridironApp(logger, db, traceStore, false, appOpts)
+		polarisApp = runtime.NewPolarisApp(logger, db, traceStore, false, appOpts)
 
-		if err := gridironApp.LoadHeight(height); err != nil {
+		if err := polarisApp.LoadHeight(height); err != nil {
 			return servertypes.ExportedApp{}, err
 		}
 	} else {
-		gridironApp = runtime.NewGridironApp(logger, db, traceStore, true, appOpts)
+		polarisApp = runtime.NewPolarisApp(logger, db, traceStore, true, appOpts)
 	}
 
-	return gridironApp.ExportAppStateAndValidators(forZeroHeight, jailAllowedAddrs, modulesToExport)
+	return polarisApp.ExportAppStateAndValidators(forZeroHeight, jailAllowedAddrs, modulesToExport)
 }
 
 var tempDir = func() string {
-	dir, err := os.MkdirTemp("", "gridironApp")
+	dir, err := os.MkdirTemp("", "polarisApp")
 	if err != nil {
 		dir = runtime.DefaultNodeHome
 	}

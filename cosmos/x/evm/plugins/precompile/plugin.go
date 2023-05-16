@@ -28,16 +28,16 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/state"
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/core"
-	ethprecompile "github.com/gridironOne/gridiron/eth/core/precompile"
-	"github.com/gridironOne/gridiron/eth/core/vm"
-	"github.com/gridironOne/gridiron/eth/params"
-	"github.com/gridironOne/gridiron/lib/registry"
-	libtypes "github.com/gridironOne/gridiron/lib/types"
-	"github.com/gridironOne/gridiron/lib/utils"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state"
+	"github.com/polarisOne/polaris/eth/common"
+	"github.com/polarisOne/polaris/eth/core"
+	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
+	"github.com/polarisOne/polaris/eth/core/vm"
+	"github.com/polarisOne/polaris/eth/params"
+	"github.com/polarisOne/polaris/lib/registry"
+	libtypes "github.com/polarisOne/polaris/lib/types"
+	"github.com/polarisOne/polaris/lib/utils"
 )
 
 // Plugin is the interface that must be implemented by the plugin.
@@ -70,7 +70,7 @@ func NewPlugin(precompiles []ethprecompile.Registrable, sp StatePlugin) Plugin {
 		Registry:    registry.NewMap[common.Address, vm.PrecompileContainer](),
 		precompiles: precompiles,
 		// TODO: Re-enable gas config for precompiles.
-		// https://github.com/gridironOne/gridiron/issues/393
+		// https://github.com/polarisOne/polaris/issues/393
 		kvGasConfig:          storetypes.GasConfig{},
 		transientKVGasConfig: storetypes.GasConfig{},
 		sp:                   sp,
@@ -129,8 +129,8 @@ func (p *plugin) Run(
 	// consume static gas from RequiredGas
 	gm.ConsumeGas(pc.RequiredGas(input), "RequiredGas")
 
-	// get native Cosmos SDK context from the Gridiron StateDB
-	sdb := utils.MustGetAs[vm.GridironStateDB](evm.GetStateDB())
+	// get native Cosmos SDK context from the Polaris StateDB
+	sdb := utils.MustGetAs[vm.PolarisStateDB](evm.GetStateDB())
 	ctx := sdk.UnwrapSDKContext(sdb.GetContext())
 
 	// begin precompile execution => begin emitting Cosmos event as Eth logs

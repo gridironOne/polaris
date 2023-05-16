@@ -29,12 +29,12 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkmempool "github.com/cosmos/cosmos-sdk/types/mempool"
 
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/state"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/txpool"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/types"
-	ethprecompile "github.com/gridironOne/gridiron/eth/core/precompile"
-	ethlog "github.com/gridironOne/gridiron/eth/log"
-	"github.com/gridironOne/gridiron/eth/provider"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/txpool"
+	"github.com/polarisOne/polaris/cosmos/x/evm/types"
+	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
+	ethlog "github.com/polarisOne/polaris/eth/log"
+	"github.com/polarisOne/polaris/eth/provider"
 )
 
 type Keeper struct {
@@ -42,17 +42,17 @@ type Keeper struct {
 	ak state.AccountKeeper
 	// bk is the reference to the BankKeeper.
 	bk state.BankKeeper
-	// provider is the struct that houses the Gridiron EVM.
-	gridiron *provider.GridironProvider
+	// provider is the struct that houses the Polaris EVM.
+	polaris *provider.PolarisProvider
 	// The (unexposed) key used to access the store from the Context.
 	storeKey storetypes.StoreKey
 	// authority is the bech32 address that is allowed to execute governance proposals.
 	authority string
-	// The host contains various plugins that are are used to implement `core.GridironHostChain`.
+	// The host contains various plugins that are are used to implement `core.PolarisHostChain`.
 	host Host
 }
 
-// NewKeeper creates new instances of the gridiron Keeper.
+// NewKeeper creates new instances of the polaris Keeper.
 func NewKeeper(
 	storeKey storetypes.StoreKey,
 	ak state.AccountKeeper,
@@ -82,25 +82,25 @@ func NewKeeper(
 	return k
 }
 
-// Setup sets up the plugins in the Host. It also build the Gridiron EVM Provider.
+// Setup sets up the plugins in the Host. It also build the Polaris EVM Provider.
 func (k *Keeper) Setup(
 	offchainStoreKey *storetypes.KVStoreKey,
 	qc func(height int64, prove bool) (sdk.Context, error),
-	gridironConfigPath string,
-	gridironDataDir string,
+	polarisConfigPath string,
+	polarisDataDir string,
 
 ) {
 	// Setup plugins in the Host
 	k.host.Setup(k.storeKey, offchainStoreKey, k.ak, k.bk, qc)
 
-	// Build the Gridiron EVM Provider
-	k.gridiron = provider.NewGridironProvider(gridironConfigPath, gridironDataDir, k.host, nil)
+	// Build the Polaris EVM Provider
+	k.polaris = provider.NewPolarisProvider(polarisConfigPath, polarisDataDir, k.host, nil)
 }
 
 // ConfigureGethLogger configures the Geth logger to use the Cosmos logger.
 func (k *Keeper) ConfigureGethLogger(ctx sdk.Context) {
 	ethlog.Root().SetHandler(ethlog.FuncHandler(func(r *ethlog.Record) error {
-		logger := ctx.Logger().With("module", "gridiron-geth")
+		logger := ctx.Logger().With("module", "polaris-geth")
 		switch r.Lvl { //nolint:nolintlint,exhaustive // linter is bugged.
 		case ethlog.LvlTrace, ethlog.LvlDebug:
 			logger.Debug(r.Msg, r.Ctx...)

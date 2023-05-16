@@ -21,12 +21,12 @@
 package chain
 
 import (
-	"github.com/gridironOne/gridiron/eth/core"
-	"github.com/gridironOne/gridiron/playground/pkg/plugins"
+	"github.com/polarisOne/polaris/eth/core"
+	"github.com/polarisOne/polaris/playground/pkg/plugins"
 )
 
-// The playground chain implements the gridiron host chain interface.
-var _ core.GridironHostChain = (*Playground)(nil)
+// The playground chain implements the polaris host chain interface.
+var _ core.PolarisHostChain = (*Playground)(nil)
 
 // Playground is the playground chain.
 type Playground struct {
@@ -40,7 +40,7 @@ func NewPlayground(mempool MempoolReader) *Playground {
 		mempool: mempool,
 	}
 	playground.blockProducer = &blockProducer{
-		gridiron: core.NewChain(playground),
+		polaris: core.NewChain(playground),
 	}
 	return playground
 }
@@ -49,41 +49,41 @@ func (p *Playground) ProduceBlock() error {
 	return p.blockProducer.ProduceBlock()
 }
 
-// GetBlockPlugin implements `core.GridironHostChain`.
+// GetBlockPlugin implements `core.PolarisHostChain`.
 func (p *Playground) GetBlockPlugin() core.BlockPlugin {
 	return plugins.NewBlockPlugin()
 }
 
-// GetConfigurationPlugin implements `core.GridironHostChain`.
+// GetConfigurationPlugin implements `core.PolarisHostChain`.
 func (p *Playground) GetConfigurationPlugin() core.ConfigurationPlugin {
 	return plugins.NewConfigurationPlugin()
 }
 
-// GetGasPlugin implements `core.GridironHostChain`.
+// GetGasPlugin implements `core.PolarisHostChain`.
 func (p *Playground) GetGasPlugin() core.GasPlugin {
 	return plugins.NewGasPlugin()
 }
 
-// GetStatePlugin implements `core.GridironHostChain`.
+// GetStatePlugin implements `core.PolarisHostChain`.
 func (p *Playground) GetStatePlugin() core.StatePlugin {
 	return plugins.NewStatePlugin()
 }
 
-// GetTxPoolPlugin implements `core.GridironHostChain`.
+// GetTxPoolPlugin implements `core.PolarisHostChain`.
 func (p *Playground) GetTxPoolPlugin() core.TxPoolPlugin {
 	return plugins.NewTxPoolPlugin()
 }
 
 // The Playground Host Chain does not support stateful precompiles.
 //
-// GetPrecompilePlugin implements `core.GridironHostChain`.
+// GetPrecompilePlugin implements `core.PolarisHostChain`.
 func (p *Playground) GetPrecompilePlugin() core.PrecompilePlugin {
 	return nil
 }
 
 // The Playground Host Chain does not support historical data.
 //
-// GetHistoricalPlugin implements `core.GridironHostChain`.
+// GetHistoricalPlugin implements `core.PolarisHostChain`.
 func (p *Playground) GetHistoricalPlugin() core.HistoricalPlugin {
 	return nil
 }

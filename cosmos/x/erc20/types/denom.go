@@ -23,28 +23,28 @@ package types
 import (
 	fmt "fmt"
 
-	"github.com/gridironOne/gridiron/eth/common"
+	"github.com/polarisOne/polaris/eth/common"
 )
 
 const (
-	// gridironDenomPrefix represents the bank module prefix all Gridiron coin denominations will
+	// polarisDenomPrefix represents the bank module prefix all Polaris coin denominations will
 	// have (ERC20 originated token).
-	gridironDenomPrefix = "gridiron/"
+	polarisDenomPrefix = "polaris/"
 
-	// lenGridironDenomPrefix is the length of the gridironDenomPrefix.
-	lenGridironDenomPrefix = 8
+	// lenPolarisDenomPrefix is the length of the polarisDenomPrefix.
+	lenPolarisDenomPrefix = 8
 
-	// lenGridironDenom is the length of the (gridironDenomPrefix + 20 bytes + "0x") for the address.
-	lenGridironDenom = 50
+	// lenPolarisDenom is the length of the (polarisDenomPrefix + 20 bytes + "0x") for the address.
+	lenPolarisDenom = 50
 )
 
-// NewGridironDenomForAddress returns a new Gridiron coin denomination for a given ERC20 originated
+// NewPolarisDenomForAddress returns a new Polaris coin denomination for a given ERC20 originated
 // token address.
-func NewGridironDenomForAddress(token common.Address) string {
-	return fmt.Sprintf("%s%s", gridironDenomPrefix, token.Hex())
+func NewPolarisDenomForAddress(token common.Address) string {
+	return fmt.Sprintf("%s%s", polarisDenomPrefix, token.Hex())
 }
 
-// IsGridironDenom returns true if the given denom is a Gridiron coin denomination.
-func IsGridironDenom(denom string) bool {
-	return len(denom) == lenGridironDenom && denom[:lenGridironDenomPrefix] == gridironDenomPrefix
+// IsPolarisDenom returns true if the given denom is a Polaris coin denomination.
+func IsPolarisDenom(denom string) bool {
+	return len(denom) == lenPolarisDenom && denom[:lenPolarisDenomPrefix] == polarisDenomPrefix
 }

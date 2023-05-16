@@ -44,8 +44,8 @@ for dir in $proto_dirs; do
 done
 
 # move proto files to the right places
-cp -r github.com/gridironOne/gridiron/cosmos/* ../
-rm -rf github.com/gridironOne
+cp -r github.com/polarisOne/polaris/cosmos/* ../
+rm -rf github.com/polarisOne
 
 cd ../
 

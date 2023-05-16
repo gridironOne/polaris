@@ -4,10 +4,10 @@
 package snapshot
 
 import (
-	"github.com/gridironOne/gridiron/lib/ds"
-	"github.com/gridironOne/gridiron/lib/ds/stack"
-	"github.com/gridironOne/gridiron/lib/registry"
-	libtypes "github.com/gridironOne/gridiron/lib/types"
+	"pkg.berachain.dev/polaris/lib/ds"
+	"pkg.berachain.dev/polaris/lib/ds/stack"
+	"pkg.berachain.dev/polaris/lib/registry"
+	libtypes "pkg.berachain.dev/polaris/lib/types"
 )
 
 // initJournalCapacity is the initial capacity of the `journal` stack.

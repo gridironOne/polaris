@@ -21,8 +21,8 @@
 package state
 
 import (
-	types "github.com/gridironOne/gridiron/cosmos/x/evm/types"
-	"github.com/gridironOne/gridiron/eth/common"
+	types "github.com/polarisOne/polaris/cosmos/x/evm/types"
+	"github.com/polarisOne/polaris/eth/common"
 )
 
 // NOTE: we use copy to build keys for max performance: https://github.com/golang/go/issues/55905

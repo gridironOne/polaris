@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BUSL-1.1
 //
-// Copyright (C) 2023, Furychain Foundation. All rights reserved.
+// Copyright (C) 2023, Berachain Foundation. All rights reserved.
 // Use of this software is govered by the Business Source License included
 // in the LICENSE file of this repository and at www.mariadb.com/bsl11.
 //
@@ -21,28 +21,35 @@
 package provider
 
 import (
+	"github.com/ethereum/go-ethereum/cmd/utils"
+	"github.com/ethereum/go-ethereum/eth/ethconfig"
 	"github.com/ethereum/go-ethereum/node"
 
-	"github.com/gridironOne/gridiron/eth/api"
-	"github.com/gridironOne/gridiron/eth/core"
-	"github.com/gridironOne/gridiron/eth/log"
-	"github.com/gridironOne/gridiron/eth/rpc"
+	"pkg.berachain.dev/polaris/eth/api"
+	"pkg.berachain.dev/polaris/eth/core"
+	"pkg.berachain.dev/polaris/eth/log"
+	"pkg.berachain.dev/polaris/eth/rpc"
 )
 
-// GridironProvider is the only object that an implementing chain should use.
-type GridironProvider struct {
+var defaultEthConfig = ethconfig.Config{
+	SyncMode:           0,
+	FilterLogCacheSize: 0,
+}
+
+// PolarisProvider is the only object that an implementing chain should use.
+type PolarisProvider struct {
 	api.Chain
-	backend rpc.GridironBackend
+	backend rpc.PolarisBackend
 	Node    *node.Node
 }
 
-// NewGridironProvider creates a new `GridironEVM` instance for use on an underlying blockchain.
-func NewGridironProvider(
+// NewPolarisProvider creates a new `PolarisEVM` instance for use on an underlying blockchain.
+func NewPolarisProvider(
 	configPath string,
 	dataDir string,
-	host core.GridironHostChain,
+	host core.PolarisHostChain,
 	logHandler log.Handler,
-) *GridironProvider {
+) *PolarisProvider {
 	// Load the config file.
 	cfg, err := LoadConfigFromFilePath(configPath)
 	if err != nil {
@@ -53,18 +60,18 @@ func NewGridironProvider(
 	// set the data dir
 	cfg.NodeConfig.DataDir = dataDir
 
-	// Create the Gridiron Provider.
-	return NewGridironProviderWithConfig(cfg, host, logHandler)
+	// Create the Polaris Provider.
+	return NewPolarisProviderWithConfig(cfg, host, logHandler)
 }
 
-// NewGridironProvider creates a new `GridironEVM` instance for use on an underlying blockchain.
-func NewGridironProviderWithConfig(
+// NewPolarisProvider creates a new `PolarisEVM` instance for use on an underlying blockchain.
+func NewPolarisProviderWithConfig(
 	cfg *Config,
-	host core.GridironHostChain,
+	host core.PolarisHostChain,
 	logHandler log.Handler,
-) *GridironProvider {
-	sp := &GridironProvider{}
-	// When creating a Gridiron EVM, we allow the implementing chain
+) *PolarisProvider {
+	sp := &PolarisProvider{}
+	// When creating a Polaris EVM, we allow the implementing chain
 	// to specify their own log handler. If logHandler is nil then we
 	// we use the default geth log handler.
 	if logHandler != nil {
@@ -76,7 +83,7 @@ func NewGridironProviderWithConfig(
 	sp.Chain = core.NewChain(host)
 
 	// Build and set the RPC Backend.
-	sp.backend = rpc.NewGridironBackend(sp.Chain, &cfg.RPCConfig, &cfg.NodeConfig)
+	sp.backend = rpc.NewPolarisBackend(sp.Chain, &cfg.RPCConfig, &cfg.NodeConfig)
 
 	var err error
 	sp.Node, err = node.New(&cfg.NodeConfig)
@@ -88,7 +95,12 @@ func NewGridironProviderWithConfig(
 }
 
 // StartServices starts the standard go-ethereum node-services (i.e json-rpc).
-func (sp *GridironProvider) StartServices() error {
+func (sp *PolarisProvider) StartServices() error {
 	sp.Node.RegisterAPIs(rpc.GetAPIs(sp.backend))
+	// Register the filter API separately in order to get access to the filterSystem
+	// TODO: this should be made cleaner.
+	filterSystem := utils.RegisterFilterAPI(sp.Node, sp.backend, &defaultEthConfig)
+	// this should be a flag rather than make every node default to using it
+	utils.RegisterGraphQLService(sp.Node, sp.backend, filterSystem, sp.Node.Config())
 	return sp.Node.Start()
 }

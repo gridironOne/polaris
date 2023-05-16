@@ -46,7 +46,7 @@ var (
 	// Variables.
 	baseDockerPath  = "./cosmos/runtime/localnode/"
 	furydDockerPath = baseDockerPath + "Dockerfile"
-	imageName       = "gridiron-cosmos"
+	imageName       = "polaris-cosmos"
 	// testImageVersion       = "e2e-test-dev".
 	goVersion              = "1.20.4"
 	golangAlpine           = "golang:1.20-alpine3.17"
@@ -118,7 +118,7 @@ func (c Cosmos) dockerBuildFurydWithX(goVersion string) error {
 		"--build-arg", "GOOS=linux",
 		"--build-arg", "GOARCH=amd64",
 		"-f", furydDockerPath,
-		"-t", "gridiron:devnet-0.1", //TODO: do not hardcode, have ability to pass as arg
+		"-t", "polaris:devnet-0.1", //TODO: do not hardcode, have ability to pass as arg
 		".",
 	)
 }

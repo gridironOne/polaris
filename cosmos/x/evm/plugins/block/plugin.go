@@ -28,9 +28,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins"
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/core"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
+	"github.com/polarisOne/polaris/eth/common"
+	"github.com/polarisOne/polaris/eth/core"
 )
 
 type Plugin interface {
@@ -63,7 +63,7 @@ func (p *plugin) Prepare(ctx context.Context) {
 
 // BaseFee implements core.BlockPlugin.
 func (p *plugin) BaseFee() *big.Int {
-	return big.NewInt(-1) // we defer to gridiron' built in eip-1559 for the base fee.
+	return big.NewInt(-1) // we defer to polaris' built in eip-1559 for the base fee.
 }
 
 // GetNewBlockMetadata returns the host chain block metadata for the given block height. It returns

@@ -25,7 +25,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/eth/accounts"
+	"github.com/polarisOne/polaris/eth/accounts"
 )
 
 const (

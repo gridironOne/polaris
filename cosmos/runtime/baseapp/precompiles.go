@@ -25,18 +25,18 @@ import (
 	distrkeeper "github.com/cosmos/cosmos-sdk/x/distribution/keeper"
 	govkeeper "github.com/cosmos/cosmos-sdk/x/gov/keeper"
 
-	authprecompile "github.com/gridironOne/gridiron/cosmos/precompile/auth"
-	bankprecompile "github.com/gridironOne/gridiron/cosmos/precompile/bank"
-	distrprecompile "github.com/gridironOne/gridiron/cosmos/precompile/distribution"
-	erc20precompile "github.com/gridironOne/gridiron/cosmos/precompile/erc20"
-	govprecompile "github.com/gridironOne/gridiron/cosmos/precompile/governance"
-	stakingprecompile "github.com/gridironOne/gridiron/cosmos/precompile/staking"
-	ethprecompile "github.com/gridironOne/gridiron/eth/core/precompile"
+	authprecompile "github.com/polarisOne/polaris/cosmos/precompile/auth"
+	bankprecompile "github.com/polarisOne/polaris/cosmos/precompile/bank"
+	distrprecompile "github.com/polarisOne/polaris/cosmos/precompile/distribution"
+	erc20precompile "github.com/polarisOne/polaris/cosmos/precompile/erc20"
+	govprecompile "github.com/polarisOne/polaris/cosmos/precompile/governance"
+	stakingprecompile "github.com/polarisOne/polaris/cosmos/precompile/staking"
+	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
 )
 
 // PrecompilesToInject returns a function that provides the initialization of the standard
 // set of precompiles.
-func PrecompilesToInject(app *GridironBaseApp, customPcs ...ethprecompile.Registrable) func() *ethprecompile.Injector {
+func PrecompilesToInject(app *PolarisBaseApp, customPcs ...ethprecompile.Registrable) func() *ethprecompile.Injector {
 	return func() *ethprecompile.Injector {
 		// Create the precompile injector with the standard precompiles.
 		pcs := ethprecompile.NewPrecompiles([]ethprecompile.Registrable{

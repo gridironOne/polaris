@@ -29,17 +29,17 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/gridironOne/gridiron/cosmos/lib"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/plugins/state/events"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/store/snapmulti"
-	"github.com/gridironOne/gridiron/cosmos/x/evm/types"
-	"github.com/gridironOne/gridiron/eth/common"
-	"github.com/gridironOne/gridiron/eth/core"
-	"github.com/gridironOne/gridiron/eth/crypto"
-	"github.com/gridironOne/gridiron/eth/rpc"
-	"github.com/gridironOne/gridiron/lib/snapshot"
-	libtypes "github.com/gridironOne/gridiron/lib/types"
+	"github.com/polarisOne/polaris/cosmos/lib"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
+	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state/events"
+	"github.com/polarisOne/polaris/cosmos/x/evm/store/snapmulti"
+	"github.com/polarisOne/polaris/cosmos/x/evm/types"
+	"github.com/polarisOne/polaris/eth/common"
+	"github.com/polarisOne/polaris/eth/core"
+	"github.com/polarisOne/polaris/eth/crypto"
+	"github.com/polarisOne/polaris/eth/rpc"
+	"github.com/polarisOne/polaris/lib/snapshot"
+	libtypes "github.com/polarisOne/polaris/lib/types"
 )
 
 const pluginRegistryKey = `statePlugin`
@@ -217,7 +217,7 @@ func (p *plugin) Exist(addr common.Address) bool {
 	return p.ak.HasAccount(p.ctx, addr[:])
 }
 
-// Empty implements the `GridironStateDB` interface by returning whether the state object
+// Empty implements the `PolarisStateDB` interface by returning whether the state object
 // is either non-existent or empty according to the EIP161 epecification
 // (balance = nonce = code = 0)
 // https://github.com/ethereum/EIPs/blob/master/EIPS/eip-161.md

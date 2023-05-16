@@ -29,15 +29,15 @@ import (
 // BeginBlocker is called during the BeginBlock processing of the ABCI lifecycle.
 func (k *Keeper) BeginBlocker(ctx context.Context) {
 	sCtx := sdk.UnwrapSDKContext(ctx)
-	// Prepare the Gridiron Ethereum block.
-	k.gridiron.Prepare(ctx, sCtx.BlockHeight())
+	// Prepare the Polaris Ethereum block.
+	k.polaris.Prepare(ctx, sCtx.BlockHeight())
 }
 
 // Precommit is called during the Commit processing of the ABCI lifecycle, right before the state
 // is committed to the root multistore.
 func (k *Keeper) Precommit(ctx context.Context) {
-	// Finalize the Gridiron Ethereum block.
-	if err := k.gridiron.Finalize(ctx); err != nil {
+	// Finalize the Polaris Ethereum block.
+	if err := k.polaris.Finalize(ctx); err != nil {
 		panic(err)
 	}
 }
