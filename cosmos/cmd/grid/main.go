@@ -27,8 +27,8 @@ import (
 
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 
-	"github.com/polarisOne/polaris/cosmos/cmd/grid/cmd"
-	simapp "github.com/polarisOne/polaris/cosmos/runtime"
+	"github.com/gridironOne/polaris/cosmos/cmd/grid/cmd"
+	simapp "github.com/gridironOne/polaris/cosmos/runtime"
 )
 
 func main() {

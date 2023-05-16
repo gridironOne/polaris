@@ -25,9 +25,9 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/cosmos/cosmos-sdk/x/auth/ante"
 
-	antelib "github.com/polarisOne/polaris/cosmos/lib/ante"
-	"github.com/polarisOne/polaris/cosmos/x/evm/types"
-	"github.com/polarisOne/polaris/lib/errors"
+	antelib "github.com/gridironOne/polaris/cosmos/lib/ante"
+	"github.com/gridironOne/polaris/cosmos/x/evm/types"
+	"github.com/gridironOne/polaris/lib/errors"
 )
 
 // NewAnteHandler returns an AnteHandler that checks and increments sequence

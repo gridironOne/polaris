@@ -23,8 +23,8 @@ package erc20
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	erc20types "github.com/polarisOne/polaris/cosmos/x/erc20/types"
-	"github.com/polarisOne/polaris/eth/common"
+	erc20types "github.com/gridironOne/polaris/cosmos/x/erc20/types"
+	"github.com/gridironOne/polaris/eth/common"
 )
 
 type (

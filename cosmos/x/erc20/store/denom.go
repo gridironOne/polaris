@@ -24,8 +24,8 @@ import (
 	"cosmossdk.io/store/prefix"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/polarisOne/polaris/cosmos/x/erc20/types"
-	"github.com/polarisOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/cosmos/x/erc20/types"
+	"github.com/gridironOne/polaris/eth/common"
 )
 
 // DenomKVStore is the store type for ERC20 token address <-> SDK Coin denominations.

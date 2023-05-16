@@ -27,8 +27,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
-	"github.com/polarisOne/polaris/eth/core"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins"
+	"github.com/gridironOne/polaris/eth/core"
 )
 
 // Plugin is the interface that must be implemented by the plugin.

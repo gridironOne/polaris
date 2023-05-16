@@ -29,12 +29,12 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkmempool "github.com/cosmos/cosmos-sdk/types/mempool"
 
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state"
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/txpool"
-	"github.com/polarisOne/polaris/cosmos/x/evm/types"
-	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
-	ethlog "github.com/polarisOne/polaris/eth/log"
-	"github.com/polarisOne/polaris/eth/provider"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/state"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/txpool"
+	"github.com/gridironOne/polaris/cosmos/x/evm/types"
+	ethprecompile "github.com/gridironOne/polaris/eth/core/precompile"
+	ethlog "github.com/gridironOne/polaris/eth/log"
+	"github.com/gridironOne/polaris/eth/provider"
 )
 
 type Keeper struct {

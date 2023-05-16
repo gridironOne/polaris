@@ -29,8 +29,8 @@ import (
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	erc20types "github.com/polarisOne/polaris/cosmos/x/erc20/types"
-	evmtypes "github.com/polarisOne/polaris/cosmos/x/evm/types"
+	erc20types "github.com/gridironOne/polaris/cosmos/x/erc20/types"
+	evmtypes "github.com/gridironOne/polaris/cosmos/x/evm/types"
 )
 
 var (

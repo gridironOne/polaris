@@ -23,7 +23,7 @@ package antelib
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/polarisOne/polaris/lib/utils"
+	"github.com/gridironOne/polaris/lib/utils"
 )
 
 // IgnoreDecorator is an AnteDecorator that wraps an existing AnteDecorator. It allows

@@ -23,7 +23,7 @@ package types
 import (
 	fmt "fmt"
 
-	"github.com/polarisOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/eth/common"
 )
 
 const (

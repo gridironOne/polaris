@@ -69,12 +69,12 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/staking"
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 
-	ethcryptocodec "github.com/polarisOne/polaris/cosmos/crypto/codec"
-	"github.com/polarisOne/polaris/cosmos/x/erc20"
-	erc20keeper "github.com/polarisOne/polaris/cosmos/x/erc20/keeper"
-	"github.com/polarisOne/polaris/cosmos/x/evm"
-	evmkeeper "github.com/polarisOne/polaris/cosmos/x/evm/keeper"
-	"github.com/polarisOne/polaris/lib/utils"
+	ethcryptocodec "github.com/gridironOne/polaris/cosmos/crypto/codec"
+	"github.com/gridironOne/polaris/cosmos/x/erc20"
+	erc20keeper "github.com/gridironOne/polaris/cosmos/x/erc20/keeper"
+	"github.com/gridironOne/polaris/cosmos/x/evm"
+	evmkeeper "github.com/gridironOne/polaris/cosmos/x/evm/keeper"
+	"github.com/gridironOne/polaris/lib/utils"
 
 	_ "github.com/cosmos/cosmos-sdk/x/auth/tx/config" // import for side-effects
 )

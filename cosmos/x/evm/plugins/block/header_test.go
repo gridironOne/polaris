@@ -25,8 +25,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	testutil "github.com/polarisOne/polaris/cosmos/testing/utils"
-	"github.com/polarisOne/polaris/lib/utils"
+	testutil "github.com/gridironOne/polaris/cosmos/testing/utils"
+	"github.com/gridironOne/polaris/lib/utils"
 
 	. "github.com/onsi/ginkgo/v2"
 )

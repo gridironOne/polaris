@@ -26,8 +26,8 @@ import (
 	signingv1beta1 "cosmossdk.io/api/cosmos/tx/signing/v1beta1"
 	txsigning "cosmossdk.io/x/tx/signing"
 
-	evmapi "github.com/polarisOne/polaris/cosmos/api/polaris/evm/v1alpha1"
-	"github.com/polarisOne/polaris/cosmos/x/evm/types"
+	evmapi "github.com/gridironOne/polaris/cosmos/api/polaris/evm/v1alpha1"
+	"github.com/gridironOne/polaris/cosmos/x/evm/types"
 )
 
 // SignMode_SIGN_MODE_ETHEREUM defines the sign mode for Ethereum transactions.

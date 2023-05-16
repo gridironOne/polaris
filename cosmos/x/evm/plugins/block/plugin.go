@@ -28,9 +28,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
-	"github.com/polarisOne/polaris/eth/common"
-	"github.com/polarisOne/polaris/eth/core"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins"
+	"github.com/gridironOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/eth/core"
 )
 
 type Plugin interface {

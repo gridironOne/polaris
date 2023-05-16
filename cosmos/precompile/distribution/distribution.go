@@ -27,12 +27,12 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	distributiontypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
 
-	generated "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/distribution"
-	"github.com/polarisOne/polaris/cosmos/precompile"
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/precompile/log"
-	"github.com/polarisOne/polaris/eth/common"
-	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
-	"github.com/polarisOne/polaris/lib/utils"
+	generated "github.com/gridironOne/polaris/contracts/bindings/cosmos/precompile/distribution"
+	"github.com/gridironOne/polaris/cosmos/precompile"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/precompile/log"
+	"github.com/gridironOne/polaris/eth/common"
+	ethprecompile "github.com/gridironOne/polaris/eth/core/precompile"
+	"github.com/gridironOne/polaris/lib/utils"
 )
 
 // Contract is the precompile contract for the distribution module.

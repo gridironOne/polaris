@@ -30,10 +30,10 @@ import (
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/ethclient"
 
-	"github.com/polarisOne/polaris/cosmos/crypto/keys/ethsecp256k1"
-	"github.com/polarisOne/polaris/cosmos/testing/network"
-	"github.com/polarisOne/polaris/eth/common"
-	"github.com/polarisOne/polaris/eth/crypto"
+	"github.com/gridironOne/polaris/cosmos/crypto/keys/ethsecp256k1"
+	"github.com/gridironOne/polaris/cosmos/testing/network"
+	"github.com/gridironOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/eth/crypto"
 )
 
 // defaultTimeout is the default timeout for the test fixture.

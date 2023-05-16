@@ -26,16 +26,16 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	bindings "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/distribution"
-	sbindings "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/staking"
-	tbindings "github.com/polarisOne/polaris/contracts/bindings/testing"
-	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
-	"github.com/polarisOne/polaris/cosmos/testing/integration"
-	"github.com/polarisOne/polaris/eth/common"
+	bindings "github.com/gridironOne/polaris/contracts/bindings/cosmos/precompile/distribution"
+	sbindings "github.com/gridironOne/polaris/contracts/bindings/cosmos/precompile/staking"
+	tbindings "github.com/gridironOne/polaris/contracts/bindings/testing"
+	cosmlib "github.com/gridironOne/polaris/cosmos/lib"
+	"github.com/gridironOne/polaris/cosmos/testing/integration"
+	"github.com/gridironOne/polaris/eth/common"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	. "github.com/polarisOne/polaris/cosmos/testing/integration/utils"
+	. "github.com/gridironOne/polaris/cosmos/testing/integration/utils"
 )
 
 func TestDistributionPrecompile(t *testing.T) {

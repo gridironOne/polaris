@@ -26,13 +26,13 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	cbindings "github.com/polarisOne/polaris/contracts/bindings/cosmos"
-	tbindings "github.com/polarisOne/polaris/contracts/bindings/testing"
-	"github.com/polarisOne/polaris/cosmos/testing/integration"
+	cbindings "github.com/gridironOne/polaris/contracts/bindings/cosmos"
+	tbindings "github.com/gridironOne/polaris/contracts/bindings/testing"
+	"github.com/gridironOne/polaris/cosmos/testing/integration"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	. "github.com/polarisOne/polaris/cosmos/testing/integration/utils"
+	. "github.com/gridironOne/polaris/cosmos/testing/integration/utils"
 )
 
 func TestPolarisERC20(t *testing.T) {

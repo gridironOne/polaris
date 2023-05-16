@@ -25,11 +25,11 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 
-	ethsecp256k1 "github.com/polarisOne/polaris/cosmos/crypto/keys/ethsecp256k1"
-	"github.com/polarisOne/polaris/eth/accounts"
-	"github.com/polarisOne/polaris/eth/common"
-	crypto "github.com/polarisOne/polaris/eth/crypto"
-	"github.com/polarisOne/polaris/lib/utils"
+	ethsecp256k1 "github.com/gridironOne/polaris/cosmos/crypto/keys/ethsecp256k1"
+	"github.com/gridironOne/polaris/eth/accounts"
+	"github.com/gridironOne/polaris/eth/common"
+	crypto "github.com/gridironOne/polaris/eth/crypto"
+	"github.com/gridironOne/polaris/lib/utils"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

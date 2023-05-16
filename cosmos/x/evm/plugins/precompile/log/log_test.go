@@ -23,9 +23,9 @@ package log
 import (
 	"testing"
 
-	"github.com/polarisOne/polaris/eth/accounts/abi"
-	"github.com/polarisOne/polaris/eth/common"
-	"github.com/polarisOne/polaris/eth/crypto"
+	"github.com/gridironOne/polaris/eth/accounts/abi"
+	"github.com/gridironOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/eth/crypto"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

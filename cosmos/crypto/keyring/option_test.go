@@ -31,10 +31,10 @@ import (
 	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	"github.com/cosmos/cosmos-sdk/std"
 
-	cryptocodec "github.com/polarisOne/polaris/cosmos/crypto/codec"
-	"github.com/polarisOne/polaris/cosmos/crypto/hd"
-	accounts "github.com/polarisOne/polaris/eth/accounts"
-	"github.com/polarisOne/polaris/eth/common"
+	cryptocodec "github.com/gridironOne/polaris/cosmos/crypto/codec"
+	"github.com/gridironOne/polaris/cosmos/crypto/hd"
+	accounts "github.com/gridironOne/polaris/eth/accounts"
+	"github.com/gridironOne/polaris/eth/common"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

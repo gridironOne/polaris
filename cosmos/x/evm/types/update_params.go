@@ -23,7 +23,7 @@ package types
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	errorslib "github.com/polarisOne/polaris/lib/errors"
+	errorslib "github.com/gridironOne/polaris/lib/errors"
 )
 
 // Compile-time interface assertions.

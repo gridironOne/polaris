@@ -24,9 +24,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/polarisOne/polaris/eth/common"
-	"github.com/polarisOne/polaris/lib/errors"
-	libtypes "github.com/polarisOne/polaris/lib/types"
+	"github.com/gridironOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/lib/errors"
+	libtypes "github.com/gridironOne/polaris/lib/types"
 )
 
 // Compile-time interface assertions.

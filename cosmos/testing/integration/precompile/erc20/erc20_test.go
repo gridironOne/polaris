@@ -26,17 +26,17 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	cbindings "github.com/polarisOne/polaris/contracts/bindings/cosmos"
-	bbindings "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/bank"
-	bindings "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/erc20"
-	tbindings "github.com/polarisOne/polaris/contracts/bindings/testing"
-	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
-	"github.com/polarisOne/polaris/cosmos/testing/integration"
-	erc20types "github.com/polarisOne/polaris/cosmos/x/erc20/types"
+	cbindings "github.com/gridironOne/polaris/contracts/bindings/cosmos"
+	bbindings "github.com/gridironOne/polaris/contracts/bindings/cosmos/precompile/bank"
+	bindings "github.com/gridironOne/polaris/contracts/bindings/cosmos/precompile/erc20"
+	tbindings "github.com/gridironOne/polaris/contracts/bindings/testing"
+	cosmlib "github.com/gridironOne/polaris/cosmos/lib"
+	"github.com/gridironOne/polaris/cosmos/testing/integration"
+	erc20types "github.com/gridironOne/polaris/cosmos/x/erc20/types"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	. "github.com/polarisOne/polaris/cosmos/testing/integration/utils"
+	. "github.com/gridironOne/polaris/cosmos/testing/integration/utils"
 )
 
 func TestERC20Precompile(t *testing.T) {

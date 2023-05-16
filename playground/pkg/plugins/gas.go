@@ -20,7 +20,7 @@
 
 package plugins
 
-import "github.com/polarisOne/polaris/eth/core"
+import "github.com/gridironOne/polaris/eth/core"
 
 type gasPlugin struct {
 	core.GasPlugin

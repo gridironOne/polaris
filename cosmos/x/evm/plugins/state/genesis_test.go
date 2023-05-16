@@ -23,11 +23,11 @@ package state_test
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	testutil "github.com/polarisOne/polaris/cosmos/testing/utils"
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state"
-	"github.com/polarisOne/polaris/cosmos/x/evm/types"
-	"github.com/polarisOne/polaris/eth/common"
-	"github.com/polarisOne/polaris/eth/crypto"
+	testutil "github.com/gridironOne/polaris/cosmos/testing/utils"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/state"
+	"github.com/gridironOne/polaris/cosmos/x/evm/types"
+	"github.com/gridironOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/eth/crypto"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

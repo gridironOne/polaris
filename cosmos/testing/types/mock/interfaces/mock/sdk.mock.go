@@ -7,7 +7,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/tx/signing"
-	"github.com/polarisOne/polaris/cosmos/testing/types/mock/interfaces"
+	"github.com/gridironOne/polaris/cosmos/testing/types/mock/interfaces"
 	"sync"
 )
 

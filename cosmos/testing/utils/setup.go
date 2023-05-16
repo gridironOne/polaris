@@ -43,11 +43,11 @@ import (
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	"github.com/polarisOne/polaris/cosmos/runtime/config"
-	"github.com/polarisOne/polaris/cosmos/testing/types/mock"
-	erc20types "github.com/polarisOne/polaris/cosmos/x/erc20/types"
-	evmtypes "github.com/polarisOne/polaris/cosmos/x/evm/types"
-	"github.com/polarisOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/cosmos/runtime/config"
+	"github.com/gridironOne/polaris/cosmos/testing/types/mock"
+	erc20types "github.com/gridironOne/polaris/cosmos/x/erc20/types"
+	evmtypes "github.com/gridironOne/polaris/cosmos/x/evm/types"
+	"github.com/gridironOne/polaris/eth/common"
 )
 
 var (

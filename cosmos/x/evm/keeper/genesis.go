@@ -23,9 +23,9 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
-	"github.com/polarisOne/polaris/cosmos/x/evm/types"
-	"github.com/polarisOne/polaris/lib/utils"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins"
+	"github.com/gridironOne/polaris/cosmos/x/evm/types"
+	"github.com/gridironOne/polaris/lib/utils"
 )
 
 // InitGenesis is called during the InitGenesis.

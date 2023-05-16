@@ -37,7 +37,7 @@ var (
 	commit, _      = sh.Output("git", "log", "-1", "--format='%H'")
 	defaultDB      = "pebbledb"
 	ledgerEnabled  = true
-	appName        = "polarisOne"
+	appName        = "gridironOne"
 	executableName = "furyd"
 )
 

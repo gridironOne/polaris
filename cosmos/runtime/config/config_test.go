@@ -26,8 +26,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/hd"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	sgconfig "github.com/polarisOne/polaris/cosmos/runtime/config"
-	"github.com/polarisOne/polaris/eth/accounts"
+	sgconfig "github.com/gridironOne/polaris/cosmos/runtime/config"
+	"github.com/gridironOne/polaris/eth/accounts"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

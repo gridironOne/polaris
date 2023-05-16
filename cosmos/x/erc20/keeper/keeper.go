@@ -28,9 +28,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/polarisOne/polaris/cosmos/x/erc20/store"
-	"github.com/polarisOne/polaris/cosmos/x/erc20/types"
-	"github.com/polarisOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/cosmos/x/erc20/store"
+	"github.com/gridironOne/polaris/cosmos/x/erc20/types"
+	"github.com/gridironOne/polaris/eth/common"
 )
 
 // Keeper of this module maintains collections of erc20.

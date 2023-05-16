@@ -26,7 +26,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	distributiontypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
 
-	libgenerated "github.com/polarisOne/polaris/contracts/bindings/cosmos/lib"
+	libgenerated "github.com/gridironOne/polaris/contracts/bindings/cosmos/lib"
 )
 
 // setWithdrawAddressHelper is a helper function for the `SetWithdrawAddress` method.

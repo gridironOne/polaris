@@ -23,8 +23,8 @@ package types
 import (
 	"encoding/json"
 
-	"github.com/polarisOne/polaris/eth/params"
-	enclib "github.com/polarisOne/polaris/lib/encoding"
+	"github.com/gridironOne/polaris/eth/params"
+	enclib "github.com/gridironOne/polaris/lib/encoding"
 )
 
 const (

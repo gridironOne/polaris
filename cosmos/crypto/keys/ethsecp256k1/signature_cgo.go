@@ -21,7 +21,7 @@
 package ethsecp256k1
 
 import (
-	"github.com/polarisOne/polaris/eth/crypto"
+	"github.com/gridironOne/polaris/eth/crypto"
 )
 
 // Sign signs the provided message using the ECDSA private key. It returns an error if the

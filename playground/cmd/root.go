@@ -25,7 +25,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/polarisOne/polaris/playground/pkg/node"
+	"github.com/gridironOne/polaris/playground/pkg/node"
 )
 
 // RootCmd creates a new root command for grid. It is called once in the

@@ -21,7 +21,7 @@
 package configuration
 
 import (
-	"github.com/polarisOne/polaris/cosmos/x/evm/types"
+	"github.com/gridironOne/polaris/cosmos/x/evm/types"
 )
 
 // GetParams is used to get the params for the evm module.

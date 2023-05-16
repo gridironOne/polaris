@@ -30,17 +30,17 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
 
-	bbindings "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/bank"
-	bindings "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/governance"
-	tbindings "github.com/polarisOne/polaris/contracts/bindings/testing/governance"
-	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
-	"github.com/polarisOne/polaris/cosmos/testing/integration"
-	"github.com/polarisOne/polaris/eth/common"
-	"github.com/polarisOne/polaris/eth/core/types"
+	bbindings "github.com/gridironOne/polaris/contracts/bindings/cosmos/precompile/bank"
+	bindings "github.com/gridironOne/polaris/contracts/bindings/cosmos/precompile/governance"
+	tbindings "github.com/gridironOne/polaris/contracts/bindings/testing/governance"
+	cosmlib "github.com/gridironOne/polaris/cosmos/lib"
+	"github.com/gridironOne/polaris/cosmos/testing/integration"
+	"github.com/gridironOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/eth/core/types"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	. "github.com/polarisOne/polaris/cosmos/testing/integration/utils"
+	. "github.com/gridironOne/polaris/cosmos/testing/integration/utils"
 )
 
 var (

@@ -5,12 +5,12 @@ export default {
     logo: <span>Polaris</span>,
     logoLink: '/',
     project: {
-        link: 'https://github.com/polarisOne/polaris',
+        link: 'https://github.com/gridironOne/polaris',
     },
-    docsRepositoryBase: "https://github.com/polarisOne/polaris",
+    docsRepositoryBase: "https://github.com/gridironOne/polaris",
     banner: {
         key: '2.0-release',
-        text: <a href="https://medium.com/polarisOne-foundation/introducing-polaris-vm-2a0b77d777f8" target="_blank">
+        text: <a href="https://medium.com/gridironOne-foundation/introducing-polaris-vm-2a0b77d777f8" target="_blank">
           🎉 Introducing Polaris Ethereum! 
         </a>,
     },
@@ -41,9 +41,9 @@ export default {
                 />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:image" content="/header.png" />
-                <meta name="twitter:site:domain" content="https://polaris.polarisOne.dev/" />
+                <meta name="twitter:site:domain" content="https://polaris.gridironOne.dev/" />
                 <meta property="twitter:description" content="Polaris Ethereum brings EVM to Cosmos in a new way"/>
-                <meta name="twitter:url" content="https://polaris.polarisOne.dev/" />
+                <meta name="twitter:url" content="https://polaris.gridironOne.dev/" />
                 <meta
                     name="og:title"
                     content={title ? title + ' – Polaris Ethereum' : 'Polaris Ethereum'}
@@ -54,13 +54,13 @@ export default {
                 <link rel="icon" href="/milky-way.ico"/>
                 <link
                     rel="icon"
-                    href="/polarisOne.svg"
+                    href="/gridironOne.svg"
                     type="image/svg+xml"
                     media="(prefers-color-scheme: dark)"
                 />
                 <link
                     rel="icon"
-                    href="/polarisOne.png"
+                    href="/gridironOne.png"
                     type="image/png"
                     media="(prefers-color-scheme: dark)"
                 />

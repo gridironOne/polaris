@@ -28,9 +28,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/authz"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 
-	generated "github.com/polarisOne/polaris/contracts/bindings/cosmos/lib"
-	"github.com/polarisOne/polaris/cosmos/precompile"
-	"github.com/polarisOne/polaris/lib/utils"
+	generated "github.com/gridironOne/polaris/contracts/bindings/cosmos/lib"
+	"github.com/gridironOne/polaris/cosmos/precompile"
+	"github.com/gridironOne/polaris/lib/utils"
 )
 
 /**

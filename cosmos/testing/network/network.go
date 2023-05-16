@@ -40,11 +40,11 @@ import (
 	distrtypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	ethhd "github.com/polarisOne/polaris/cosmos/crypto/hd"
-	ethkeyring "github.com/polarisOne/polaris/cosmos/crypto/keyring"
-	"github.com/polarisOne/polaris/cosmos/crypto/keys/ethsecp256k1"
-	runtime "github.com/polarisOne/polaris/cosmos/runtime"
-	config "github.com/polarisOne/polaris/cosmos/runtime/config"
+	ethhd "github.com/gridironOne/polaris/cosmos/crypto/hd"
+	ethkeyring "github.com/gridironOne/polaris/cosmos/crypto/keyring"
+	"github.com/gridironOne/polaris/cosmos/crypto/keys/ethsecp256k1"
+	runtime "github.com/gridironOne/polaris/cosmos/runtime"
+	config "github.com/gridironOne/polaris/cosmos/runtime/config"
 )
 
 type (

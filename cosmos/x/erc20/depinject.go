@@ -28,8 +28,8 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 
-	modulev1alpha1 "github.com/polarisOne/polaris/cosmos/api/polaris/erc20/module/v1alpha1"
-	"github.com/polarisOne/polaris/cosmos/x/erc20/keeper"
+	modulev1alpha1 "github.com/gridironOne/polaris/cosmos/api/polaris/erc20/module/v1alpha1"
+	"github.com/gridironOne/polaris/cosmos/x/erc20/keeper"
 )
 
 //nolint:gochecknoinits // GRRRR fix later.

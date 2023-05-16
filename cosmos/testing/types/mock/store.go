@@ -28,9 +28,9 @@ import (
 
 	"cosmossdk.io/store/types"
 
-	"github.com/polarisOne/polaris/cosmos/testing/types/mock/interfaces"
-	"github.com/polarisOne/polaris/cosmos/testing/types/mock/interfaces/mock"
-	"github.com/polarisOne/polaris/lib/utils"
+	"github.com/gridironOne/polaris/cosmos/testing/types/mock/interfaces"
+	"github.com/gridironOne/polaris/cosmos/testing/types/mock/interfaces/mock"
+	"github.com/gridironOne/polaris/lib/utils"
 )
 
 // MultiStore is a simple multistore used for testing.

@@ -23,8 +23,8 @@ package storage_test
 import (
 	"testing"
 
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state/storage"
-	"github.com/polarisOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/state/storage"
+	"github.com/gridironOne/polaris/eth/common"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

@@ -29,9 +29,9 @@ import (
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 	"github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 
-	"github.com/polarisOne/polaris/cosmos/cmd/grid/cmd"
-	simapp "github.com/polarisOne/polaris/cosmos/runtime"
-	"github.com/polarisOne/polaris/cosmos/runtime/config"
+	"github.com/gridironOne/polaris/cosmos/cmd/grid/cmd"
+	simapp "github.com/gridironOne/polaris/cosmos/runtime"
+	"github.com/gridironOne/polaris/cosmos/runtime/config"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

@@ -47,13 +47,13 @@ Go v1.20+ or higher is required for Polaris
 
 **Step 2: Get Polaris source code**
 
-Clone the `polaris` repo from the [official repo](https://github.com/polarisOne/polaris/) and check
+Clone the `polaris` repo from the [official repo](https://github.com/gridironOne/polaris/) and check
 out the `main` branch for the latest stable release.
 Build the binary.
 
 ```bash
 cd $HOME
-git clone https://github.com/polarisOne/polaris
+git clone https://github.com/gridironOne/polaris
 cd polaris
 git checkout main
 go run magefiles/setup/setup.go
@@ -78,7 +78,7 @@ grid version --long
 A successful installation will return the following:
 
 ```bash
-name: polarisOne
+name: gridironOne
 server_name: grid
 version: <x.x.x>
 commit: <Commit hash>

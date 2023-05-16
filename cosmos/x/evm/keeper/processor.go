@@ -25,8 +25,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/polarisOne/polaris/eth/core"
-	coretypes "github.com/polarisOne/polaris/eth/core/types"
+	"github.com/gridironOne/polaris/eth/core"
+	coretypes "github.com/gridironOne/polaris/eth/core/types"
 )
 
 // ProcessTransaction is called during the DeliverTx processing of the ABCI lifecycle.

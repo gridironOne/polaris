@@ -30,8 +30,8 @@ import (
 
 	gethvm "github.com/ethereum/go-ethereum/core/vm"
 
-	"github.com/polarisOne/polaris/eth/common"
-	"github.com/polarisOne/polaris/eth/core/vm"
+	"github.com/gridironOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/eth/core/vm"
 )
 
 type PrecompileEVM interface {

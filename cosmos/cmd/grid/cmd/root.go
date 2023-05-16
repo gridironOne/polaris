@@ -56,9 +56,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/crisis"
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 
-	"github.com/polarisOne/polaris/cosmos/crypto/keyring"
-	"github.com/polarisOne/polaris/cosmos/runtime"
-	evmante "github.com/polarisOne/polaris/cosmos/x/evm/ante"
+	"github.com/gridironOne/polaris/cosmos/crypto/keyring"
+	"github.com/gridironOne/polaris/cosmos/runtime"
+	evmante "github.com/gridironOne/polaris/cosmos/x/evm/ante"
 )
 
 // NewRootCmd creates a new root command for grid. It is called once in the

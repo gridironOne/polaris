@@ -5,11 +5,11 @@
 *The project is still work in progress, see the [disclaimer below](#-warning-under-construction-).*
 
 <div>
-  <a href="https://codecov.io/gh/polarisOne/polaris" target="_blank">
-    <img src="https://codecov.io/gh/polarisOne/polaris/branch/main/graph/badge.svg?token=5SYYGUS8GW"/> 
+  <a href="https://codecov.io/gh/gridironOne/polaris" target="_blank">
+    <img src="https://codecov.io/gh/gridironOne/polaris/branch/main/graph/badge.svg?token=5SYYGUS8GW"/> 
   </a>
-  <a href="https://pkg.go.dev/github.com/polarisOne/polaris" target="_blank">
-    <img src="https://pkg.go.dev/badge/github.com/polarisOne/polaris.svg" alt="Go Reference">
+  <a href="https://pkg.go.dev/github.com/gridironOne/polaris" target="_blank">
+    <img src="https://pkg.go.dev/badge/github.com/gridironOne/polaris.svg" alt="Go Reference">
   </a>
   <a href="https://magefile.org" target="_blank">
     <img alt="Built with Mage" src="https://magefile.org/badge.svg" />
@@ -17,8 +17,8 @@
   <a href="https://t.me/polaris_devs" target="_blank">
     <img alt="Telegram Chat" src="https://img.shields.io/endpoint?color=neon&logo=telegram&label=chat&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fpolaris_devs">
   </a>
-  <a href="https://twitter.com/polarisOne" target="_blank">
-    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/polarisOne">
+  <a href="https://twitter.com/gridironOne" target="_blank">
+    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/gridironOne">
   </a>
 </div>
 
@@ -38,7 +38,7 @@ Polaris is built with serveral core principles in mind:
 
 ## Documentation
 
-If you want to build on top of Polaris, take a look at our [documentation](http://polaris.polarisOne.dev/).
+If you want to build on top of Polaris, take a look at our [documentation](http://polaris.gridironOne.dev/).
 If you want to help contribute to the framework, check out the [Framework Specs](./specs/).
 
 ## Directory Structure
@@ -93,7 +93,7 @@ If you want to help contribute to the framework, check out the [Framework Specs]
 
    ```sh
    cd $HOME
-   git clone https://github.com/polarisOne/polaris
+   git clone https://github.com/gridironOne/polaris
    cd polaris
    git checkout main
    go run magefiles/setup/setup.go

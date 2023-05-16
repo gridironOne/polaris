@@ -35,7 +35,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/staking"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	"github.com/polarisOne/polaris/lib/errors"
+	"github.com/gridironOne/polaris/lib/errors"
 )
 
 // ExportAppStateAndValidators exports the state of the application for a genesis

@@ -28,9 +28,9 @@ import (
 	"github.com/ethereum/go-ethereum/core"
 	"github.com/ethereum/go-ethereum/core/txpool"
 
-	"github.com/polarisOne/polaris/eth/common"
-	coretypes "github.com/polarisOne/polaris/eth/core/types"
-	"github.com/polarisOne/polaris/lib/utils"
+	"github.com/gridironOne/polaris/eth/common"
+	coretypes "github.com/gridironOne/polaris/eth/core/types"
+	"github.com/gridironOne/polaris/lib/utils"
 )
 
 // EthTransactionRequest defines a Cosmos SDK message for Ethereum transactions.

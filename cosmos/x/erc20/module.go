@@ -32,8 +32,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 
-	"github.com/polarisOne/polaris/cosmos/x/erc20/keeper"
-	"github.com/polarisOne/polaris/cosmos/x/erc20/types"
+	"github.com/gridironOne/polaris/cosmos/x/erc20/keeper"
+	"github.com/gridironOne/polaris/cosmos/x/erc20/types"
 )
 
 // ConsensusVersion defines the current x/erc20 module consensus version.

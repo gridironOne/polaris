@@ -27,9 +27,9 @@ import (
 
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/configuration"
-	"github.com/polarisOne/polaris/cosmos/x/evm/types"
-	"github.com/polarisOne/polaris/lib/utils"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/configuration"
+	"github.com/gridironOne/polaris/cosmos/x/evm/types"
+	"github.com/gridironOne/polaris/lib/utils"
 )
 
 // Compile-time check to ensure `Keeper` implements the `MsgServiceServer` interface.

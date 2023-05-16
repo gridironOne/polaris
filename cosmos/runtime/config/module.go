@@ -65,10 +65,10 @@ import (
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	erc20modulev1alpha1 "github.com/polarisOne/polaris/cosmos/api/polaris/erc20/module/v1alpha1"
-	evmmodulev1alpha1 "github.com/polarisOne/polaris/cosmos/api/polaris/evm/module/v1alpha1"
-	erc20types "github.com/polarisOne/polaris/cosmos/x/erc20/types"
-	evmtypes "github.com/polarisOne/polaris/cosmos/x/evm/types"
+	erc20modulev1alpha1 "github.com/gridironOne/polaris/cosmos/api/polaris/erc20/module/v1alpha1"
+	evmmodulev1alpha1 "github.com/gridironOne/polaris/cosmos/api/polaris/evm/module/v1alpha1"
+	erc20types "github.com/gridironOne/polaris/cosmos/x/erc20/types"
+	evmtypes "github.com/gridironOne/polaris/cosmos/x/evm/types"
 )
 
 var (

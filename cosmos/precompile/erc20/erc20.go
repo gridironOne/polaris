@@ -27,16 +27,16 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 
-	cbindings "github.com/polarisOne/polaris/contracts/bindings/cosmos"
-	cpbindings "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/erc20"
-	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
-	"github.com/polarisOne/polaris/cosmos/precompile"
-	erc20types "github.com/polarisOne/polaris/cosmos/x/erc20/types"
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/precompile/log"
-	"github.com/polarisOne/polaris/eth/accounts/abi"
-	"github.com/polarisOne/polaris/eth/common"
-	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
-	"github.com/polarisOne/polaris/lib/utils"
+	cbindings "github.com/gridironOne/polaris/contracts/bindings/cosmos"
+	cpbindings "github.com/gridironOne/polaris/contracts/bindings/cosmos/precompile/erc20"
+	cosmlib "github.com/gridironOne/polaris/cosmos/lib"
+	"github.com/gridironOne/polaris/cosmos/precompile"
+	erc20types "github.com/gridironOne/polaris/cosmos/x/erc20/types"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/precompile/log"
+	"github.com/gridironOne/polaris/eth/accounts/abi"
+	"github.com/gridironOne/polaris/eth/common"
+	ethprecompile "github.com/gridironOne/polaris/eth/core/precompile"
+	"github.com/gridironOne/polaris/lib/utils"
 )
 
 // Contract is the precompile contract for the auth module.

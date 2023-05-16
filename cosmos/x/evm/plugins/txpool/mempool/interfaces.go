@@ -20,7 +20,7 @@
 
 package mempool
 
-import "github.com/polarisOne/polaris/eth/common"
+import "github.com/gridironOne/polaris/eth/common"
 
 type (
 	// NonceRetriever is used to retrieve a nonce from the db.

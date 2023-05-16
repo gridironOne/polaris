@@ -26,13 +26,13 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	testutil "github.com/polarisOne/polaris/cosmos/testing/utils"
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state/events"
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state/events/mock"
-	"github.com/polarisOne/polaris/eth/common"
-	"github.com/polarisOne/polaris/eth/core/precompile"
-	"github.com/polarisOne/polaris/eth/core/vm"
-	"github.com/polarisOne/polaris/lib/utils"
+	testutil "github.com/gridironOne/polaris/cosmos/testing/utils"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/state/events"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/state/events/mock"
+	"github.com/gridironOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/eth/core/precompile"
+	"github.com/gridironOne/polaris/eth/core/vm"
+	"github.com/gridironOne/polaris/lib/utils"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

@@ -29,8 +29,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	"github.com/cosmos/cosmos-sdk/x/auth/tx"
 
-	cryptocodec "github.com/polarisOne/polaris/cosmos/crypto/codec"
-	evmante "github.com/polarisOne/polaris/cosmos/x/evm/ante"
+	cryptocodec "github.com/gridironOne/polaris/cosmos/crypto/codec"
+	evmante "github.com/gridironOne/polaris/cosmos/x/evm/ante"
 )
 
 func BuildPolarisEncodingConfig(mb module.BasicManager) params.EncodingConfig {

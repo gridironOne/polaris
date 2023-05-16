@@ -29,10 +29,10 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	libgenerated "github.com/polarisOne/polaris/contracts/bindings/cosmos/lib"
-	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
-	"github.com/polarisOne/polaris/eth/accounts/abi"
-	"github.com/polarisOne/polaris/eth/core/precompile"
+	libgenerated "github.com/gridironOne/polaris/contracts/bindings/cosmos/lib"
+	cosmlib "github.com/gridironOne/polaris/cosmos/lib"
+	"github.com/gridironOne/polaris/eth/accounts/abi"
+	"github.com/gridironOne/polaris/eth/core/precompile"
 )
 
 const (

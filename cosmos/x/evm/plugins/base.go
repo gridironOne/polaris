@@ -23,7 +23,7 @@ package plugins
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/polarisOne/polaris/cosmos/x/evm/types"
+	"github.com/gridironOne/polaris/cosmos/x/evm/types"
 )
 
 // Base is the base interface which all x/evm Polaris plugins must implement

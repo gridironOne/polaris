@@ -23,7 +23,7 @@ package mock
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/polarisOne/polaris/cosmos/testing/types/mock/interfaces/mock"
+	"github.com/gridironOne/polaris/cosmos/testing/types/mock/interfaces/mock"
 )
 
 // FakeMsg is a mock implementation of sdk.Msg for testing purposes.

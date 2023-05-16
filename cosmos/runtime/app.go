@@ -46,10 +46,10 @@ import (
 	authsims "github.com/cosmos/cosmos-sdk/x/auth/simulation"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 
-	polarisbaseapp "github.com/polarisOne/polaris/cosmos/runtime/baseapp"
-	simappconfig "github.com/polarisOne/polaris/cosmos/runtime/config"
-	evmante "github.com/polarisOne/polaris/cosmos/x/evm/ante"
-	evmmempool "github.com/polarisOne/polaris/cosmos/x/evm/plugins/txpool/mempool"
+	polarisbaseapp "github.com/gridironOne/polaris/cosmos/runtime/baseapp"
+	simappconfig "github.com/gridironOne/polaris/cosmos/runtime/config"
+	evmante "github.com/gridironOne/polaris/cosmos/x/evm/ante"
+	evmmempool "github.com/gridironOne/polaris/cosmos/x/evm/plugins/txpool/mempool"
 
 	_ "embed"
 	_ "github.com/cosmos/cosmos-sdk/x/auth/tx/config" // import for side-effects

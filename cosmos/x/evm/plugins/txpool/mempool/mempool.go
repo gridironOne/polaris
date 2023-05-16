@@ -26,11 +26,11 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
-	evmtypes "github.com/polarisOne/polaris/cosmos/x/evm/types"
-	"github.com/polarisOne/polaris/eth/common"
-	coretypes "github.com/polarisOne/polaris/eth/core/types"
-	"github.com/polarisOne/polaris/lib/utils"
+	cosmlib "github.com/gridironOne/polaris/cosmos/lib"
+	evmtypes "github.com/gridironOne/polaris/cosmos/x/evm/types"
+	"github.com/gridironOne/polaris/eth/common"
+	coretypes "github.com/gridironOne/polaris/eth/core/types"
+	"github.com/gridironOne/polaris/lib/utils"
 )
 
 // EthTxPool is a mempool for Ethereum transactions. It wraps a PriorityNonceMempool and caches

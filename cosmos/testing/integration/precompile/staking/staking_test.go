@@ -25,14 +25,14 @@ import (
 	"testing"
 	"time"
 
-	bindings "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/staking"
-	tbindings "github.com/polarisOne/polaris/contracts/bindings/testing"
-	"github.com/polarisOne/polaris/cosmos/testing/integration"
-	"github.com/polarisOne/polaris/eth/common"
+	bindings "github.com/gridironOne/polaris/contracts/bindings/cosmos/precompile/staking"
+	tbindings "github.com/gridironOne/polaris/contracts/bindings/testing"
+	"github.com/gridironOne/polaris/cosmos/testing/integration"
+	"github.com/gridironOne/polaris/eth/common"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	. "github.com/polarisOne/polaris/cosmos/testing/integration/utils"
+	. "github.com/gridironOne/polaris/cosmos/testing/integration/utils"
 )
 
 func TestStakingPrecompile(t *testing.T) {

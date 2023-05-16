@@ -20,10 +20,10 @@ package events_test
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	testutil "github.com/polarisOne/polaris/cosmos/testing/utils"
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state"
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state/events"
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state/events/mock"
+	testutil "github.com/gridironOne/polaris/cosmos/testing/utils"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/state"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/state/events"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/state/events/mock"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

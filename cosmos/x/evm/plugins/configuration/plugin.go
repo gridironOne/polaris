@@ -28,11 +28,11 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
-	"github.com/polarisOne/polaris/cosmos/x/evm/types"
-	"github.com/polarisOne/polaris/eth/common"
-	"github.com/polarisOne/polaris/eth/core"
-	"github.com/polarisOne/polaris/eth/params"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins"
+	"github.com/gridironOne/polaris/cosmos/x/evm/types"
+	"github.com/gridironOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/eth/core"
+	"github.com/gridironOne/polaris/eth/params"
 )
 
 // Plugin is the interface that must be implemented by the plugin.

@@ -30,9 +30,9 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 
-	modulev1alpha1 "github.com/polarisOne/polaris/cosmos/api/polaris/evm/module/v1alpha1"
-	"github.com/polarisOne/polaris/cosmos/x/evm/keeper"
-	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
+	modulev1alpha1 "github.com/gridironOne/polaris/cosmos/api/polaris/evm/module/v1alpha1"
+	"github.com/gridironOne/polaris/cosmos/x/evm/keeper"
+	ethprecompile "github.com/gridironOne/polaris/eth/core/precompile"
 )
 
 //nolint:gochecknoinits // GRRRR fix later.

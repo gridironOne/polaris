@@ -24,9 +24,9 @@ import (
 	"cosmossdk.io/store/cachekv"
 	storetypes "cosmossdk.io/store/types"
 
-	"github.com/polarisOne/polaris/lib/ds"
-	"github.com/polarisOne/polaris/lib/ds/stack"
-	"github.com/polarisOne/polaris/lib/utils"
+	"github.com/gridironOne/polaris/lib/ds"
+	"github.com/gridironOne/polaris/lib/ds/stack"
+	"github.com/gridironOne/polaris/lib/utils"
 )
 
 const (

@@ -29,7 +29,7 @@ import (
 
 	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
 
-	"github.com/polarisOne/polaris/eth/crypto"
+	"github.com/gridironOne/polaris/eth/crypto"
 )
 
 const (

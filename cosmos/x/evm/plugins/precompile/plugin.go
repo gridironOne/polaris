@@ -28,16 +28,16 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state"
-	"github.com/polarisOne/polaris/eth/common"
-	"github.com/polarisOne/polaris/eth/core"
-	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
-	"github.com/polarisOne/polaris/eth/core/vm"
-	"github.com/polarisOne/polaris/eth/params"
-	"github.com/polarisOne/polaris/lib/registry"
-	libtypes "github.com/polarisOne/polaris/lib/types"
-	"github.com/polarisOne/polaris/lib/utils"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/state"
+	"github.com/gridironOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/eth/core"
+	ethprecompile "github.com/gridironOne/polaris/eth/core/precompile"
+	"github.com/gridironOne/polaris/eth/core/vm"
+	"github.com/gridironOne/polaris/eth/params"
+	"github.com/gridironOne/polaris/lib/registry"
+	libtypes "github.com/gridironOne/polaris/lib/types"
+	"github.com/gridironOne/polaris/lib/utils"
 )
 
 // Plugin is the interface that must be implemented by the plugin.
@@ -70,7 +70,7 @@ func NewPlugin(precompiles []ethprecompile.Registrable, sp StatePlugin) Plugin {
 		Registry:    registry.NewMap[common.Address, vm.PrecompileContainer](),
 		precompiles: precompiles,
 		// TODO: Re-enable gas config for precompiles.
-		// https://github.com/polarisOne/polaris/issues/393
+		// https://github.com/gridironOne/polaris/issues/393
 		kvGasConfig:          storetypes.GasConfig{},
 		transientKVGasConfig: storetypes.GasConfig{},
 		sp:                   sp,

@@ -39,8 +39,8 @@ import (
 	governancetypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
 
-	"github.com/polarisOne/polaris/cosmos/lib"
-	testutil "github.com/polarisOne/polaris/cosmos/testing/utils"
+	"github.com/gridironOne/polaris/cosmos/lib"
+	testutil "github.com/gridironOne/polaris/cosmos/testing/utils"
 
 	//nolint:stylecheck,revive // Ginkgo is the testing framework.
 	. "github.com/onsi/ginkgo/v2"

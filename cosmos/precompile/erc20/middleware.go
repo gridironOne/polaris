@@ -27,10 +27,10 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
-	erc20types "github.com/polarisOne/polaris/cosmos/x/erc20/types"
-	"github.com/polarisOne/polaris/eth/common"
-	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
+	cosmlib "github.com/gridironOne/polaris/cosmos/lib"
+	erc20types "github.com/gridironOne/polaris/cosmos/x/erc20/types"
+	"github.com/gridironOne/polaris/eth/common"
+	ethprecompile "github.com/gridironOne/polaris/eth/core/precompile"
 )
 
 const (
@@ -94,7 +94,7 @@ func (c *Contract) transferCoinToERC20(
 		// deploy the new PolarisERC20 token contract
 		// NOTE: deployer of this contract is the ERC20 precompile account, NOT the msg.sender
 		// NOTE: the incoming coin's denom must have a denomMetadata set in the bank keeper
-		// (ref: https://github.com/polarisOne/polaris/issues/682)
+		// (ref: https://github.com/gridironOne/polaris/issues/682)
 		var token common.Address
 		if token, _, err = cosmlib.DeployOnEVMFromPrecompile(
 			sdkCtx, c.GetPlugin(), evm,

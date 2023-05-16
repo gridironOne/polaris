@@ -29,7 +29,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/auth/ante"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 
-	"github.com/polarisOne/polaris/cosmos/crypto/keys/ethsecp256k1"
+	"github.com/gridironOne/polaris/cosmos/crypto/keys/ethsecp256k1"
 )
 
 const (

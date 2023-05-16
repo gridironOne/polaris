@@ -23,7 +23,7 @@ package lib
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/polarisOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/eth/common"
 )
 
 // AccAddressToEthAddress converts a Cosmos SDK `AccAddress` to an Ethereum `Address`.

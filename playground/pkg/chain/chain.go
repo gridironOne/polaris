@@ -21,8 +21,8 @@
 package chain
 
 import (
-	"github.com/polarisOne/polaris/eth/core"
-	"github.com/polarisOne/polaris/playground/pkg/plugins"
+	"github.com/gridironOne/polaris/eth/core"
+	"github.com/gridironOne/polaris/playground/pkg/plugins"
 )
 
 // The playground chain implements the polaris host chain interface.

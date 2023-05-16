@@ -26,10 +26,10 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/polarisOne/polaris/cosmos/x/evm/types"
-	coretypes "github.com/polarisOne/polaris/eth/core/types"
-	"github.com/polarisOne/polaris/eth/rpc"
-	errorslib "github.com/polarisOne/polaris/lib/errors"
+	"github.com/gridironOne/polaris/cosmos/x/evm/types"
+	coretypes "github.com/gridironOne/polaris/eth/core/types"
+	"github.com/gridironOne/polaris/eth/rpc"
+	errorslib "github.com/gridironOne/polaris/lib/errors"
 )
 
 // ===========================================================================

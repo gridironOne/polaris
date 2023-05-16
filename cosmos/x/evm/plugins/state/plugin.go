@@ -29,17 +29,17 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/polarisOne/polaris/cosmos/lib"
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins"
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state/events"
-	"github.com/polarisOne/polaris/cosmos/x/evm/store/snapmulti"
-	"github.com/polarisOne/polaris/cosmos/x/evm/types"
-	"github.com/polarisOne/polaris/eth/common"
-	"github.com/polarisOne/polaris/eth/core"
-	"github.com/polarisOne/polaris/eth/crypto"
-	"github.com/polarisOne/polaris/eth/rpc"
-	"github.com/polarisOne/polaris/lib/snapshot"
-	libtypes "github.com/polarisOne/polaris/lib/types"
+	"github.com/gridironOne/polaris/cosmos/lib"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/state/events"
+	"github.com/gridironOne/polaris/cosmos/x/evm/store/snapmulti"
+	"github.com/gridironOne/polaris/cosmos/x/evm/types"
+	"github.com/gridironOne/polaris/eth/common"
+	"github.com/gridironOne/polaris/eth/core"
+	"github.com/gridironOne/polaris/eth/crypto"
+	"github.com/gridironOne/polaris/eth/rpc"
+	"github.com/gridironOne/polaris/lib/snapshot"
+	libtypes "github.com/gridironOne/polaris/lib/types"
 )
 
 const pluginRegistryKey = `statePlugin`

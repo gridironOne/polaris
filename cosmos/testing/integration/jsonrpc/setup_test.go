@@ -25,7 +25,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/ethclient"
 
-	"github.com/polarisOne/polaris/cosmos/testing/integration"
+	"github.com/gridironOne/polaris/cosmos/testing/integration"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

@@ -31,13 +31,13 @@ import (
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
 
-	generated "github.com/polarisOne/polaris/contracts/bindings/cosmos/precompile/governance"
-	cosmlib "github.com/polarisOne/polaris/cosmos/lib"
-	"github.com/polarisOne/polaris/cosmos/precompile"
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/precompile/log"
-	"github.com/polarisOne/polaris/eth/common"
-	ethprecompile "github.com/polarisOne/polaris/eth/core/precompile"
-	"github.com/polarisOne/polaris/lib/utils"
+	generated "github.com/gridironOne/polaris/contracts/bindings/cosmos/precompile/governance"
+	cosmlib "github.com/gridironOne/polaris/cosmos/lib"
+	"github.com/gridironOne/polaris/cosmos/precompile"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/precompile/log"
+	"github.com/gridironOne/polaris/eth/common"
+	ethprecompile "github.com/gridironOne/polaris/eth/core/precompile"
+	"github.com/gridironOne/polaris/lib/utils"
 )
 
 // Contract is the precompile contract for the governance module.

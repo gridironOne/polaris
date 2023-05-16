@@ -23,8 +23,8 @@ package chain
 import (
 	"context"
 
-	"github.com/polarisOne/polaris/eth/api"
-	"github.com/polarisOne/polaris/eth/core/types"
+	"github.com/gridironOne/polaris/eth/api"
+	"github.com/gridironOne/polaris/eth/core/types"
 )
 
 // blockProducer is the block producer.

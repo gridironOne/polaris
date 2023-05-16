@@ -1,4 +1,4 @@
-module github.com/polarisOne/polaris/cosmos
+module github.com/gridironOne/polaris/cosmos
 
 go 1.20
 
@@ -8,7 +8,7 @@ replace (
 	github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.46.0-beta2.0.20230423204932-f0018246f107
 
 	// Required for stateful precompiles and supporting the Ethereum JSON-RPC API.
-	github.com/ethereum/go-ethereum => github.com/polarisOne/polaris-geth v0.0.0-geth
+	github.com/ethereum/go-ethereum => github.com/gridironOne/polaris-geth v0.0.0-geth
 	github.com/syndtr/goleveldb => github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
 )
 
@@ -49,9 +49,9 @@ require (
 	google.golang.org/genproto v0.0.0-20230410155749-daa745c078e1
 	google.golang.org/grpc v1.54.0
 	google.golang.org/protobuf v1.30.0
-	github.com/polarisOne/contracts v0.0.0-contracts
-	github.com/polarisOne/eth v0.0.0-eth
-	github.com/polarisOne/lib v0.0.0-lib
+	github.com/gridironOne/contracts v0.0.0-contracts
+	github.com/gridironOne/eth v0.0.0-eth
+	github.com/gridironOne/lib v0.0.0-lib
 )
 
 require (

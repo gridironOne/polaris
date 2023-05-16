@@ -32,8 +32,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 
-	"github.com/polarisOne/polaris/cosmos/x/evm/keeper"
-	"github.com/polarisOne/polaris/cosmos/x/evm/types"
+	"github.com/gridironOne/polaris/cosmos/x/evm/keeper"
+	"github.com/gridironOne/polaris/cosmos/x/evm/types"
 )
 
 // ConsensusVersion defines the current x/evm module consensus version.

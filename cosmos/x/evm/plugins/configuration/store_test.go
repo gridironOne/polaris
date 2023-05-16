@@ -25,10 +25,10 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	testutil "github.com/polarisOne/polaris/cosmos/testing/utils"
-	"github.com/polarisOne/polaris/cosmos/x/evm/types"
-	"github.com/polarisOne/polaris/eth/params"
-	enclib "github.com/polarisOne/polaris/lib/encoding"
+	testutil "github.com/gridironOne/polaris/cosmos/testing/utils"
+	"github.com/gridironOne/polaris/cosmos/x/evm/types"
+	"github.com/gridironOne/polaris/eth/params"
+	enclib "github.com/gridironOne/polaris/lib/encoding"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

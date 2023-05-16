@@ -102,8 +102,8 @@ linters-settings:
       - Prefix(cosmossdk.io)
       - Prefix(github.com/cosmos/cosmos-sdk
       - Prefix(github.com/ethereum/go-ethereum
-      - Prefix(github.com/polarisOne
-      - Prefix(github.com/polarisOne/polaris
+      - Prefix(github.com/gridironOne
+      - Prefix(github.com/gridironOne/polaris
       - blank
       - dot
     skip-generated: true

@@ -24,7 +24,7 @@ package polaris.erc20.v1alpha1;
 import "gogoproto/gogo.proto";
 import "polaris/erc20/v1alpha1/params.proto";
 
-option go_package = "github.com/polarisOne/polaris/cosmos/x/erc20/types";
+option go_package = "github.com/gridironOne/polaris/cosmos/x/erc20/types";
 
 // GenesisState defines the erc20 module's genesis state.
 message GenesisState {

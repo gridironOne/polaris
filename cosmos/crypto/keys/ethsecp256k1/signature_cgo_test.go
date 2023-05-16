@@ -23,7 +23,7 @@ package ethsecp256k1
 import (
 	"crypto/ecdsa"
 
-	"github.com/polarisOne/polaris/eth/crypto"
+	"github.com/gridironOne/polaris/eth/crypto"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

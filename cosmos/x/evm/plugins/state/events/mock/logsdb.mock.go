@@ -5,7 +5,7 @@ package mock
 
 import (
 	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/polarisOne/polaris/cosmos/x/evm/plugins/state/events"
+	"github.com/gridironOne/polaris/cosmos/x/evm/plugins/state/events"
 	"sync"
 )
 

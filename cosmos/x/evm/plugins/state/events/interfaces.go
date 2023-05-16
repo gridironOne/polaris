@@ -23,7 +23,7 @@ package events
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	coretypes "github.com/polarisOne/polaris/eth/core/types"
+	coretypes "github.com/gridironOne/polaris/eth/core/types"
 )
 
 type (

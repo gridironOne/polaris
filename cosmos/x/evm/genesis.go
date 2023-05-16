@@ -30,7 +30,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/polarisOne/polaris/cosmos/x/evm/types"
+	"github.com/gridironOne/polaris/cosmos/x/evm/types"
 )
 
 // DefaultGenesis returns default genesis state as raw bytes for the evm
